@@ -14,23 +14,23 @@
 ## 页面展示
 
 ## 首页 (PC)
-![image](https://github.com/PDKSophia/resumes/raw/master/image/1.jpg)
+![image](https://github.com/PDKSophia/resumes/raw/develop/image/1.jpg)
 
 ## 模板案例页 (PC)
-![image](https://github.com/PDKSophia/resumes/raw/master/image/3.jpg)
+![image](https://github.com/PDKSophia/resumes/raw/develop/image/3.jpg)
 
 ## 快速了解 (PC)
-![image](https://github.com/PDKSophia/resumes/raw/master/image/page2.jpg)
+![image](https://github.com/PDKSophia/resumes/raw/develop/image/2.jpg)
 
 
 ## 首页 (Mobile)
-![image](https://github.com/PDKSophia/resumes/raw/master/image/4.jpg)
+![image](https://github.com/PDKSophia/resumes/raw/develop/image/4.jpg)
 
 ## 模板案例页 (Mobile)
-![image](https://github.com/PDKSophia/resumes/raw/master/image/6.jpg)
+![image](https://github.com/PDKSophia/resumes/raw/develop/image/6.jpg)
 
 ## 快速了解 (Mobile)
-![image](https://github.com/PDKSophia/resumes/raw/master/image/page5.jpg)
+![image](https://github.com/PDKSophia/resumes/raw/develop/image/5.jpg)
 
 
 
@@ -44,7 +44,7 @@
 ```
 
 ### 友情链接
-演示 : http://zhaike.pengdaokuan.cn
+演示 : http://zhaike.pengdaokuan.cn/YunResume
 
 博主github : https://github.com/PDKSophia/
 
