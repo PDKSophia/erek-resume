@@ -10,11 +10,17 @@
         <li @click="ToLink('openUse')">使用</li>
       </ul>
     </div>
+    <!-- <open-user></open-user> -->
   </div>
 </template>
 
 <script>
+import OpenUser from './base/openUser'
+
 export default {
+    components : {
+      OpenUser
+    },
     methods : {
       ToLink (link) {
         let url = '/home'
@@ -34,7 +40,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .view {
   padding-top: 8%;
   text-align: center;
@@ -156,24 +162,24 @@ li:hover{
   }
 
   20% {
-    -webkit-transform: scale3d(1.1, 1.1, 1.1);
-    transform: scale3d(1.1, 1.1, 1.1);
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
   }
 
   40% {
-    -webkit-transform: scale3d(0.9, 0.9, 0.9);
-    transform: scale3d(0.9, 0.9, 0.9);
+    -webkit-transform: scale3d(0.8, 0.8, 0.8);
+    transform: scale3d(0.8, 0.8, 0.8);
   }
 
   60% {
     opacity: 1;
-    -webkit-transform: scale3d(1.03, 1.03, 1.03);
-    transform: scale3d(1.03, 1.03, 1.03);
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
   }
 
   80% {
-    -webkit-transform: scale3d(0.97, 0.97, 0.97);
-    transform: scale3d(0.97, 0.97, 0.97);
+    -webkit-transform: scale3d(0.87, 0.87, 0.87);
+    transform: scale3d(0.87, 0.87, 0.87);
   }
 
   to {
@@ -201,24 +207,24 @@ li:hover{
   }
 
   20% {
-    -webkit-transform: scale3d(1.1, 1.1, 1.1);
-    transform: scale3d(1.1, 1.1, 1.1);
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
   }
 
   40% {
-    -webkit-transform: scale3d(0.9, 0.9, 0.9);
-    transform: scale3d(0.9, 0.9, 0.9);
+    -webkit-transform: scale3d(0.8, 0.8, 0.8);
+    transform: scale3d(0.8, 0.8, 0.8);
   }
 
   60% {
     opacity: 1;
-    -webkit-transform: scale3d(1.03, 1.03, 1.03);
-    transform: scale3d(1.03, 1.03, 1.03);
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
   }
 
   80% {
-    -webkit-transform: scale3d(0.97, 0.97, 0.97);
-    transform: scale3d(0.97, 0.97, 0.97);
+    -webkit-transform: scale3d(0.87, 0.87, 0.87);
+    transform: scale3d(0.87, 0.87, 0.87);
   }
 
   to {
