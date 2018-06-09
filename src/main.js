@@ -5,11 +5,19 @@ import App from './App'
 import router from './router'
 
 Vue.config.productionTip = false
+// 引入iView组件
+import iView from 'iview';
+import 'iview/dist/styles/iview.css';
+Vue.use(iView);
+
+// 引入Vuex状态管理
+import store from './store'
 
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
+  store,
   template: '<App/>',
   components: { App }
 })

@@ -1,10 +1,13 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HomePage from '@/components/home'                            // 首页
+import HomePage from '@/components/home'                                          // 首页
 
-import TemplateRouterPage from '@/components/common/template_router.vue'         // 模板样式页
-import TemplateOnePage from '@/components/common/template_one.vue'         // 模板样式页
-import TemplateTwoPage from '@/components/common/template_two.vue'         // 模板样式页
+import TemplateRouterPage from '@/components/common/template_router.vue'          // 模板样式页
+import TemplateOnePage from '@/components/common/template_one.vue'                // 模板1
+import TemplateTwoPage from '@/components/common/template_two.vue'                // 模板2
+
+import FormMajorPage from '@/components/major.vue'                                // 用户选择专业
+
 
 Vue.use(Router)
 
@@ -14,6 +17,11 @@ export default new Router({
       path: '/',
       name: 'home',
       component: HomePage
+    },
+    {
+      path: '/form_major',
+      name: 'form_major',
+      component: FormMajorPage
     },
     {
       path: '/example',
