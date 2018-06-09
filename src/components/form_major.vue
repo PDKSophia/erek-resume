@@ -3,19 +3,19 @@
         <img src="../assets/yun.png" alt="">
         <p class="logo-name">快速了解</p>
         <div class="form">
-            <Select class="select-form" placeholder="湖南科技大学" disabled id="school">
+            <Select class="select-form"  v-model="UserSelect.School">
                 <Option v-for="item in SchoolList" :value="item.value" :key="item.value" class="option-form">{{ item.label }}</Option>
             </Select> 
             <span>-</span> 
-            <Select class="select-form" placeholder="计算机学院" disabled id="academy">
+            <Select class="select-form" v-model="UserSelect.Academy">
                 <Option v-for="item in AcademyList" :value="item.value" :key="item.value" class="option-form">{{ item.label }}</Option>
             </Select> 
             <span>-</span> 
-            <Select class="select-form" id="major">
+            <Select class="select-form" v-model="UserSelect.Major">
                 <Option v-for="item in MajorList" :value="item.value" :key="item.value" class="option-form">{{ item.label }}</Option>
             </Select> 
             <span>-</span> 
-            <Select class="select-form" id="job">
+            <Select class="select-form"  v-model="UserSelect.Job">
                 <Option v-for="item in JobList" :value="item.value" :key="item.value" class="option-form">{{ item.label }}</Option>
             </Select> 
         </div>
@@ -38,14 +38,27 @@ export default {
             SchoolList : '',
             AcademyList : '',
             MajorList : '',
-            JobList : ''
+            JobList : '',
+
+            UserSelect : {
+                School : '湖南科技大学',
+                Academy : '计算机学院',
+                Major : '软件工程',
+                Job : '前端工程师'
+            },
         }
     },
     methods : {
         ContinueUse () {
-            // this.$router.push({
-            //     path : '/home'
-            // })
+            this.$Message.success('开启专属你的旅行~')
+            this.$store.commit('ADD_USER_SELECT', this.UserSelect)
+            // console.log(sessionStorage.getItem('Auth'))
+            // console.log(this.$store.state.Auth)
+            setTimeout(()=> {
+                this.$router.push({
+                    path : '/home'
+                })
+            }, 1500)
         },
     },
     created () {

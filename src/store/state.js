@@ -42,7 +42,15 @@ const state = {
             value: 'Android工程师',
             label: 'Android工程师'
         }
-    ]
+    ],
+
+    // 登陆人信息
+    Auth : {
+        school : '',
+        academy : '',
+        major : '',
+        job : ''
+    }
 }
 
 export default state;
