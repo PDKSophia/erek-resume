@@ -6,9 +6,9 @@
         <p class="logo-summary">根据 WPS 简历模板,手写HTML 及 CSS 样式布局 ~ </p>
         <div class="box">
             <ul class="styleul">
+                <li @click="HiddenBox('index')">首页</li>
                 <li @click="HiddenBox('new')">最新</li>
                 <li @click="HiddenBox('hot')">热门</li>
-                <li>预览</li>
             </ul>
         </div>
     </div>
@@ -16,7 +16,7 @@
         <h1 style="color:#15275e;margin-bottom: 1rem">{{ DefaultTitle }}</h1>
         <Row v-if="ShowNewTemplate">
             <i-col v-for="(sam, index) in SampleNewList" :key="index" :xs="24" :sm="12" :md="8" :lg="8" class="cell">
-                <div class="img-box">
+                <div class="img-box mouse" @click="go(sam.path)">
                     <img :src="sam.avatar" alt="">
                     <p class="under-explain">{{ sam.text }}</p>
                 </div>
@@ -26,7 +26,7 @@
         <!-- 热门 -->
         <Row v-if="ShowHotTemplate">
             <i-col v-for="(sam, index) in SampleHotList" :key="index" :xs="24" :sm="12" :md="8" :lg="8" class="cell">
-                <div class="img-box">
+                <div class="img-box mouse" @click="go(sam.path)">
                     <img :src="sam.avatar" alt="">
                     <p class="under-explain">{{ sam.text }}</p>
                 </div>
@@ -81,53 +81,65 @@ export default {
             SampleNewList : [
                 {
                     avatar : require('../../image/模板1.jpg'),
-                    text : 'Sample Template 1'
+                    text : 'Sample Template 1',
+                    path : 'one'
                 },
                 {
                     avatar : require('../../image/模板2.jpg'),
-                    text : 'Sample Template 2'
+                    text : 'Sample Template 2',
+                    path : 'two'
                 },
                 {
                     avatar : require('../../image/模板3.jpg'),
-                    text : 'Sample Template 3'
+                    text : 'Sample Template 3',
+                    path : 'three'
                 },
                 {
                     avatar : require('../../image/模板4.jpg'),
-                    text : 'Sample Template 4'
+                    text : 'Sample Template 4',
+                    path : 'four'
                 },
                 {
                     avatar : require('../../image/模板5.jpg'),
-                    text : 'Sample Template 5'
+                    text : 'Sample Template 5',
+                    path : 'five'
                 },
                 {
                     avatar : require('../../image/模板6.jpg'),
-                    text : 'Sample Template 6'
+                    text : 'Sample Template 6',
+                    path : 'six'
                 }
             ],
             SampleHotList : [
                 {
                     avatar : require('../../image/模板4.jpg'),
-                    text : 'Sample Template 4'
+                    text : 'Sample Template 4',
+                    path : 'four'
                 },
                 {
                     avatar : require('../../image/模板5.jpg'),
-                    text : 'Sample Template 5'
+                    text : 'Sample Template 5',
+                    path : 'five'
                 },
                 {
                     avatar : require('../../image/模板6.jpg'),
-                    text : 'Sample Template 6'
+                    text : 'Sample Template 6',
+                    path : 'six'
                 },
                 {
                     avatar : require('../../image/模板7.jpg'),
-                    text : 'Sample Template 7'
+                    text : 'Sample Template 7',
+                    path : 'seven'
                 },
                 {
                     avatar : require('../../image/模板8.jpg'),
-                    text : 'Sample Template 8'
+                    text : 'Sample Template 8',
+                    path : 'eight'
                 },
                 {
                     avatar : require('../../image/模板9.jpg'),
-                    text : 'Sample Template 9'
+                    text : 'Sample Template 9',
+                    path : 'nine'
                 }
             ]
         }
@@ -145,7 +157,12 @@ export default {
                     this.ShowNewTemplate = false
                     this.ShowHotTemplate = true
                     break;
+                case 'index' :
+                    this.$router.push({path : '/'})
             }
+        },
+        go: function(p) {
+            this.$router.push({ path : '/example/exam_' + p })
         }  
     }
 }
@@ -364,6 +381,9 @@ li:hover{
 .img-box p.under-explain{
     font-size: .78rem;
     margin-top: .66rem;
+}
+.mouse {
+    cursor: pointer;
 }
 /* 底部 */
 .bottom{
