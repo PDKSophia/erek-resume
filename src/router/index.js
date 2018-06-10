@@ -4,7 +4,8 @@ import IndexPage from '@/components/index'                                    //
 
 import TemplateRouterPage from '@/components/common/template_router'          // 模板样式页
 import TemplateOnePage from '@/components/common/template_one'                // 模板1
-import TemplateTwoPage from '@/components/common/template_two'                // 模板2
+import TemplateTwoPage from '@/components/common/template_two'
+import TemplateThreePage from '@/components/common/template_three'                // 模板2
 
 import FormMajorPage from '@/components/form_major'                           // 用户选择专业
 import SamplePage from '@/components/sample'                                  // 案例页
@@ -47,6 +48,11 @@ export default new Router({
           path: 'exam_two',
           name: 'exam_two',
           component: TemplateTwoPage,
+        },
+        {
+          path: 'exam_three',
+          name: 'exam_three',
+          component: TemplateThreePage,
         }
       ]
     }
