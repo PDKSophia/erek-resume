@@ -42,7 +42,7 @@
           </div>
         </div>
         <div class="title-wrapper">
-          <div class="title"><i class="fa fa-graduation-cap"></i>&nbsp;&nbsp;实习经历</div>
+          <div class="title"><i class="fa fa-suitcase"></i>&nbsp;&nbsp;实习经历</div>
         </div>
         <div class="inner">
           <div class="time">
@@ -72,7 +72,7 @@
           </div>
         </div>
         <div class="title-wrapper">
-          <div class="title"><i class="fa fa-graduation-cap"></i>&nbsp;&nbsp;技能证书</div>
+          <div class="title"><i class="fa fa-gear"></i>&nbsp;&nbsp;技能证书</div>
         </div>
         <div class="inner">
           <div class="time">
@@ -93,7 +93,7 @@
           </div>
         </div>
         <div class="title-wrapper">
-          <div class="title"><i class="fa fa-graduation-cap"></i>&nbsp;&nbsp;自我评价</div>
+          <div class="title"><i class="fa fa-address-card"></i>&nbsp;&nbsp;自我评价</div>
         </div>
         <div class="inner">
           <div class="list">
