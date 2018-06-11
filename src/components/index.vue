@@ -5,6 +5,7 @@
     <p class="logo-summary">一个模板简历制作平台, 让你的简历更加出众 ~ </p>
     <div class="box">
       <ul class="styleul">
+        <li @click="ToLink('Introduce')">介绍</li>
         <li @click="ToLink('Sample')">模板</li>
         <li><a href="https://github.com/PDKSophia/resumes" target="_blank">GitHub</a></li>
         <li @click="ToLink('openUse')">使用</li>
@@ -25,6 +26,9 @@ export default {
       ToLink (link) {
         let url = '/home'
         switch(link) {
+          case 'Introduce' :
+            url = '/introduce'
+            break;
           case 'Sample' :
             url = '/sample'
             break;
@@ -78,7 +82,7 @@ ul.styleul {
   text-align: center;
 }
 li {
-  width: 33.33%;       
+  width: 25%;       
   color: #0099fb;
   font-size: 1.1rem;
 }

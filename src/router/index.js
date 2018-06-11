@@ -2,6 +2,12 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import IndexPage from '@/components/index'                                    // 首页
 
+import FormMajorPage from '@/components/form_major'                           // 用户选择专业
+import SamplePage from '@/components/sample'                                  // 案例页
+import ChooseTemplatePage from '@/components/choose_template'                     // 用户选择模板
+import IntroducePage from '@/components/page/introduce'                     // 介绍
+import UserSkillPage from '@/components/page/user_form_skill'                     // 完善用户信息
+
 import TemplateRouterPage from '@/components/common/template_router'          // 模板样式页
 import TemplateOnePage from '@/components/common/template_one'                // 模板1
 import TemplateTwoPage from '@/components/common/template_two'                //模板2
@@ -12,9 +18,6 @@ import TemplateSixPage from '@/components/common/template_six'            // 模
 import TemplateSevenPage from '@/components/common/template_seven'            // 模板7
 import TemplateEightPage from '@/components/common/template_eight'            // 模板8
 import TemplateNinePage from '@/components/common/template_nine'            // 模板9
-
-import FormMajorPage from '@/components/form_major'                           // 用户选择专业
-import SamplePage from '@/components/sample'                                  // 案例页
 
 Vue.use(Router)
 
@@ -27,6 +30,12 @@ export default new Router({
       component: IndexPage
     },
     {
+      // 介绍
+      path: '/introduce',
+      name: 'introduce',
+      component: IntroducePage
+    },
+    {
       // 快速了解
       path: '/form_major',
       name: 'form_major',
@@ -37,6 +46,18 @@ export default new Router({
       path: '/sample',
       name: 'sample',
       component: SamplePage
+    },
+    {
+      // 用户选择简历
+      path: '/choose_template',
+      name: 'choose_template',
+      component: ChooseTemplatePage
+    },
+    {
+      // 用户补充信息
+      path: '/user_form_skill',
+      name: 'user_form_skill',
+      component: UserSkillPage
     },
     {
       // 模板
