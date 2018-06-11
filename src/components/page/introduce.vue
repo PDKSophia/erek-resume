@@ -1,45 +1,50 @@
 <template>
   <div>
     <div class="sample-view">
-        <img src="../assets/yun.png" alt="">
-        <p class="logo-name">WPS - 模板</p>
-        <p class="logo-summary">根据 WPS 简历模板,手写HTML 及 CSS 样式布局 ~ </p>
+        <img src="../../assets/yun.png" alt="">
+        <p class="logo-name">了解一下</p>
+        <p class="logo-summary">由 ` TickNet ` 工作室 成员开发此应用平台 ~</p>
         <div class="box">
             <ul class="styleul">
                 <li @click="HiddenBox('index')">首页</li>
-                <li @click="HiddenBox('new')">最新</li>
-                <li @click="HiddenBox('hot')">热门</li>
+                <li @click="HiddenBox('new')">功能了解</li>
+                <li @click="HiddenBox('hot')">团队了解</li>
             </ul>
         </div>
     </div>
     <div class="sample-cell">
-        <h1 style="color:#15275e;margin-bottom: 1rem">{{ DefaultTitle }}</h1>
-        <Row v-if="ShowNewTemplate">
-            <i-col v-for="(sam, index) in SampleNewList" :key="index" :xs="24" :sm="12" :md="8" :lg="8" class="cell">
-                <div class="img-box mouse" @click="go(sam.path)">
-                    <img :src="sam.avatar" alt="">
-                    <p class="under-explain">{{ sam.text }}</p>
-                </div>
-            </i-col>
-        </Row>
-
-        <!-- 热门 -->
-        <Row v-if="ShowHotTemplate">
-            <i-col v-for="(sam, index) in SampleHotList" :key="index" :xs="24" :sm="12" :md="8" :lg="8" class="cell">
-                <div class="img-box mouse" @click="go(sam.path)">
-                    <img :src="sam.avatar" alt="">
-                    <p class="under-explain">{{ sam.text }}</p>
-                </div>
-            </i-col>
-        </Row>
+        <p class="h-title">{{ DefaultTitle }}</p>
+        <div class="fun-understand" v-if="ShowAbilityFlag">
+            <Row class="code-row-bg">
+                <i-col :xs="24" :sm="24" :md="12" :lg="12">
+                    <p class="fun-title mobile">找不到好的简历模板 ? </p>
+                    <div class="fun-content">
+                        <p>你想做一份好一点的简历 ? 但是找不到好的模板 ?</p>
+                        <p>找到了一份好的模板 ? 但是居然要会员、要破费 ?</p>
+                        <p>. . .</p>
+                        <p>. . .</p>
+                        <p>最终找到了一份模板 , 但是不知道怎么写 ?</p>
+                    </div>
+                </i-col>
+                <i-col :xs="24" :sm="24" :md="12" :lg="12" >
+                    <p class="fun-title mobile">我们的优势 ? </p>
+                    <div class="fun-content">
+                        <p>HTML 还原 WPS 模板简历</p>
+                        <p><span style="color:red">不</span>收费！<span style="color:red">不</span>收费！<span style="color:red">不</span>收费！</p>
+                        <p>可以直接转成<span style="color:red"> pdf </span>文档 ！！！</p>
+                        <p><span style="color:red">随意</span>挑选自己喜欢的模板！</p>
+                        <p>为你整理多条<span style="color:red">金句</span>，无需自己组织语言！</p>
+                        <p>. . .</p>
+                    </div>
+                </i-col>
+            </Row>
+        </div>
     </div>
     <div class="bottom">
         <Row>
             <i-col :xs="24" :sm="24" :md="24" :lg="24" >
                 <div class="img-box">
                     <p>Template From : WPS </p>
-                    <!-- <p>Web PDK  : <a href="https://github.com/PDKSophia" target="_blank">Github</a></p> -->
-                    <!-- <p>Web LYY : <a href="https://github.com/PDKSophia" target="_blank">Github</a></p> -->
                     <p>Web Designer : PDK</p>
                     <p>Web Engineer : PDK / LYY</p>
                     <p style="margin-top: 1rem">Copyright © Yun Resumes</p>
@@ -51,95 +56,27 @@
 </template>
 
 <script>
-import OpenUser from './base/openUser'
 
 export default {
-    components : {
-      OpenUser
-    },
     data () {
         return {
-            DefaultTitle : '最新',
-            ShowNewTemplate : true,         // 显示最新
-            ShowHotTemplate : false,        // 显示热门
-            SampleNewList : [
-                {
-                    avatar : require('../../image/模板1.jpg'),
-                    text : 'Sample Template 1',
-                    path : 'one'
-                },
-                {
-                    avatar : require('../../image/模板2.jpg'),
-                    text : 'Sample Template 2',
-                    path : 'two'
-                },
-                {
-                    avatar : require('../../image/模板3.jpg'),
-                    text : 'Sample Template 3',
-                    path : 'three'
-                },
-                {
-                    avatar : require('../../image/模板4.jpg'),
-                    text : 'Sample Template 4',
-                    path : 'four'
-                },
-                {
-                    avatar : require('../../image/模板5.jpg'),
-                    text : 'Sample Template 5',
-                    path : 'five'
-                },
-                {
-                    avatar : require('../../image/模板6.jpg'),
-                    text : 'Sample Template 6',
-                    path : 'six'
-                }
-            ],
-            SampleHotList : [
-                {
-                    avatar : require('../../image/模板4.jpg'),
-                    text : 'Sample Template 4',
-                    path : 'four'
-                },
-                {
-                    avatar : require('../../image/模板5.jpg'),
-                    text : 'Sample Template 5',
-                    path : 'five'
-                },
-                {
-                    avatar : require('../../image/模板6.jpg'),
-                    text : 'Sample Template 6',
-                    path : 'six'
-                },
-                {
-                    avatar : require('../../image/模板7.jpg'),
-                    text : 'Sample Template 7',
-                    path : 'seven'
-                },
-                {
-                    avatar : require('../../image/模板8.jpg'),
-                    text : 'Sample Template 8',
-                    path : 'eight'
-                },
-                {
-                    avatar : require('../../image/模板9.jpg'),
-                    text : 'Sample Template 9',
-                    path : 'nine'
-                }
-            ]
+            DefaultTitle : '功能了解',
+            ShowAbilityFlag : true,         // 显示最新
+            ShowTeamFlag : false,        // 显示热门
         }
     },
     methods : {
         HiddenBox (type) {
             switch(type) {
                 case 'new' :
-                    this.DefaultTitle    = '最新'
-                    this.ShowNewTemplate = true
-                    this.ShowHotTemplate = false
+                    this.DefaultTitle    = '功能了解'
+                    this.ShowAbilityFlag = true
+                    this.ShowTeamFlag = false
                     break;
                 case 'hot' :
-                    this.DefaultTitle    = '热门'
-                    this.ShowNewTemplate = false
-                    this.ShowHotTemplate = true
+                    this.DefaultTitle    = '团队了解'
+                    this.ShowAbilityFlag = false
+                    this.ShowTeamFlag = true
                     break;
                 case 'index' :
                     this.$router.push({path : '/'})
@@ -344,30 +281,32 @@ li:hover{
     transform: scale3d(1, 1, 1);
   }
 }
-/* 显示案例模板 */
+p.h-title{
+    color:#15275e;
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+/* 显示功能了解 / 团队了解 */
 .sample-cell {
-    padding: 3rem 10%;
-    text-align: center;
+    padding: 3rem 15%;
 }
-.cell {
-    padding: 1rem 2rem;
-    text-align: center;
-}
-.cell .img-box {
-    border: 2px solid #cfcfcf;
-    padding: 1.5rem;
-    border-radius: 10px;
-}
-.cell img{
+.fun-understand {
+    line-height: 2rem;
+    padding-top: 1rem;
+    padding: 1rem 3rem;
     width: 100%;
-    height: 23rem;
 }
-.img-box p.under-explain{
-    font-size: .78rem;
-    margin-top: .66rem;
+.fun-understand p.fun-title{
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
 }
-.mouse {
-    cursor: pointer;
+.fun-understand .fun-content{
+    font-size: 1rem;
+    text-align: center;
 }
 /* 底部 */
 .bottom{
@@ -401,27 +340,26 @@ li:hover{
     li {
         font-size: .78rem;
     }
-    /* 显示案例模板 */
+    /* 显示功能了解 / 团队了解 */
+    p.h-title{
+        margin-bottom: 0rem;
+    }
     .sample-cell {
-        padding: 0rem;
-        text-align: center;
+        padding: 3rem 1rem;
     }
-    .cell {
-        padding:1rem;
-        text-align: center;
-    }
-    .cell .img-box {
-        border: 2px solid #cfcfcf;
-        padding: 1.5rem;
-        border-radius: 5px;
-    }
-    .cell img{
+    .fun-understand {
+        line-height: 1.7rem;
         width: 100%;
-        height: 20rem;
     }
-    .img-box p.under-explain{
-        font-size: .78rem;
-        margin-top: .66rem;
+    .fun-understand p.fun-title{
+        font-size: 1.1rem;
+    }
+    .fun-understand .fun-content{
+        font-size: .8rem;
+        text-align: center;
+    }
+    .mobile {
+        margin-top: 2.5rem;
     }
 }
 @media screen and (min-width: 360px) and (max-width: 420px){
@@ -450,25 +388,30 @@ li:hover{
         padding: 0rem;
         padding-top: 1rem;
     }
-    .cell {
-        padding:1rem;
-        text-align: center;
-    }
-    .cell .img-box {
-        border: 2px solid #cfcfcf;
-        padding: 1.5rem;
-        border-radius: 5px;
-    }
-    .cell img{
-        width: 100%;
-        height: 25rem;
-    }
-    .img-box p.under-explain{
-        font-size: .88rem;
-        margin-top: .66rem;
-    }
+   
     .mobile-hidden {
         display: none;
+    }
+    /* 显示功能了解 / 团队了解 */
+    p.h-title{
+        margin-bottom: 0rem;
+    }
+    .sample-cell {
+        padding: 3rem 1rem;
+    }
+    .fun-understand {
+        line-height: 1.7rem;
+        width: 100%;
+    }
+    .fun-understand p.fun-title{
+        font-size: 1.1rem;
+    }
+    .fun-understand .fun-content{
+        font-size: .84rem;
+        text-align: center;
+    }
+    .mobile {
+        margin-top: 2rem;
     }
 }
 </style>

@@ -2,11 +2,11 @@
   <div>
     <div class="sample-view">
         <img src="../assets/yun.png" alt="">
-        <p class="logo-name">WPS - 模板</p>
+        <p class="logo-name">模板 - 选择</p>
         <p class="logo-summary">根据 WPS 简历模板,手写HTML 及 CSS 样式布局 ~ </p>
         <div class="box">
             <ul class="styleul">
-                <li @click="HiddenBox('index')">首页</li>
+                <li @click="HiddenBox('back')">返回</li>
                 <li @click="HiddenBox('new')">最新</li>
                 <li @click="HiddenBox('hot')">热门</li>
             </ul>
@@ -141,8 +141,8 @@ export default {
                     this.ShowNewTemplate = false
                     this.ShowHotTemplate = true
                     break;
-                case 'index' :
-                    this.$router.push({path : '/'})
+                case 'back' :
+                    this.$router.push({path : '/form_major'})
             }
         },
         go: function(p) {

@@ -22,9 +22,19 @@
 ## 快速了解 (PC)
 ![image](https://github.com/PDKSophia/resumes/raw/develop/image/2.jpg)
 
+## 关于介绍 (PC)
+![image](https://github.com/PDKSophia/resumes/raw/develop/image/7.jpg)
+
+## 完善信息 (PC) -根据职位不同，标签实时相应不同
+![image](https://github.com/PDKSophia/resumes/raw/develop/image/8.jpg)
+
+![image](https://github.com/PDKSophia/resumes/raw/develop/image/9.jpg)
+
+![image](https://github.com/PDKSophia/resumes/raw/develop/image/10.jpg)
+
 
 ## 首页 (Mobile)
-![image](https://github.com/PDKSophia/resumes/raw/develop/image/4.jpg)
+![image](https://github.com/PDKSophia/resumes/raw/develop/image/13.jpg)
 
 ## 模板案例页 (Mobile)
 ![image](https://github.com/PDKSophia/resumes/raw/develop/image/6.jpg)
@@ -32,7 +42,13 @@
 ## 快速了解 (Mobile)
 ![image](https://github.com/PDKSophia/resumes/raw/develop/image/5.jpg)
 
+## 关于介绍 (Mobile)
+![image](https://github.com/PDKSophia/resumes/raw/develop/image/14.jpg)
 
+## 完善信息 (Mobile)
+![image](https://github.com/PDKSophia/resumes/raw/develop/image/11.jpg)
+
+![image](https://github.com/PDKSophia/resumes/raw/develop/image/12.jpg)
 
 
 -------------------

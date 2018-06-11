@@ -137,7 +137,7 @@ i {
 
 /* 左边 */
 .left-wrapper {
-  width: 30%;
+  width: 33%;
   color: #fff;
   text-align: center;
   background-color: #778495;
@@ -180,7 +180,7 @@ i {
  /* 右边 */
 .right-wrapper {
   height: 100%;
-  width: 70%;
+  width: 67%;
   padding: 2rem;
 }
 /* 标题 */
