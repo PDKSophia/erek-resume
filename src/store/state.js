@@ -27,6 +27,10 @@ const state = {
         {
             value: '物联网',
             label: '物联网'
+        },
+        {
+            value: '网络工程',
+            label: '网络工程'
         }
     ],
     JobList : [

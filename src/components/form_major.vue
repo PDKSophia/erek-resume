@@ -19,11 +19,13 @@
                 <Option v-for="item in JobList" :value="item.value" :key="item.value" class="option-form">{{ item.label }}</Option>
             </Select> 
         </div>
-        <div class="form-button">
-            <Button type="ghost" style="color: white" long @click="ContinueUse">SUBMIT</Button>
-        </div>
         <div class="tips">
-            <p class="tips-content">Tips : 一定要选择专业与工作范畴哦 ~ </p>
+            <!-- <p class="tips-content">Tips : 一定要选择专业与工作范畴哦 ~ </p> -->
+        </div>
+        <div class="form-button">
+            <p class="arrow-pre" @click="ToIndex"><i class="fa fa-angle-left pc"></i><span class="pc_span">回到首页</span></p>
+            <p class="arrow-next" @click="ContinueUse"><span class="pc_span">选择模板</span><i class="fa fa-angle-right pc"></i></p>
+            <Button type="ghost" class="mobile" style="color: white" long @click="ContinueUse">SUBMIT</Button>
         </div>
     </div>
 </template>
@@ -49,14 +51,19 @@ export default {
         }
     },
     methods : {
+        ToIndex () {
+            this.$router.push({
+                path : '/'
+            })
+        },
         ContinueUse () {
             this.$Message.success('开启专属你的旅行~')
             this.$store.commit('ADD_USER_SELECT', this.UserSelect)
-            // console.log(sessionStorage.getItem('Auth'))
-            // console.log(this.$store.state.Auth)
+            console.log(sessionStorage.getItem('Auth'))
+            console.log(this.$store.state.Auth)
             setTimeout(()=> {
                 this.$router.push({
-                    path : '/home'
+                    path : '/user_form_skill'
                 })
             }, 1500)
         },
@@ -110,7 +117,32 @@ span{
 }
 p.tips-content {
     color: white;
-    font-size: .67rem;
+    font-size: .77rem;
+    margin-top: 2rem;
+}
+/* 上下箭头 */
+/* PC显示箭头，手机显示按钮 */
+.mobile {
+    display: none;
+}
+.pc{
+    margin-top: 4rem;
+}
+span.pc_span{
+    margin: 0 .58rem;
+    font-size: .65rem;
+}
+p.arrow-pre {
+    cursor: pointer;
+    font-size: 1rem;
+    color: white;
+    float: left;
+}
+p.arrow-next {
+    cursor: pointer;
+    font-size: 1rem;
+    color: white;
+    float: right; 
 }
 /* iphone 5 - iphone X - 平板Ipad*/
 @media screen and (min-width: 320px) and (max-width: 768px){
@@ -143,11 +175,18 @@ p.tips-content {
         display: none;
     }
     .form-button{
-        margin: 0rem 25%;
+        margin: 0rem 20%;
     }
     p.tips-content {
         color: white;
-        font-size: .6rem;
+        font-size: .7rem;
+        margin-top: 1rem;
+    }
+    .pc {
+        display: none;
+    }
+    .mobile{
+        display: block;
         margin-top: 1rem;
     }
 }
