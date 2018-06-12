@@ -3,7 +3,7 @@
     <div class="template">
       <div class="left-wrapper">
         <div class="pic">
-          <img src="../../assets/咸鱼.jpg">
+          <img src="../../assets/tmg.png">
         </div>
         <div class="name-wrapper">
           <p class="name">张云溪</p>
@@ -147,7 +147,7 @@ i {
   height: 10rem;
   width: 8rem;
   margin: 2.5rem auto;
-  border: #fff solid 0.5rem;
+  border: #fff solid 0.2rem;
 }
 /* 名字 */
 .name-wrapper{
