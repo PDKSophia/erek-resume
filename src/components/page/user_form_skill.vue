@@ -6,9 +6,24 @@
             <p class="logo-summary">完善个人技能，开启 “ 装逼 ” 之路 ~</p>
         </div>
         <div class="form-box">
+            <div id="yun-tips">
+                <p style="color:red">提示</p>
+                <p>开发者对所有的输入框都没做验证，说白就是太懒了也太多了~ 你们不填，简历就是空的，为的是你们，而不是我 ~ 就那么任性</p>
+            </div>
+        </div>
+        <div class="form-box">
+            <div id="yun-tips">
+                <p style="color:red">常见问题</p>
+                <p>1 : 浏览器关闭状态下需重新完善信息</p>
+                <p>2 : 建议每次完善信息或者在 “ 生成简历 ” 前都先“ 保存所有 ”，防止页面刷新之后重填</p>
+                <p>3 : 页面刷新，输入的信息都没了，是不是需要重填 ? 如果页面刷新前你 “ 保存所有 ” 则不需要，否则需重填</p>
+                <p>4 : 请按照开发者定义好的规则填写 ~ </p>
+            </div>
+        </div>
+        <div class="form-box">
             <Tabs style="background: white" class="tabs">
                 <TabPane label="完善信息">
-                    <Form :label-width="80">
+                    <Form :label-width="80" ref="formCustom">
                         <!-- 基本信息 -->
                         <div class="base-infomation">
                             <p class="prompt-title">基本信息</p>
@@ -16,6 +31,16 @@
                             <p>学 &nbsp; 院 &nbsp; :  &nbsp; {{ Auth.Academy }}</p>
                             <p>专 &nbsp; 业 &nbsp; :  &nbsp; {{ Auth.Major }}</p>
                             <p>职 &nbsp; 位 &nbsp; :  &nbsp; {{ Auth.Job }}</p>
+                        </div>
+                        <!-- 简历照片 -->
+                        <div class="base-infomation">
+                            <p class="prompt-title">简历头像</p>
+                            <div class="box-resume-image">
+                                <img class="avatar-image" :src="Auth.Avatar" alt="">
+                                <a class="input-file input-fileup" href="javascript:;">
+                                    + 选择文件<input type="file" name="image" id="image" @change="HeadImage('head-file')">
+                                </a>
+                            </div>
                         </div>
                         <!-- 个人信息 -->
                         <div class="base-infomation">
@@ -31,6 +56,10 @@
                             </p>
                             <p><span class="left-tips">*</span>电 话 : 
                                 &nbsp;<Input v-model="Auth.Phone" placeholder="电话..." />
+                            </p>
+                            <p><span class="left-tips">*</span>学 年 : 
+                                &nbsp;<DatePicker type="date" v-model="Auth.EnrolmentTime" placeholder="Select date"></DatePicker>
+                                 - <DatePicker type="date" v-model="Auth.GraduationTime" placeholder="Select date"></DatePicker>
                             </p>
                         </div>
                         <!-- 个人简介 -->
@@ -71,7 +100,7 @@
                             </p>
                         </div>
                         <!-- 技能清单 -->
-                        <div class="base-infomation">
+                        <div class="base-infomation" v-if="Auth.Academy == '计算机科学与工程学院'">
                             <p class="prompt-title">技能清单</p>
                             <p style="float: left;" class="mobile-skill"><span class="left-tips">*</span>标 签 : </p>
                             <p>
@@ -96,7 +125,73 @@
                         <!-- 项目经验 -->
                         <div class="base-infomation">
                             <p class="prompt-title">项目经验</p>
-                            
+                            <div class="experience" v-for="(item, index) in Auth.Experience" :key="index">
+                                <p>项目名称 : {{ item.projectName }}</p>  
+                                <p>担任职位 : {{ item.projectJob }}</p>  
+                                <p v-if="item.projectLink != ''">链接地址 : {{ item.projectLink }}</p>
+                                <p>项目描述 : {{ item.projectSummary }}</p>
+                                <Button type="error" style="margin:.6rem 0rem 1rem" @click="DeleteProject(index)">删除</Button>
+                            </div> 
+        
+                            <!-- <div class="experience">
+                                <p>项目名称 : 基于微信企业号 - 二手市场 - 前端</p>  
+                                <p>担任职位 : Web前端工程师</p>  
+                                <p>链接地址 : https://github.com/PDKSophia/resumes</p>
+                                <p>项目描述 : 作为在校学生进行二手商品交易平台，功能包括商品上传、下单、聊天、处理、收藏等</p>
+                            </div> 
+                            <div class="experience">
+                                <p>项目名称 : 开源 - 宅客( 开发中 ) - 独立开发</p>  
+                                <p>担任职位 : 全栈工程师</p>  
+                                <p>链接地址 : https://github.com/PDKSophia/resumes</p>
+                                <p>项目描述 : 一个有爱的聊天APP平台应用功能包括 : 注册登陆、个人信息、添加好友、加入群聊、接入图灵机器人、朋友圈等</p>
+                            </div>  -->
+                            <!-- 添加一条 -->
+                            <div class="experience" style="border: none" v-if="ShowAddProject">
+                                <div class="project-table">
+                                    <div class="left-cell">
+                                        <p class="label-span"><span class="left-tips">*</span>项目名称 : </p>
+                                    </div>
+                                    <div class="right-cell">
+                                        <Input class="pro-tab" v-model="NewProject.projectName" placeholder="例如 : 开源 - 宅客( 开发中 ) - 独立开发" />
+                                    </div>
+                                    <div class="left-cell">
+                                        <p class="label-span"><span class="left-tips">*</span>担任职位 : </p>
+                                    </div>
+                                    <div class="right-cell">
+                                        <Input class="pro-tab" v-model="NewProject.projectJob" placeholder="例如 : 前端工程师" />
+                                    </div>
+                                    <div class="left-cell">
+                                        <p class="label-span"><span class="left-tips">*</span>技术栈 : </p>
+                                    </div>
+                                    <div class="right-cell">
+                                        <Input class="pro-tab" v-model="NewProject.projectSkill"  placeholder="例如 : Vue.js + Axios + iView UI + ThinkPHP5.1" />
+                                    </div>
+                                    <div class="left-cell">
+                                        <p class="label-span">链接地址 : </p>
+                                    </div>
+                                    <div class="right-cell">
+                                        <Input class="pro-tab" v-model="NewProject.projectLink" placeholder="建议填写" />
+                                    </div>
+                                    <div class="left-cell">
+                                        <p class="label-span"><span class="left-tips">*</span>项目描述 : </p>
+                                    </div>
+                                    <div class="right-cell">
+                                        <Input class="pro-tab" v-model="NewProject.projectSummary" type="textarea" :autosize="{minRows: 3,maxRows: 6}" placeholder="项目的基本介绍" />
+                                    </div>
+                                    <div class="left-cell">
+                                        <p class="label-span"><span class="left-tips">*</span>问题解决 : </p>
+                                    </div>
+                                    <div class="right-cell">
+                                        <Input class="pro-tab" v-model="NewProject.projectSolve" type="textarea" :autosize="{minRows: 3,maxRows: 6}" placeholder="例如 : {node socket.io实现群聊，采用PM2部署node.js，保证进程永久存活}" />
+                                        <p><span class="input-tips" style="margin-left: 0"> * 多个问题及解决以 { } 分割成一个句子</span></p>
+                                    </div>
+                                </div>
+                                <div align="center">
+                                    <Button type="ghost" @click="ShowAddProject = false">取消</Button>
+                                    <Button type="dashed" @click="IncreaseProject">保存</Button>
+                                </div>
+                            </div>
+                            <Button type="ghost" v-else class="AddButton" @click="ShowAddProject = true">增加一条</Button>
                         </div>
                         <!-- 个人评价 -->
                         <div class="base-infomation">
@@ -115,17 +210,33 @@
                         </div>
 
                         <div class="base-infomation" style="border-bottom: none; text-align:center">
-                            <Button type="primary">保存所有</Button>
-                            <Button type="success">生成简历</Button>
+                            <Button type="primary" @click="SessionUserInfo">保存所有</Button>
+                            <Button type="success" @click="SubmitMakeResume">生成简历</Button>
                         </div>
                     </form>
                 </TabPane>
             </Tabs>
         </div>
+        
+        <div class="form-box" v-if="ShowTemplateChoose">
+            <div id="template-choose">
+                <p class="title-choose">模板挑选</p>
+                <Row>
+                    <i-col v-for="(sam, index) in SampleNewList" :key="index" :xs="24" :sm="12" :md="8" :lg="8" class="cell">
+                        <div class="img-box mouse">
+                            <img :src="sam.avatar" alt="">
+                            <Button type="dashed" @click="UserTemplate(index)">使用模板</Button>
+                        </div>
+                    </i-col>
+                </Row>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
+import Validate from '../../task/validate.js'
+
 export default {
     data () {
         return {
@@ -134,16 +245,20 @@ export default {
                 Academy : '',
                 Major : '',
                 Job : '',
+                Avatar : require('../../assets/PDK.jpg'),
                 UserName : '',
                 Area : '',
                 Email : '',
                 Phone : '',
+                EnrolmentTime : '2015-09-01',
+                GraduationTime : '2019-07-01',
                 JobAddress : '',
                 Certificate : '',
                 Github : '',
                 Blog : '',
                 Hobby : '',
                 Skill : '',
+                Experience :[],
                 Evaluation : '',
             },
             WebSkill : [
@@ -151,16 +266,16 @@ export default {
                     'text' : 'HTML'
                 },
                 {
-                    'text' : 'JavaScript'
+                    'text' : 'jQuery'
                 },
                 {
-                    'text' : 'jQuery'
+                    'text' : 'Git'
                 },
                 {
                     'text' : 'Node.js'
                 },
                 {
-                    'text' : 'Git'
+                    'text' : 'JavaScript'
                 },
                 {
                     'text' : 'Mysql'
@@ -176,6 +291,15 @@ export default {
                 },
                 {
                     'text' : 'WebSocket'
+                },
+                {
+                    'text' : '了解微信小程序'
+                },
+                {
+                    'text' : '了解基于微信公众号开发'
+                },
+                {
+                    'text' : '了解Mysql,了解数据库优化方法'
                 }
             ],
             HouDuanSkill : [
@@ -214,6 +338,15 @@ export default {
                 },
                 {
                     'text' : 'Swoole'
+                },
+                {
+                    'text' : '了解微信小程序'
+                },
+                {
+                    'text' : '了解基于微信公众号开发'
+                },
+                {
+                    'text' : '了解MYSQL,了解数据库优化方法'
                 }
             ],
             AndroidSkill : [
@@ -253,7 +386,49 @@ export default {
                 {
                     'text' : '保持好奇，对新知识新技术有决心和毅力'
                 }
-            ]
+            ],
+            NewProject : {
+                projectName : '',
+                projectJob : '',
+                projectSkill : '',
+                projectLink : '',
+                projectSummary : '',
+                projectSolve : ''
+            },
+            ShowAddProject : false,
+            ShowTemplateChoose : false,
+            SampleNewList : [
+                {
+                    avatar : require('../../../image/模板1.jpg'),
+                    text : 'Sample Template 1',
+                    path : 'one'
+                },
+                {
+                    avatar : require('../../../image/模板2.jpg'),
+                    text : 'Sample Template 2',
+                    path : 'two'
+                },
+                {
+                    avatar : require('../../../image/模板3.jpg'),
+                    text : 'Sample Template 3',
+                    path : 'three'
+                },
+                {
+                    avatar : require('../../../image/模板4.jpg'),
+                    text : 'Sample Template 4',
+                    path : 'four'
+                },
+                {
+                    avatar : require('../../../image/模板5.jpg'),
+                    text : 'Sample Template 5',
+                    path : 'five'
+                },
+                {
+                    avatar : require('../../../image/模板6.jpg'),
+                    text : 'Sample Template 6',
+                    path : 'six'
+                }
+            ],
         }
     },
     methods : {
@@ -270,6 +445,86 @@ export default {
             }else{
                 this.Auth.Evaluation = this.Auth.Evaluation + tab + ' | '
             }
+        },
+        // 添加新项目经验数据信息
+        IncreaseProject () {
+            // 添加到用户的项目经验中
+            this.Auth.Experience.push({
+                projectName : this.NewProject.projectName,
+                projectJob : this.NewProject.projectJob,
+                projectSkill : this.NewProject.projectSkill,
+                projectLink : this.NewProject.projectLink,
+                projectSummary : this.NewProject.projectSummary,
+                projectSolve : this.NewProject.projectSolve
+            })
+            this.NewProject = {}
+            this.ShowAddProject = false
+        },
+        // 删除项目
+        DeleteProject (index) {
+            this.$Modal.confirm({
+                title: 'Yun Resume Title',
+                content: '<p>确定要删除此项目吗 ? </p>',
+                onOk: () => {
+                    this.Auth.Experience.splice(index, 1)
+                    this.$Message.success('删除成功');
+                },
+                onCancel: () => {
+                    
+                }
+            });
+        },
+        // 保存所有
+        SessionUserInfo () {
+            sessionStorage.setItem('SessionUser', JSON.stringify(this.Auth))
+            this.$Modal.success({
+                title: 'Yun Resume',
+                content: '保存成功，无需重新完善信息，直接点击 “生成简历” 去生成专属自己的简历吧 ~'
+            });
+            console.log(sessionStorage.getItem('SessionUser'))
+        },
+        // 生成简历
+        SubmitMakeResume () {
+            console.log(this.Auth)
+            this.$Notice.warning({
+                title: 'Yun Resume title',
+                desc: '建议先 “ 保存所有 ”，再生成简历，这样只要页面不关闭状态，都可生成简历'
+            });
+            this.ShowTemplateChoose = true
+        },
+        // 使用该模板
+        UserTemplate (index) {
+            console.log(index)
+        },
+        // 头像上传
+        HeadImage (head) {
+            var headBox = document.getElementById('image')
+            var headimg = headBox.files
+            console.log(headimg)
+			// 获得图片名， 大小， 类型(全转换小写)
+            var imgName = headimg[0].name
+			var imgSize = headimg[0].size
+			var imgType = imgName.substring(imgName.lastIndexOf(".")+1).toLowerCase()
+            // 判断是否属于jpg  jpeg png
+            if(imgType != 'jpg' && imgType != 'jpeg' && imgType != 'png')
+            {
+                this.$Message.info('只支持 jpg | jpeg | png 格式')
+                imgName = ''
+                headimg = null
+                return false
+            }
+            // 判断大小
+            if(imgSize > 5242000)       // 1M = 1024 * 1024 * 1
+            {
+                this.$Message.info('图片不能大于5M ')
+                headimg = null
+                return false
+			}
+			else
+			{
+                var imgUrl = window.URL.createObjectURL(headBox.files[0])
+                this.Auth.Avatar = imgUrl
+			}
         }
     },
     created () {
@@ -294,6 +549,7 @@ export default {
 .sample-view img{
   height: 8rem;
   width: 8rem;
+  animation: swing 2s;
 }
 .sample-view p.logo-name {
   font-size : 1.68rem;
@@ -305,10 +561,49 @@ export default {
   color: white;
   margin-top: 5.2rem;
 }
+/* 简历头像 */
+.box-resume-image {
+    
+}
+.box-resume-image img.avatar-image {
+    width: 9rem;
+    height: 13rem;
+}
+/* 提示框 */
+#yun-tips {
+  animation: bounceIn 2s;
+}
+#yun-tips, #template-choose{
+    background-color: white;
+    text-align: center;
+    padding: 1rem 1rem;
+    border-radius: 10px;
+    line-height: 1.5rem;
+}
+/* 模板选择 */
+#template-choose p.title-choose{
+    color: #15275e;
+    font-size: 1.36rem;
+    font-weight: 600;
+}
+/* 使用模板 */
+.img-box {
+    margin-top: 1rem;
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+.img-box img{
+    width: 100%;
+    height: 20rem;
+    padding: .5rem
+}
+.mouse {
+    cursor: pointer;
+}
 /* 用户基本信息 */
 .form-box{
     background-color: #ecedf1;
-    padding: 3rem 20%;
+    padding: 1.5rem 20%;
 }
 .form-box .tabs {
     padding: 2rem 3rem;
@@ -323,7 +618,7 @@ export default {
     border-bottom: 1px solid #e8e8ea;
 }
 p.mobile-skill, p.mobile-remark {
-    height: 3rem;
+    height: 4rem;
 }
 p.prompt-title{
     color: #15275e;
@@ -340,6 +635,29 @@ span.left-tips{
     font-size: .68rem;
     margin-right: .5rem;
 }
+/* 项目经验 */
+.new-project {
+    border: none;
+}
+.experience{
+    margin: 0rem 1rem;
+    padding: 1rem 0rem;
+    border-bottom: 1px solid #e8e8ea;
+}
+.experience p {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+/* 增加一条 */
+button.AddButton {
+    width: 80%;
+    margin: 1rem 5rem;
+    margin-top: 2rem;
+}
+.ivu-date-picker {
+    width: 29.2%;
+}
 .ivu-input-wrapper,.ivu-select {
     width: 60%;
     line-height: 3rem;
@@ -352,6 +670,60 @@ button{
     margin: 1rem;
     margin-bottom: 0;
 }
+/* 新增项目表格样式 */
+.project-table {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #e8e8ea;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 2rem;
+}
+.project-table .left-cell {
+    width: 25%;
+    margin-bottom: .4rem;
+}
+.left-cell p.label-span {
+    float: right;
+    margin-right: 1rem;
+    margin-top: .5rem;
+}
+.project-table .right-cell {
+    width: 75%;
+    margin-bottom: .4rem;
+}
+.pro-tab{
+    width: 80%;
+}
+/* 头像上传按钮 */
+.input-file{
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    width: auto;
+    background-color: #576fb9;
+    border: solid 1px #ddd;
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 18px;
+    color:#fff;
+    text-decoration: none;
+    margin-left : 3rem;
+}
+.input-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 14px;
+    background-color: #fff;
+    transform: translate(-300px, 0px) scale(4);
+    height: 40px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+ }
 /* iphone 5 - iphone X - 平板Ipad*/
 @media screen and (min-width: 320px) and (max-width: 768px){
   .sample-view {
@@ -380,7 +752,7 @@ button{
         padding-bottom: 2.6rem;
     }
     p.mobile-skill{
-        height: 9rem;
+        height: 15rem;
     }
     p.mobile-remark{
         height: 2rem;
@@ -401,7 +773,10 @@ button{
         font-size: .68rem;
         text-align: center;
     }
-    .ivu-input-wrapper,.ivu-select {
+    .ivu-date-picker {
+        width: 32%;
+    }
+    .ivu-input-wrapper,.ivu-select{
         width: 70%;
         line-height: 3rem;
     }
@@ -409,6 +784,77 @@ button{
         height: 25px;
         margin: 4px;
     }
+    /* 简历头像 */
+    .box-resume-image {
+        text-align: center;
+    }
+    .input-file {
+        margin-left: 0;
+    }
+    .box-resume-image img.avatar-image {
+        width: 9rem;
+        height: 13rem;
+    }
+    /* 项目经验 */
+    .experience{
+        margin: 0rem 0rem;
+        padding: 0rem 0rem;
+        border-bottom: 1px solid #e8e8ea;
+    }
+    .experience p{
+        font-size: .7rem;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    button.AddButton {
+        width: 90%;
+        margin: 1.5rem 1rem;
+        margin-bottom: -1rem;
+    }
+    /* 新增项目表格样式 */
+    .project-table {
+        width: 100%;
+        padding: .4rem;
+        border: 1px solid #e8e8ea;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 10px;
+        margin-top: .68rem;
+        padding-bottom: 1rem;
+    }
+    .project-table .left-cell {
+        width: 35%;
+        margin-bottom: 0rem;
+    }
+    .left-cell p.label-span {
+        float: right;
+        margin-right: .5rem;
+        margin-top: .5rem;
+    }
+    .project-table .right-cell {
+        width: 100%;
+        margin-bottom: 0rem;
+        padding: 0rem .45rem;
+    }
+    .pro-tab{
+        width: 100%;
+    }
+    /* 模板选择 */
+    #template-choose p.title-choose{
+        margin-top: 1rem;
+    }
+    /* 使用模板 */
+    .img-box {
+        padding: .5rem;
+        border-radius: 10px;
+    }
+    .img-box img{
+        width: 100%;
+        height: 20rem;
+        padding: .5rem
+    }
+    
 }
 @media screen and (min-width: 365px) and (max-width: 768px){
     span.input-tips{
@@ -417,15 +863,88 @@ button{
         float: right;
         margin-right: 1rem;
     }
-    .ivu-input-wrapper,.ivu-select {
+    .ivu-date-picker {
+        width: 36%;
+    }
+    .ivu-input-wrapper,.ivu-select{
         width: 77%;
         line-height: 3rem;
     }
     p.mobile-skill{
-        height: 7rem;
+        height: 13rem;
     }
     p.mobile-remark{
         height: 2rem;
+    }
+    /* 项目经验 */
+    .experience{
+        margin: 0rem 0rem;
+        padding: 1rem 0rem;
+        border-bottom: 1px solid #e8e8ea;
+    }
+    .experience p{
+        font-size: .78rem;
+    }
+    .experience p {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    /* 项目经验 */
+    .experience{
+        margin: 0rem 0rem;
+        padding: 0rem 0rem;
+        border-bottom: 1px solid #e8e8ea;
+    }
+    .experience p{
+        font-size: .7rem;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+    button.AddButton {
+        width: 90%;
+        margin: 1.5rem 1rem;
+        margin-bottom: -1rem;
+    }
+    /* 新增项目表格样式 */
+    .project-table {
+        width: 100%;
+        padding: .4rem;
+        border: 1px solid #e8e8ea;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 10px;
+        margin-top: .68rem;
+        padding-bottom: 1rem;
+    }
+    .project-table .left-cell {
+        width: 27%;
+        margin-bottom: 0rem;
+    }
+    .left-cell p.label-span {
+        float: right;
+        margin-right: .5rem;
+        margin-top: .5rem;
+    }
+    .project-table .right-cell {
+        width: 100%;
+        margin-bottom: 0rem;
+        padding: 0rem .45rem;
+    }
+    .pro-tab{
+        width: 100%;
+    }
+    /* 使用模板 */
+    .img-box {
+        padding: .5rem 1rem;
+        border-radius: 10px;
+    }
+    
+    .img-box img{
+        width: 100%;
+        height: 24rem;
+        padding: .8rem;
     }
 }
 @media screen and (min-width: 650px) and (max-width: 768px){
@@ -440,6 +959,9 @@ button{
     }
     p.mobile-remark{
         height: 4rem;
+    }
+    .box-resume-image {
+        text-align: unset;
     }
 }
 </style>

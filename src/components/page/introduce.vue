@@ -39,6 +39,32 @@
                 </i-col>
             </Row>
         </div>
+        <div class="fun-understand" v-if="ShowTeamFlag">
+            <Row class="code-row-bg">
+                <i-col :xs="24" :sm="24" :md="12" :lg="12">
+                    <div class="fun-content">
+                        <img src="../../assets/PDK.jpg" alt="">
+                        <p class="fun-title mobile">彭道宽</p>
+                        <p>一枚爱学习的程(老)序(司)猿(机)</p>
+                        <p>吉他 、 篮球 、 撸码 、 舞蹈</p>
+                        <p>. . .</p>
+                        <p>. . .</p>
+                        <p>太多了 ? 写不完，就这样吧...</p>
+                    </div>
+                </i-col>
+                <i-col :xs="24" :sm="24" :md="12" :lg="12" >
+                    <div class="fun-content mobile">
+                        <img src="../../assets/LYY.jpg" alt="">
+                        <p class="fun-title mobile">林囿余</p>
+                        <p>一枚爱学习的程(老)序(司)猿(机)</p>
+                        <p>吉他 、 篮球 、 撸码 、 舞蹈</p>
+                        <p>. . .</p>
+                        <p>. . .</p>
+                        <p>太多了 ? 写不完，就这样吧...</p>
+                    </div>
+                </i-col>
+            </Row>
+        </div>
     </div>
     <div class="bottom">
         <Row>
@@ -307,6 +333,10 @@ p.h-title{
 .fun-understand .fun-content{
     font-size: 1rem;
     text-align: center;
+}
+.fun-content img{
+    width: 8rem;
+    height: 11rem;
 }
 /* 底部 */
 .bottom{
