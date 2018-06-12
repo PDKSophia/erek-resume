@@ -73,7 +73,7 @@
                         <!-- 技能清单 -->
                         <div class="base-infomation">
                             <p class="prompt-title">技能清单</p>
-                            <p style="float: left;" class="mobile-skill"><span class="left-tips">*</span>标 签 : </p>
+                            <p style="float: left;" class="mobile-skill"><span class="left-tips">*</span>标 签 :</p>
                             <p>
                                 <Tag v-if="Auth.Job == '前端工程师'" v-for="(web, index) in WebSkill" 
                                         :key="index">
@@ -101,7 +101,7 @@
                         <!-- 个人评价 -->
                         <div class="base-infomation">
                             <p class="prompt-title">个人评价</p>
-                            <p style="float: left;" class="mobile-remark"><span class="left-tips">*</span>常 用 : </p>
+                            <p style="float: left;" class="mobile-remark"><span class="left-tips">*</span>常 用 :&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                             <p>
                                 <Tag v-for="(eva, index) in EvaluationList" 
                                         :key="index">
@@ -138,13 +138,14 @@ export default {
                 Area : '',
                 Email : '',
                 Phone : '',
+                Time : '',
                 JobAddress : '',
                 Certificate : '',
                 Github : '',
                 Blog : '',
                 Hobby : '',
                 Skill : '',
-                Evaluation : '',
+                Evaluation : ''
             },
             WebSkill : [
                 {
@@ -340,9 +341,12 @@ span.left-tips{
     font-size: .68rem;
     margin-right: .5rem;
 }
-.ivu-input-wrapper,.ivu-select {
+.ivu-input-wrapper,.ivu-select,.ivu-date-picker {
     width: 60%;
     line-height: 3rem;
+}
+.ivu-input-wrapper,.ivu-select {
+    margin-left: 1.3rem;
 }
 .ivu-tag{
     height: 25px;

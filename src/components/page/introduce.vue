@@ -299,7 +299,7 @@ p.h-title{
     width: 100%;
 }
 .fun-understand p.fun-title{
-    font-size: 1.3rem;
+    font-size: 1.46rem;
     font-weight: 600;
     margin-bottom: 1rem;
     text-align: center;

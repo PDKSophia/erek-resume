@@ -19,6 +19,7 @@ import TemplateSevenPage from '@/components/common/template_seven'            //
 import TemplateEightPage from '@/components/common/template_eight'            // 模板8
 import TemplateNinePage from '@/components/common/template_nine'            // 模板9
 
+
 Vue.use(Router)
 
 export default new Router({
