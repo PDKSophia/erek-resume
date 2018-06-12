@@ -7,8 +7,9 @@
                 <Option v-for="item in SchoolList" :value="item.value" :key="item.value" class="option-form">{{ item.label }}</Option>
             </Select> 
             <span>-</span> 
-            <Select class="select-form" v-model="UserSelect.Academy">
-                <Option v-for="item in AcademyList" :value="item.value" :key="item.value" class="option-form">{{ item.label }}</Option>
+            
+            <Select id="Academy" class="select-form" v-model="UserSelect.Academy">
+                <Option v-for="item in AcademyList" :value="item.value" :key="item.value" class="option-form" disabled>{{ item.label }}</Option>
             </Select> 
             <span>-</span> 
             <Select class="select-form" v-model="UserSelect.Major">
@@ -19,9 +20,8 @@
                 <Option v-for="item in JobList" :value="item.value" :key="item.value" class="option-form">{{ item.label }}</Option>
             </Select> 
         </div>
-        <div class="tips">
-            <!-- <p class="tips-content">Tips : 一定要选择专业与工作范畴哦 ~ </p> -->
-        </div>
+        <!-- 多级联动 -->
+        <!-- <Cascader :data="AcademyMajorList" trigger="hover"></Cascader>  -->
         <div class="form-button">
             <p class="arrow-pre" @click="ToIndex"><i class="fa fa-angle-left pc"></i><span class="pc_span">回到首页</span></p>
             <p class="arrow-next" @click="ContinueUse"><span class="pc_span">选择模板</span><i class="fa fa-angle-right pc"></i></p>
@@ -44,10 +44,11 @@ export default {
 
             UserSelect : {
                 School : '湖南科技大学',
-                Academy : '计算机学院',
+                Academy : '计算机科学与工程学院',
                 Major : '软件工程',
                 Job : '前端工程师'
             },
+            AcademyMajorList : []
         }
     },
     methods : {
@@ -72,6 +73,7 @@ export default {
         this.SchoolList  = this.$store.state.SchoolList
         this.AcademyList = this.$store.state.AcademyList
         this.MajorList   = this.$store.state.MajorList
+        // this.AcademyMajorList = this.$store.state.AcademyMajorList
         this.JobList     = this.$store.state.JobList
     }
 }
@@ -98,15 +100,18 @@ export default {
 }
 /* 复选框 */
 .form{
-    margin: 3rem 20%;
+    margin: 3rem 13%;
 }
 .select-form {
     margin-right: 1rem;
     margin-left: 1rem;
-    width: 10rem;
+    width: 11rem;
+}
+#Academy {
+    width: 12.2rem;
 }
 .option-form{
-    width: 10rem;
+    width: 11rem;
 }
 span{
     color: white;
@@ -163,12 +168,15 @@ p.arrow-next {
     .form{
         margin: 1.4rem; 
     }
+    #Academy {
+        width: 15rem
+    }
     .select-form {
         margin: 1rem;
-        width: 13rem;
+        width: 15rem;
     }
     .option-form{
-        width: 13rem;
+        width: 15rem;
     }
     span{
         color: white;

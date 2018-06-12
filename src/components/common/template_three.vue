@@ -3,7 +3,7 @@
     <div class="template">
       <div class="left-wrapper">
         <div class="pic-wrapper">
-          <img class="pic" src="../../assets/咸鱼.jpg" alt="">
+          <img class="pic" src="../../assets/tmg.png" alt="">
         </div>
         <p class="box-1"></p>
         <div class="message-wrapper">
@@ -157,7 +157,7 @@ i {
 .pic {
   width: 11rem;
   height: 13rem;
-  border: 0.4rem solid #ffffff;
+  border: 0.3rem solid #ffffff;
   margin: 2.5rem 0;
 }
 .box-1 {
