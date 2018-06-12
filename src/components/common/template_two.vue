@@ -5,7 +5,7 @@
       <div class="right">
         <div class="information-wrapper">
           <div class="pic">
-            <img src="../../assets/咸鱼.jpg">
+            <img src="../../assets/tmg.png">
           </div>
           <div class="information-inner">
             <div class="mobile-style">
