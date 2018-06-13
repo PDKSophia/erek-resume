@@ -19,6 +19,8 @@ import TemplateSevenPage from '@/components/common/template_seven'            //
 import TemplateEightPage from '@/components/common/template_eight'            // 模板8
 import TemplateNinePage from '@/components/common/template_nine'            // 模板9
 
+import TemplateOne1Page from '@/components/common/template_one.1'                // 模板1
+
 
 Vue.use(Router)
 
@@ -71,6 +73,11 @@ export default new Router({
           path: 'exam_one',
           name: 'exam_one',
           component: TemplateOnePage,
+        },
+        {
+          path: 'exam_one1',
+          name: 'exam_one1',
+          component: TemplateOne1Page,
         },
         {
           path: 'exam_two',

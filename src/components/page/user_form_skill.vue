@@ -58,8 +58,8 @@
                                 &nbsp;<Input v-model="Auth.Phone" placeholder="电话..." />
                             </p>
                             <p><span class="left-tips">*</span>学 年 : 
-                                &nbsp;<DatePicker type="date" v-model="Auth.EnrolmentTime" placeholder="Select date"></DatePicker>
-                                 - <DatePicker type="date" v-model="Auth.GraduationTime" placeholder="Select date"></DatePicker>
+                                &nbsp;<DatePicker type="month" v-model="Auth.EnrolmentTime" placeholder="Select date"></DatePicker>
+                                 - <DatePicker type="month" v-model="Auth.GraduationTime" placeholder="Select date"></DatePicker>
                             </p>
                         </div>
                         <!-- 个人简介 -->
@@ -250,8 +250,8 @@ export default {
                 Area : '',
                 Email : '',
                 Phone : '',
-                EnrolmentTime : '2015-09-01',
-                GraduationTime : '2019-07-01',
+                EnrolmentTime : '2015-09',
+                GraduationTime : '2019-07',
                 JobAddress : '',
                 Certificate : '',
                 Github : '',
@@ -494,6 +494,28 @@ export default {
         },
         // 使用该模板
         UserTemplate (index) {
+            switch (index) {
+                case 0:
+                    this.$router.push({path : '/example/exam_one1'})
+                    break;
+                case 1:
+                    this.$router.push({path : '/example/exam_two'})
+                    break;
+                case 2:
+                    this.$router.push({path : '/example/exam_three'})
+                    break;
+                case 3:
+                    this.$router.push({path : '/example/exam_four'})
+                    break;
+                case 4:
+                    this.$router.push({path : '/example/exam_five'})
+                    break;
+                case 5:
+                    this.$router.push({path : '/example/exam_six'})
+                    break;
+                default:
+                    break;
+            }
             console.log(index)
         },
         // 头像上传
