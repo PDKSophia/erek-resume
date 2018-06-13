@@ -13,6 +13,9 @@
 
 # 看个流程操作
 ![image](https://github.com/PDKSophia/resumes/raw/develop/image/x.gif)
+
+![image](https://github.com/PDKSophia/resumes/raw/develop/image/y.gif)
+
 ## 页面展示
 
 ## 首页 (PC)
