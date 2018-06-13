@@ -9,8 +9,10 @@
  + iView UI
  + ...
 
+> 要我说这个技术难点，其实还真没什么难点，因为目前前期并未涉及到后端，纯前端的工作，同时博主对所有的输入框没有做验证，不输入就没信息，是你们要生成简历，如果你自己都不输入信息，那么简历肯定就是一片空白咯，还有！！一定要按照博主定义的格式填写，不然到时候解析等出问题，简历就丑啦 ~ 
 
-
+# 看个流程操作
+![image](https://github.com/PDKSophia/resumes/raw/develop/image/x.gif)
 ## 页面展示
 
 ## 首页 (PC)
@@ -25,12 +27,18 @@
 ## 关于介绍 (PC)
 ![image](https://github.com/PDKSophia/resumes/raw/develop/image/7.jpg)
 
-## 完善信息 (PC) -根据职位不同，标签实时相应不同
-![image](https://github.com/PDKSophia/resumes/raw/develop/image/8.jpg)
+## 完善信息 (PC) -
+![image](https://github.com/PDKSophia/resumes/raw/develop/image/15.jpg)
 
-![image](https://github.com/PDKSophia/resumes/raw/develop/image/9.jpg)
+![image](https://github.com/PDKSophia/resumes/raw/develop/image/16.jpg)
 
-![image](https://github.com/PDKSophia/resumes/raw/develop/image/10.jpg)
+![image](https://github.com/PDKSophia/resumes/raw/develop/image/17.jpg)
+
+![image](https://github.com/PDKSophia/resumes/raw/develop/image/18.jpg)
+
+![image](https://github.com/PDKSophia/resumes/raw/develop/image/19.jpg)
+
+![image](https://github.com/PDKSophia/resumes/raw/develop/image/20.jpg)
 
 
 ## 首页 (Mobile)
