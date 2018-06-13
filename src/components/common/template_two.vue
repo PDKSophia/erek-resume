@@ -15,13 +15,13 @@
             <div class="column">
               <ul class="fa-ul info">
                 <li><i class="fa-li fa fa-clock-o"></i>年龄：21岁</li>
-                <li><i class="fa-li fa fa-id-card-o"></i>学历：大学本科</li>
+                <li><i class="fa-li fa fa-id-card-o"></i>学历：软件工程</li>
                 <li><i class="fa-li fa fa-home"></i>现居：福建厦门</li>
               </ul>
               <ul class="fa-ul info column-r">
-                <li><i class="fa-li fa fa-leaf"></i>政治面貌：共青团员</li>
-                <li><i class="fa-li fa fa-phone"></i>电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话：17070707070</li>
-                <li><i class="fa-li fa fa-envelope-open"></i>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：1868660@qq.com</li>
+                <li><i class="fa-li fa fa-leaf"></i>意向城市：北京 / 成都 / 上海</li>
+                <li><i class="fa-li fa fa-phone"></i>电&nbsp;&nbsp;&nbsp;话：18796831223</li>
+                <li><i class="fa-li fa fa-envelope-open"></i>邮&nbsp;&nbsp;&nbsp;箱：1063137960@qq.com</li>
               </ul>
             </div>
           </div>
