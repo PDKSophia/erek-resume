@@ -19,7 +19,10 @@ import TemplateSevenPage from '@/components/common/template_seven'            //
 import TemplateEightPage from '@/components/common/template_eight'            // 模板8
 import TemplateNinePage from '@/components/common/template_nine'            // 模板9
 
-import TemplateOne1Page from '@/components/common/template_one.1'                // 模板1
+
+import UserTemplateRouterPage from '@/components/template/tem_router'          // 使用模板路由页
+import UserTemplateOnePage from '@/components/template/tem_one'                // 使用模板1
+import UserTemplateTwoPage from '@/components/template/tem_two'                // 使用模板2
 
 
 Vue.use(Router)
@@ -75,11 +78,6 @@ export default new Router({
           component: TemplateOnePage,
         },
         {
-          path: 'exam_one1',
-          name: 'exam_one1',
-          component: TemplateOne1Page,
-        },
-        {
           path: 'exam_two',
           name: 'exam_two',
           component: TemplateTwoPage,
@@ -123,6 +121,25 @@ export default new Router({
           name: 'exam_nine',
           component: TemplateNinePage,
         }
+      ]
+    },
+    {
+      // 模板
+      path: '/user',
+      name: 'user',
+      component: UserTemplateRouterPage,
+      redirect : '/user/template_one',
+      children : [
+        {
+          path: 'template_one',
+          name: 'template_one',
+          component: UserTemplateOnePage,
+        },
+        {
+          path: 'template_two',
+          name: 'template_two',
+          component: UserTemplateTwoPage,
+        },
       ]
     }
   ]

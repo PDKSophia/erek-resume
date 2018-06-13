@@ -1,6 +1,6 @@
 <template>
   <div class="box">
-    <div class="template">
+    <div class="template" v-if="SessionTaskFinish">
       <div class="left-wrapper">
         <div class="pic">
           <img :src="Auth.Avatar">
@@ -11,8 +11,9 @@
         </div>
         <div class="left-title">基本信息</div>
         <ul class="fa-ul info">
-          <li><i class="fa-li fa fa-bar-chart"></i>经验：五年财务岗</li>
-          <li><i class="fa-li fa fa-clock-o"></i>生日：1991.05.05</li>
+          <li><i class="fa-li fa fa-universal-access"></i>学校：{{ Auth.School }}</li>
+          <li><i class="fa-li fa fa-universal-access"></i>专业：{{ Auth.Major }}</li>
+          <li><i class="fa-li fa fa-clock-o"></i>学年：{{ Auth.EnrolmentTime }} / {{ Auth.GraduationTime }}</li>
           <li><i class="fa-li fa fa-map-marker"></i>籍贯：{{ Auth.Area }}</li>
         </ul>
         <div class="left-title">联系方式</div>
@@ -23,47 +24,21 @@
       </div>
       <div class="right-wrapper">
         <div class="title-wrapper">
-          <p class="title"><i class="fa fa-suitcase fa-2x"></i>&nbsp;&nbsp;&nbsp;工作经历&nbsp;/&nbsp;Experience</p>
+          <p class="title"><i class="fa fa-suitcase fa-2x"></i>&nbsp;&nbsp;&nbsp;项目经验&nbsp;/&nbsp;Experience</p>
         </div>
         <div>
-          <div class="work-wrapper">
+          <div class="work-wrapper" v-for="(expr, index) in Auth.Experience" :key="index">
             <div class="work-name">
-              <i>天津金米特科技股份有限公司</i>
-              <i>2013.09&nbsp;-&nbsp;2017.06</i>
+              <i>{{ expr.projectName }}</i>
+              <i>{{ expr.StartTime }}&nbsp;/&nbsp;{{ expr.EndTime }}</i>
             </div>
-            <p class="work">岗位：出纳员</p>
+            <p class="work">岗位：{{ expr.projectJob }}</p>
             <div class="inner">
-              <p>1、负责日常现金及票据的收付、保管，负责各类日常费用整理和报销以及工资结算；</p>
-              <p>2、现金、银行凭证制作、装订、保管；</p>
-              <p>3、划转、核算内部往来款项，到款确认，及时登记现金、银行日记账；每月核对公司的银行日记账金额和银行对账单上的金额；</p>
-              <p>4、负责一银行账户的开立、销户、印鉴变更等各项工作；</p>
-              <p>5、负责审计、盘点、纳税事宜；</p>
-              <p>6、负责缴纳社保，员工退工、录入等人事工作。</p>
-            </div>
-          </div>
-          <div class="work-wrapper">
-            <div class="work-name">
-              <i>北京利特投资有限公司</i>
-              <i>2013.09&nbsp;-&nbsp;2017.06</i>
-            </div>
-            <p class="work">岗位：财务会计</p>
-            <div class="inner">
-              <p>负责财务出纳工作及公司所有行政事务。联系税局,协助报税。保管现金，登记银行日记账，购买发票，管理增值税发票，
-                开具增值税发票并登记发票，核对AR和发票，确保AR正确及时到账，整理发票，编制入账。管理现金流，审核凭证并保管。
-                AP和网上付款对账，联系银行，银行对账，负责人民币及美金付款事宜。负责公司各种证件变更、年检，组织公司活动，采
-                购管理办公用品，申请付款，编制考勤。
-              </p>
-            </div>
-          </div>
-          <div class="work-wrapper">
-            <div class="work-name">
-              <i>济南中海地产</i>
-              <i>2013.09&nbsp;-&nbsp;2017.06</i>
-            </div>
-            <p class="work">学生实践&nbsp;-&nbsp;行政部实习生</p>
-            <div class="inner">
-              <p>日常考勤登记，办公室物料的清点，收发登记。</p>
-              <p>发票的报销和管理，日常工资的录入以及工资等报表制作。</p>
+              <p>1、{{ expr.projectSummary }}</p>
+              <p v-if="expr.projectLink != ''">2、<a style="color: #8c8c8c" :href="expr.projectLink" target="brank">{{ expr.projectLink }}</a></p>
+              <p>3、技术栈 : {{ expr.projectSkill }}</p>
+              <div v-for="(item, key) in expr.solveAnswer" :key="key">
+              <p>{{ key+3 }}、{{ item.solve }}</p></div>
             </div>
           </div>
         </div>
@@ -81,10 +56,8 @@
           <p class="title"><i class="fa fa-user-circle fa-2x"></i>&nbsp;&nbsp;&nbsp;自我评价&nbsp;/&nbsp;About Me</p>
         </div>
         <div class="inner">
-          <p class="i">本人性格开朗、为人诚恳、乐观向上、兴趣广泛、拥有较强的组织能力和适应能力、并具有较强的管理策划与组织管理协调能力。
-            忠实诚信，讲原则，说到做到，决不推卸责任有自制力，做事情始终坚持有始有终，从不半途而废:肯学习，有问题不逃避，
-            愿意虚心向他人学习:自信但不自负，不以自我为中心愿意以谦虚态度赞扬接纳优越者，权威者;会用100%的热情和精力投入到工作中;平易近人。
-            为人诚恩性格开朗积极进取适应力强、勤奋好学、脚踏实地，有较强的团队精神，工作积极进取态度认真。
+           <p class="i" v-for="(Eva, index) in Auth.Evaluation" :key="index">
+               {{ Eva.remark }}
           </p>
         </div>
       </div>
@@ -98,13 +71,19 @@ import SessionAuth from '../../task/session_parse.js'
 export default {
   data () {
     return {
-      Auth : {}
+        SessionTaskFinish : false,
+        Auth : {}
     }
   },
+  methods : {
+        initAuth () {
+            this.Auth = SessionAuth.initGetter()
+            // console.log(this.Auth)
+            this.SessionTaskFinish = true
+        }
+  },
   created () {
-    this.Auth = SessionAuth.initGetter()
-    console.log(this.Auth.EnrolmentTime)
-    
+      this.initAuth()
   }
 }
 </script>
