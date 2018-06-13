@@ -245,7 +245,7 @@ export default {
                 Academy : '',
                 Major : '',
                 Job : '',
-                Avatar : require('../../assets/PDK.jpg'),
+                Avatar : require('../../assets/default.jpg'),
                 UserName : '',
                 Area : '',
                 Email : '',
