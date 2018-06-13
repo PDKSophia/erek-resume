@@ -38,8 +38,6 @@
             <i-col :xs="24" :sm="24" :md="24" :lg="24" >
                 <div class="img-box">
                     <p>Template From : WPS </p>
-                    <!-- <p>Web PDK  : <a href="https://github.com/PDKSophia" target="_blank">Github</a></p> -->
-                    <!-- <p>Web LYY : <a href="https://github.com/PDKSophia" target="_blank">Github</a></p> -->
                     <p>Web Designer : PDK</p>
                     <p>Web Engineer : PDK / LYY</p>
                     <p style="margin-top: 1rem">Copyright © Yun Resumes</p>
