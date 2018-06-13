@@ -58,8 +58,8 @@
                                 &nbsp;<Input v-model="Auth.Phone" placeholder="电话..." />
                             </p>
                             <p><span class="left-tips">*</span>学 年 : 
-                                &nbsp;<DatePicker type="date" v-model="Auth.EnrolmentTime" placeholder="Select date"></DatePicker>
-                                 - <DatePicker type="date" v-model="Auth.GraduationTime" placeholder="Select date"></DatePicker>
+                                &nbsp;<DatePicker type="month" v-model="Auth.EnrolmentTime" placeholder="Select date"></DatePicker>
+                                 - <DatePicker type="month" v-model="Auth.GraduationTime" placeholder="Select date"></DatePicker>
                             </p>
                         </div>
                         <!-- 个人简介 -->
@@ -73,7 +73,7 @@
                             </p>
                             <p>Hobby :&nbsp;
                                 &nbsp;<Input v-model="Auth.Hobby"  placeholder="跑步、篮球、吉他、舞蹈" />
-                                <span class="input-tips"> * 多个爱好以 、 分割</span>
+                                <span class="input-tips"> * 多个爱好以 、 分割， 并以 、 结尾</span>
                             </p>
                         </div>
                         <!-- 求职意向 -->
@@ -88,7 +88,7 @@
                             </p>
                             <p><span class="left-tips">*</span>地 点 : 
                                 &nbsp;<Input v-model="Auth.JobAddress" placeholder="例如 : 成都|北京|南京" /> 
-                                <span class="input-tips"> * 多个地点以 | 分割</span>
+                                <span class="input-tips"> * 多个地点以 | 分割， 并以 | 结尾</span>
                             </p>
                         </div>
                         <!-- 获奖证书 -->
@@ -96,7 +96,7 @@
                             <p class="prompt-title">获奖证书</p>
                             <p><span class="left-tips">*</span>证 书 : 
                                 &nbsp;<Input v-model="Auth.Certificate" type="textarea" :autosize="{minRows: 3,maxRows: 5}" placeholder="湖南科技大学校级一等奖|互联网+大赛一等奖" />
-                                <span class="input-tips"> * 多个证书以 | 分割</span>
+                                <span class="input-tips"> * 多个证书以 | 分割， 并以 | 结尾</span>
                             </p>
                         </div>
                         <!-- 技能清单 -->
@@ -119,7 +119,7 @@
                             </p>
                             <p style="margin-top: 1rem"><span class="left-tips">*</span>技 能 : 
                                 &nbsp;<Input v-model="Auth.Skill" type="textarea" :autosize="{minRows:3, maxRows: 5}" placeholder="例如 : Git 、Mysql" />
-                                <span class="input-tips"> * 多个技能以 、 分割</span>
+                                <span class="input-tips"> * 多个技能以 、 分割， 并以 、 结尾</span>
                             </p>
                         </div>
                         <!-- 项目经验 -->
@@ -167,6 +167,13 @@
                                         <Input class="pro-tab" v-model="NewProject.projectSkill"  placeholder="例如 : Vue.js + Axios + iView UI + ThinkPHP5.1" />
                                     </div>
                                     <div class="left-cell">
+                                        <p class="label-span"><span class="left-tips">*</span>项目时间 : </p>
+                                    </div>
+                                    <div class="right-cell">
+                                        <DatePicker type="month" v-model="NewProject.StartTime" placeholder="Select date"></DatePicker>
+                                        - <DatePicker type="month" v-model="NewProject.EndTime" placeholder="Select date"></DatePicker>
+                                    </div>
+                                    <div class="left-cell">
                                         <p class="label-span">链接地址 : </p>
                                     </div>
                                     <div class="right-cell">
@@ -205,7 +212,7 @@
                             </p>
                             <p style="margin-top: 1rem"><span class="left-tips">*</span>评 价 : 
                                 &nbsp;<Input v-model="Auth.Evaluation" type="textarea" :autosize="{minRows:3, maxRows: 5}" placeholder="例如 : Git 、Mysql" />
-                                <span class="input-tips"> * 多个技能以 | 分割</span>
+                                <span class="input-tips"> * 多个技能以 | 分割， 并以 | 结尾</span>
                             </p>
                         </div>
 
@@ -245,13 +252,13 @@ export default {
                 Academy : '',
                 Major : '',
                 Job : '',
-                Avatar : require('../../assets/PDK.jpg'),
+                Avatar : require('../../assets/default.jpg'),
                 UserName : '',
                 Area : '',
                 Email : '',
                 Phone : '',
-                EnrolmentTime : '2015-09-01',
-                GraduationTime : '2019-07-01',
+                EnrolmentTime : '2015-09',
+                GraduationTime : '2019-07',
                 JobAddress : '',
                 Certificate : '',
                 Github : '',
@@ -375,7 +382,7 @@ export default {
             // 个人评价
             EvaluationList : [
                 {
-                    'text' : '良好的语言表达能力和沟通能力，能快速融 入团队，较快适应新的工作环境'
+                    'text' : '良好的语言表达能力和沟通能力，能快速融入团队，较快适应新的工作环境'
                 },
                 {
                     'text' : '代码洁癖，前后端分离'
@@ -391,6 +398,8 @@ export default {
                 projectName : '',
                 projectJob : '',
                 projectSkill : '',
+                StartTime : '',
+                EndTime : '',
                 projectLink : '',
                 projectSummary : '',
                 projectSolve : ''
@@ -455,7 +464,9 @@ export default {
                 projectSkill : this.NewProject.projectSkill,
                 projectLink : this.NewProject.projectLink,
                 projectSummary : this.NewProject.projectSummary,
-                projectSolve : this.NewProject.projectSolve
+                projectSolve : this.NewProject.projectSolve,
+                StartTime : this.NewProject.StartTime,
+                EndTime : this.NewProject.EndTime,
             })
             this.NewProject = {}
             this.ShowAddProject = false
@@ -485,16 +496,36 @@ export default {
         },
         // 生成简历
         SubmitMakeResume () {
-            console.log(this.Auth)
             this.$Notice.warning({
                 title: 'Yun Resume title',
-                desc: '建议先 “ 保存所有 ”，再生成简历，这样只要页面不关闭状态，都可生成简历'
+                desc: '先 “ 保存所有 ”，再生成简历，这样只要页面不关闭状态，都可生成简历'
             });
             this.ShowTemplateChoose = true
         },
         // 使用该模板
         UserTemplate (index) {
-            console.log(index)
+            switch (index) {
+                case 0:
+                    this.$router.push({path : '/user/template_one'})
+                    break;
+                case 1:
+                    this.$router.push({path : '/user/template_two'})
+                    break;
+                case 2:
+                    this.$router.push({path : '/user/template_three'})
+                    break;
+                case 3:
+                    this.$router.push({path : '/user/template_four'})
+                    break;
+                case 4:
+                    this.$router.push({path : '/user/template_five'})
+                    break;
+                case 5:
+                    this.$router.push({path : '/user/template_six'})
+                    break;
+                default:
+                    break;
+            }
         },
         // 头像上传
         HeadImage (head) {
@@ -663,7 +694,7 @@ button.AddButton {
     line-height: 3rem;
 }
 .ivu-input-wrapper,.ivu-select {
-    margin-left: 1.3rem;
+    /* margin-left: 1.3rem; */
 }
 .ivu-tag{
     height: 25px;

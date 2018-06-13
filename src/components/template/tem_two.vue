@@ -5,23 +5,23 @@
       <div class="right">
         <div class="information-wrapper">
           <div class="pic">
-            <img src="../../assets/tmg.png">
+            <img :src="Auth.Avatar">
           </div>
           <div class="information-inner">
             <div class="mobile-style">
-              <i class="name">陈思涵</i>
-              <i class="intention">求职意向：市场营销相关岗位</i>
+              <i class="name">{{ Auth.UserName}}</i>
+              <i class="intention">求职意向：{{ Auth.Job}}</i>
             </div>
             <div class="column">
               <ul class="fa-ul info">
                 <li><i class="fa-li fa fa-clock-o"></i>年龄：21岁</li>
                 <li><i class="fa-li fa fa-id-card-o"></i>学历：大学本科</li>
-                <li><i class="fa-li fa fa-home"></i>现居：福建厦门</li>
+                <li><i class="fa-li fa fa-home"></i>籍贯：{{ Auth.Area }}</li>
               </ul>
               <ul class="fa-ul info column-r">
-                <li><i class="fa-li fa fa-leaf"></i>政治面貌：共青团员</li>
-                <li><i class="fa-li fa fa-phone"></i>电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话：17070707070</li>
-                <li><i class="fa-li fa fa-envelope-open"></i>邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱：1868660@qq.com</li>
+                <li><i class="fa-li fa fa-leaf"></i>专&nbsp;&nbsp;&nbsp;业：{{ Auth.Major }}</li>
+                <li><i class="fa-li fa fa-phone"></i>电&nbsp;&nbsp;&nbsp;话：{{ Auth.Phone }}</li>
+                <li><i class="fa-li fa fa-envelope-open"></i>邮&nbsp;&nbsp;&nbsp;箱：{{ Auth.Email }}</li>
               </ul>
             </div>
           </div>
@@ -31,42 +31,34 @@
         </div>
         <div class="inner">
           <div class="time">
-            <i>2014.09-2018.06</i>
-            <i>闽南师范大学</i>
-            <i>市场营销专业（本科）</i>
+            <i>{{ Auth.EnrolmentTime }} / {{ Auth.GraduationTime }}</i>
+            <i>{{ Auth.School }}</i>
+            <i>{{ Auth.Major }}（本科）</i>
           </div>
           <div class="list">
-            <p>主修课程:管理学、微观经济学、宏观经济学、管理信息系统、统计学、会计学、财务管理市场营销、经济法、
+            <!-- <p>主修课程:管理学、微观经济学、宏观经济学、管理信息系统、统计学、会计学、财务管理市场营销、经济法、
               消费者行为学、国际市场营销、市场调查等课程
-            </p>
+            </p> -->
           </div>
         </div>
         <div class="title-wrapper">
           <div class="title"><i class="fa fa-suitcase"></i>&nbsp;&nbsp;项目经历</div>
         </div>
-        <div class="inner">
+        <div class="inner" v-for="(expr, index) in Auth.Experience" :key="index">
           <div class="time">
-            <i>2014.09-2018.06</i>
-            <i>福建陈翔计算机有限公司</i>
-            <i>市场专员</i>
+            <i>{{ expr.StartTime }}&nbsp;/&nbsp;{{ expr.EndTime }}</i>
+            <i>{{ expr.projectName }}</i>
+            <i>{{ expr.projectJob }}</i>
           </div>
           <div class="list">
             <ul class="fa-ul">
-              <li><i class="fa-li fa fa-star-o"></i>主要负责在本校和附近地域进行调研,根据大学生消费能力进行市场分析、竞品分析等有效数据分析，推出具有高性价比的电脑产品组合;</li>
-              <li><i class="fa-li fa fa-star-o"></i>寻找参与意向合作方的洽谈，制作可合作方案和推广销售计划；</li>
-            </ul>
-          </div>
-        </div>
-        <div class="inner">
-          <div class="time">
-            <i>2014.09-2018.06</i>
-            <i>福建亘古文化传媒有限公司</i>
-            <i>市场公关专员</i>
-          </div>
-          <div class="list">
-            <ul class="fa-ul">
-              <li><i class="fa-li fa fa-star-o"></i>主要负责邀约社交媒体进行公司活动方案的合作和商务洽谈,已拥有，上百家商务媒体渠道资源，
-              对接人事工作的安排,同时负贵市场开拓,寻找可合作的商务对象;
+              <li><i class="fa-li fa fa-star-o"></i>{{ expr.projectSummary }}</li>
+              <li v-if="expr.projectLink != ''">
+                  <i class="fa-li fa fa-star-o"></i><a style="color: #8c8c8c" :href="expr.projectLink" target="brank">{{ expr.projectLink }}</a>
+              </li>
+              <li><i class="fa-li fa fa-star-o"></i>{{ expr.projectSkill }}</li>
+              <li v-for="(item, key) in expr.solveAnswer" :key="key">
+                  <i class="fa-li fa fa-star-o"></i>{{ item.solve }}
               </li>
             </ul>
           </div>
@@ -76,9 +68,7 @@
         </div>
         <div class="inner">
           <div class="time">
-            <i>【大学英语四级】</i>
-            <i>【国家计算机二级证书】</i>
-            <i>【全国普通话二级甲等】</i>
+            <i v-for="(cer, index) in Auth.Certificate" :key="index">【{{ cer.cer }}】</i>
           </div>
           <div class="list">
             <ul class="fa-ul">
@@ -98,11 +88,8 @@
         <div class="inner">
           <div class="list">
             <ul class="fa-ul">
-              <li><i class="fa-li fa fa-star-o"></i>具备销售人员应具有的素质:积极,自信，大胆,沟通力强，
-              成熟稳重，责任心强，心态稳定，敢于担当重任，有一一定的营销与管理经验,接受能力强,能迅速接受新的理论与技能;
-              </li>
-              <li><i class="fa-li fa fa-star-o"></i>专业基础扎实,热爱销售行业,善于与人沟通，通过一些校外的实践工作,能吃苦耐劳,
-              抗压能力较强，有较强的组织、执行能力和团体协作精神,能迅速的适应各种环境，并融合其中;
+              <li v-for="(Eva, index) in Auth.Evaluation" :key="index" v-if="Eva.remark != ''">
+                  <i class="fa-li fa fa-star-o"></i>{{ Eva.remark }}
               </li>
             </ul>
           </div>
@@ -113,11 +100,24 @@
 </template>
 
 <script>
+import SessionAuth from '../../task/session_parse.js'
+
 export default {
   data () {
     return {
-      msg: '模板2'
+        SessionTaskFinish : false,
+        Auth : {}
     }
+  },
+  methods : {
+        initAuth () {
+            this.Auth = SessionAuth.initGetter()
+            // console.log(this.Auth)
+            this.SessionTaskFinish = true
+        }
+  },
+  created () {
+      this.initAuth()
   }
 }
 </script>

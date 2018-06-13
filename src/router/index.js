@@ -20,6 +20,11 @@ import TemplateEightPage from '@/components/common/template_eight'            //
 import TemplateNinePage from '@/components/common/template_nine'            // 模板9
 
 
+import UserTemplateRouterPage from '@/components/template/tem_router'          // 使用模板路由页
+import UserTemplateOnePage from '@/components/template/tem_one'                // 使用模板1
+import UserTemplateTwoPage from '@/components/template/tem_two'                // 使用模板2
+
+
 Vue.use(Router)
 
 export default new Router({
@@ -116,6 +121,25 @@ export default new Router({
           name: 'exam_nine',
           component: TemplateNinePage,
         }
+      ]
+    },
+    {
+      // 模板
+      path: '/user',
+      name: 'user',
+      component: UserTemplateRouterPage,
+      redirect : '/user/template_one',
+      children : [
+        {
+          path: 'template_one',
+          name: 'template_one',
+          component: UserTemplateOnePage,
+        },
+        {
+          path: 'template_two',
+          name: 'template_two',
+          component: UserTemplateTwoPage,
+        },
       ]
     }
   ]
