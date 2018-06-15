@@ -23,10 +23,10 @@
         </ul>
         <div class="left-title">获奖证书</div>
         <ul class="fa-ul info">
-          <li><i class="fa-li fa fa-phone"></i>英语四级</li>
-          <li><i class="fa-li fa fa-phone"></i>湖南省程序编程大赛金奖</li>
-          <li><i class="fa-li fa fa-phone"></i>中级软件工程师</li>
-          <li><i class="fa-li fa fa-phone"></i>湖南科技大学校级奖学金</li>
+          <li><i class="fa-li fa fa-send"></i>英语四级</li>
+          <li><i class="fa-li fa fa-send"></i>湖南省程序编程大赛金奖</li>
+          <li><i class="fa-li fa fa-send"></i>中级软件工程师</li>
+          <li><i class="fa-li fa fa-send"></i>湖南科技大学校级奖学金</li>
         </ul>
       </div>
       <div class="right-wrapper">
