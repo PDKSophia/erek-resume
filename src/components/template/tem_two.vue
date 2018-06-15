@@ -68,7 +68,7 @@
         </div>
         <div class="inner">
           <div class="time">
-            <i v-for="(cer, index) in Auth.Certificate" :key="index">【{{ cer.cer }}】</i>
+            <i v-for="(cer, index) in Auth.Certificate" :key="index" v-if="cer.cer!=''">【{{ cer.cer }}】</i>
           </div>
           <div class="list">
             <ul class="fa-ul">
