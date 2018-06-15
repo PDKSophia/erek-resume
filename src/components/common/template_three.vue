@@ -7,9 +7,12 @@
         </div>
         <p class="box-1"></p>
         <div class="message-wrapper">
+          <div class="name-box">
+            <p class="name text">稻壳儿</p>
+            <p class="intention text">求职意向 ：后端工程师</p>
+          </div>
           <div class="message">
             <ul class="fa-ul info">
-              <!-- <li><i class="fa-li fa fa-calendar"></i>生日：1991.07.07</li> -->
               <li><i class="fa-li fa fa-map-marker"></i>现居：湖北.武汉</li>
               <li><i class="fa-li fa fa-phone"></i>+86&nbsp;152&nbsp;0000&nbsp;0000</li>
               <li><i class="fa-li fa fa-envelope-open"></i>12125612@qq.com</li>
@@ -40,8 +43,10 @@
         </div>
       </div>
       <div class="mid-wrappr">
-        <p class="name color">稻壳儿</p>
-        <p class="intention color">求职意向 ：后端工程师</p>
+        <div class="name-box1">
+          <p class="name color">稻壳儿</p>
+          <p class="intention color">求职意向 ：后端工程师</p>
+        </div>
         <p class="introduce">
           本人持有会计证，对结算流程熟知，与财务、支付开发等部门沟通频繁。
           对支付方式的引进，支付通道问题熟知。对通道费用的核算、报销流程熟知。
@@ -157,6 +162,10 @@ i {
   margin: 0 20%;
   display: flex;
   flex-wrap: wrap;
+}
+
+.name-box {
+  display: none;
 }
 /* 左边 */
 .left-wrapper {
@@ -373,16 +382,22 @@ i {
     padding: 1.5rem;
     background-color: #fff;
   }
+  .name-box {
+    display: block;
+    text-align: center;
+    margin: 1rem 0;
+  }
+  .name-box1 {
+    display: none;
+  }
   .name {
     font-size: 3rem;
-    text-align: center;
   }
   .color {
     color: #165391;
   }
   .intention {
     font-size: 1.3rem;
-    text-align: center;
   }
   .introduce {
     font-size: 1rem;
@@ -518,6 +533,14 @@ i {
     width: 100%;
     padding: 1.5rem;
     background-color: #fff;
+  }
+  .name-box {
+    display: block;
+    text-align: center;
+    margin: 2rem 0;
+  }
+  .name-box1 {
+    display: none;
   }
   .name {
     font-size: 3rem;
@@ -664,6 +687,14 @@ i {
     width: 100%;
     padding: 1.5rem;
     background-color: #fff;
+  }
+  .name-box {
+    display: block;
+    text-align: center;
+    margin: 2rem 0;
+  }
+  .name-box1 {
+    display: none;
   }
   .name {
     font-size: 3.5rem;

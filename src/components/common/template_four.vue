@@ -1,6 +1,7 @@
 <template>
   <div class="box">
     <div class="template">
+      <img class="img" src="../../assets/tmg.png" alt="">
       <p class="name color">鹿小笙</p>
       <p class="intention">求职意向：程序员&nbsp;/&nbsp;前端工程师</p>
       <div class="message">
@@ -12,7 +13,7 @@
           <li><i class="fa-li fa fa-phone color"></i>17077007700</li>
           <li><i class="fa-li fa fa-envelope-open color"></i>Docer5563@qq.com</li>
         </ul>
-        <img src="../../assets/tmg.png" alt="">
+        <img class="img1" src="../../assets/tmg.png" alt="">
       </div>
       <div class="m-box">
         <div class="column color1">
@@ -146,6 +147,7 @@ li {
   font-weight: 600;
   font-size: 1rem;
   padding-left: 1.3rem;
+  margin-bottom: 0.5rem;
 }
 
 /* 个人信息 */
@@ -166,13 +168,17 @@ li {
 .info i {
   line-height: 1.5;
 }
-img {
-  height: 11rem;
-  width: 8rem;
+.img1 {
+  height: 13rem;
+  width: 10rem;
   border: 0.25rem solid #ffffff;
   position: absolute;
   right: 1.5rem;
   bottom: 1rem;
+  display: block;
+}
+.img {
+  display: none;
 }
 
 /* 项目经验 */
@@ -243,7 +249,7 @@ img {
   .name {
     font-size: 2.3rem;
     font-weight: 700;
-    padding-left: 1.3rem;
+    padding-left: 0;
     text-align: center;
   }
   .intention {
@@ -255,7 +261,7 @@ img {
   /* 个人信息 */
   .message {
     width: 100%;
-    height: 18rem;
+    height: 10rem;
     font-size: 1rem;
     line-height: 2;
     color: #000;
@@ -274,13 +280,21 @@ img {
   .info i {
     line-height: 1.5;
   }
-  img {
+  .img1 {
     height: 11rem;
     width: 8rem;
     border: 0.25rem solid #ffffff;
     position: absolute;
     right: 3.6rem;
     bottom: -3rem;
+    display: none;
+  }
+  .img {
+    height: 12rem;
+    width: 10rem;
+    border: 0.25rem solid #ffffff;
+    display: block;
+    margin: auto;
   }
 
   /* 项目经验 */
@@ -355,7 +369,7 @@ img {
   .name {
     font-size: 2.3rem;
     font-weight: 700;
-    padding-left: 1.3rem;
+    padding-left: 0;
     text-align: center;
   }
   .intention {
@@ -368,7 +382,7 @@ img {
   /* 个人信息 */
   .message {
     width: 100%;
-    height: 20rem;
+    height: 12rem;
     font-size: 1.2rem;
     line-height: 2;
     color: #000;
@@ -387,13 +401,21 @@ img {
   .info i {
     line-height: 1.5;
   }
-  img {
+  .img1 {
     height: 12rem;
     width: 9rem;
     border: 0.25rem solid #ffffff;
     position: absolute;
     right: 4.6rem;
     bottom: -3rem;
+    display: none;
+  }
+  .img {
+    height: 12rem;
+    width: 10rem;
+    border: 0.25rem solid #ffffff;
+    display: block;
+    margin: 1rem auto;
   }
 
   /* 项目经验 */
@@ -468,7 +490,7 @@ img {
   .name {
     font-size: 3rem;
     font-weight: 700;
-    padding-left: 1.3rem;
+    padding-left: 0;
     text-align: center;
   }
   .intention {
@@ -481,7 +503,7 @@ img {
   /* 个人信息 */
   .message {
     width: 100%;
-    height: 23rem;
+    height: 13rem;
     font-size: 1.4rem;
     line-height: 2;
     color: #000;
@@ -500,13 +522,21 @@ img {
   .info i {
     line-height: 1.5;
   }
-  img {
+  .img1 {
     height: 14rem;
     width: 11rem;
     border: 0.25rem solid #ffffff;
     position: absolute;
     right: 4.6rem;
     bottom: -4rem;
+    display: none;
+  }
+  .img {
+    height: 14rem;
+    width: 12rem;
+    border: 0.25rem solid #ffffff;
+    display: block;
+    margin: 1rem auto;
   }
 
   /* 项目经验 */

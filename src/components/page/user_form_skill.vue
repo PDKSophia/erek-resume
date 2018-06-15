@@ -72,7 +72,7 @@
                                 &nbsp;<Input v-model="Auth.Blog"  placeholder="http://www.pengdaokuan.cn/wordpress" />
                             </p>
                             <p>Hobby :&nbsp;
-                                &nbsp;<Input v-model="Auth.Hobby"  placeholder="跑步、篮球、吉他、舞蹈" />
+                                &nbsp;<Input v-model="Auth.Hobby"  placeholder="跑步、音乐、篮球、吉他、舞蹈" />
                                 <span class="input-tips"> * 多个爱好以 、 分割， 并以 、 结尾</span>
                             </p>
                         </div>
