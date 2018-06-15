@@ -3,27 +3,35 @@
     <div class="template">
       <div class="left-wrapper">
         <div class="pic">
-          <img src="../../assets/咸鱼.jpg">
+          <img src="../../assets/tmg.png">
         </div>
         <div class="name-wrapper">
           <p class="name">张云溪</p>
-          <p>求职意向：出纳工作员</p>
+          <p>求职意向：前端工程师</p>
         </div>
         <div class="left-title">基本信息</div>
         <ul class="fa-ul info">
-          <li><i class="fa-li fa fa-bar-chart"></i>经验：五年财务岗</li>
-          <li><i class="fa-li fa fa-clock-o"></i>生日：1991.05.05</li>
-          <li><i class="fa-li fa fa-map-marker"></i>现居：四川省成都</li>
+          <li><i class="fa-li fa fa-universal-access"></i>学校：湖南科技大学</li>
+          <li><i class="fa-li fa fa-universal-access"></i>专业：软件工程</li>
+          <li><i class="fa-li fa fa-clock-o"></i>学年：2015-09 / 2019-07</li>
+          <li><i class="fa-li fa fa-map-marker"></i>籍贯：四川省成都</li>
         </ul>
         <div class="left-title">联系方式</div>
         <ul class="fa-ul info">
           <li><i class="fa-li fa fa-phone"></i>手机：17077007700</li>
           <li><i class="fa-li fa fa-envelope-open"></i>邮箱：Docer5563@qq.com</li>
         </ul>
+        <div class="left-title">获奖证书</div>
+        <ul class="fa-ul info">
+          <li><i class="fa-li fa fa-send"></i>英语四级</li>
+          <li><i class="fa-li fa fa-send"></i>湖南省程序编程大赛金奖</li>
+          <li><i class="fa-li fa fa-send"></i>中级软件工程师</li>
+          <li><i class="fa-li fa fa-send"></i>湖南科技大学校级奖学金</li>
+        </ul>
       </div>
       <div class="right-wrapper">
         <div class="title-wrapper">
-          <p class="title"><i class="fa fa-suitcase fa-2x"></i>&nbsp;&nbsp;&nbsp;工作经历&nbsp;/&nbsp;Experience</p>
+          <p class="title"><i class="fa fa-suitcase fa-2x"></i>&nbsp;&nbsp;&nbsp;项目经验&nbsp;/&nbsp;Experience</p>
         </div>
         <div>
           <div class="work-wrapper">
@@ -147,7 +155,7 @@ i {
   height: 10rem;
   width: 8rem;
   margin: 2.5rem auto;
-  border: #fff solid 0.5rem;
+  border: #fff solid 0.2rem;
 }
 /* 名字 */
 .name-wrapper{

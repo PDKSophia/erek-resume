@@ -3,30 +3,39 @@
     <div class="template">
       <div class="left-wrapper">
         <div class="pic-wrapper">
-          <img class="pic" src="../../assets/咸鱼.jpg" alt="">
+          <img class="pic" src="../../assets/tmg.png" alt="">
         </div>
         <p class="box-1"></p>
         <div class="message-wrapper">
+          <div class="name-box">
+            <p class="name text">稻壳儿</p>
+            <p class="intention text">求职意向 ：后端工程师</p>
+          </div>
           <div class="message">
             <ul class="fa-ul info">
-              <li><i class="fa-li fa fa-calendar"></i>生日：1991.07.07</li>
               <li><i class="fa-li fa fa-map-marker"></i>现居：湖北.武汉</li>
               <li><i class="fa-li fa fa-phone"></i>+86&nbsp;152&nbsp;0000&nbsp;0000</li>
               <li><i class="fa-li fa fa-envelope-open"></i>12125612@qq.com</li>
             </ul>
           </div>
           <div class="skill-wrapper">
+            <p class="skill">求职意向&nbsp;&nbsp;&nbsp;&nbsp;Job</p>
+            <ul class="skill-item fa-ul">
+              <li><i class="fa-li fa fa-square"></i>职位 ：后端工程师</li>
+            </ul>
+            <ul class="skill-item fa-ul">
+              <li><i class="fa-li fa fa-square"></i>城市 ：北京 / 上海 / 成都</li>
+            </ul>
+          </div>
+          <div class="skill-wrapper">
             <p class="skill">技能证书&nbsp;&nbsp;&nbsp;&nbsp;Skill</p>
             <ul class="skill-item fa-ul">
-              <li><i class="fa-li fa fa-square"></i>2015/7</li>
               <li><i class="fa-li fa fa-square"></i>会计从业资格证书</li>
             </ul>
             <ul class="skill-item fa-ul">
-              <li><i class="fa-li fa fa-square"></i>2009/8</li>
               <li><i class="fa-li fa fa-square"></i>秘书资格证</li>
             </ul>
             <ul class="skill-item fa-ul">
-              <li><i class="fa-li fa fa-square"></i>2009/3</li>
               <li><i class="fa-li fa fa-square"></i>全国计算机等级一级</li>
             </ul>
           </div>
@@ -34,8 +43,10 @@
         </div>
       </div>
       <div class="mid-wrappr">
-        <p class="name color">稻壳儿</p>
-        <p class="intention color">求职意向：出纳专员</p>
+        <div class="name-box1">
+          <p class="name color">稻壳儿</p>
+          <p class="intention color">求职意向 ：后端工程师</p>
+        </div>
         <p class="introduce">
           本人持有会计证，对结算流程熟知，与财务、支付开发等部门沟通频繁。
           对支付方式的引进，支付通道问题熟知。对通道费用的核算、报销流程熟知。
@@ -89,7 +100,16 @@
         </p>
         <p class="school">华南电子科技大学&nbsp;/&nbsp;法律专业本科</p>
         <p class="school">2012.09-2016.07</p>
-        <p class="study">主修课程：管理学,微观经济学，宏观经济学,统计学，管理信息系统，人力资源管理，财务管理，理财，经济法，市场营销，企业战略管理等</p>
+        <!-- <p class="study">主修课程：管理学,微观经济学，宏观经济学,统计学，管理信息系统，人力资源管理，财务管理，理财，经济法，市场营销，企业战略管理等</p> -->
+        
+        <!-- 自我评价 -->
+        <p class="title color">
+          <i class="fa fa-graduation-cap"></i>自我评价&nbsp;&nbsp;&nbsp;&nbsp;Remark
+        </p>
+        <p class="study" style="font-weight: 800;">代码洁癖，前后端分离</p>
+        <p class="study" style="font-weight: 800;">自我学习能力强</p>
+        <p class="study" style="font-weight: 800;">保持好奇，对新知识新技术有决心和毅力</p>
+        <p class="study" style="font-weight: 800;">良好的语言表达能力和沟通能力，能快速融 入团队，较快适应新的工作环境</p>
       </div>
       <div class="right-wrapper">
         <p class="pic-wrapper"></p>
@@ -139,14 +159,18 @@ i {
 }
 .template {
   height: 100%;
-  margin: 0 22%;
+  margin: 0 20%;
   display: flex;
   flex-wrap: wrap;
+}
+
+.name-box {
+  display: none;
 }
 /* 左边 */
 .left-wrapper {
   width: 30%;
-  height: 100%;
+  /* height: 100%; */
   background-color: #17426c;
 }
 .pic-wrapper {
@@ -157,7 +181,7 @@ i {
 .pic {
   width: 11rem;
   height: 13rem;
-  border: 0.4rem solid #ffffff;
+  border: 0.3rem solid #ffffff;
   margin: 2.5rem 0;
 }
 .box-1 {
@@ -191,7 +215,7 @@ i {
   font-weight: 500;
 }
 .skill-item {
-  margin: 2rem 1.4rem;
+  margin: 1rem 1.4rem;
   margin-right: 0;
   font-size: 0.9rem;
 }
@@ -234,7 +258,7 @@ i {
   border-bottom: 0.1rem solid #e7e7e7;
   padding: 0 0 0.5rem 0;
   /* margin-bottom: 1rem; */
-  margin: 2rem 0;
+  margin: 1.5rem 0;
 }
 .title i {
   margin-right: 0.6rem;
@@ -314,7 +338,7 @@ i {
     color: #ffffff;
   }
   .message {
-    padding: 3rem 5.5rem;
+    padding: 1.5rem 5.5rem;
     padding-right: 0.5rem;
     font-size: 1.1rem;
   }
@@ -328,7 +352,7 @@ i {
     line-height: 2;
   }
   .skill-wrapper {
-    padding: 5rem 4rem 3rem;
+    padding: 3rem 4rem 1rem;
   }
   .skill {
     font-size: 1.5rem;
@@ -358,16 +382,22 @@ i {
     padding: 1.5rem;
     background-color: #fff;
   }
+  .name-box {
+    display: block;
+    text-align: center;
+    margin: 1rem 0;
+  }
+  .name-box1 {
+    display: none;
+  }
   .name {
     font-size: 3rem;
-    text-align: center;
   }
   .color {
     color: #165391;
   }
   .intention {
     font-size: 1.3rem;
-    text-align: center;
   }
   .introduce {
     font-size: 1rem;
@@ -460,7 +490,7 @@ i {
     color: #ffffff;
   }
   .message {
-    padding: 3rem 7rem;
+    padding: 1.5rem 7rem;
     padding-right: 0.5rem;
     font-size: 1.1rem;
   }
@@ -474,7 +504,7 @@ i {
     line-height: 2;
   }
   .skill-wrapper {
-    padding: 5rem 6rem 3rem;
+    padding: 2rem 5rem 1rem;
   }
   .skill {
     font-size: 1.5rem;
@@ -503,6 +533,14 @@ i {
     width: 100%;
     padding: 1.5rem;
     background-color: #fff;
+  }
+  .name-box {
+    display: block;
+    text-align: center;
+    margin: 2rem 0;
+  }
+  .name-box1 {
+    display: none;
   }
   .name {
     font-size: 3rem;
@@ -620,7 +658,7 @@ i {
     line-height: 2.4;
   }
   .skill-wrapper {
-    padding: 5rem 6rem 3rem;
+    padding: 2rem 5rem 1rem;
   }
   .skill {
     font-size: 1.8rem;
@@ -649,6 +687,14 @@ i {
     width: 100%;
     padding: 1.5rem;
     background-color: #fff;
+  }
+  .name-box {
+    display: block;
+    text-align: center;
+    margin: 2rem 0;
+  }
+  .name-box1 {
+    display: none;
   }
   .name {
     font-size: 3.5rem;
