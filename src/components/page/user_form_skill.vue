@@ -131,6 +131,61 @@
                                 <p v-if="item.projectLink != ''">链接地址 : {{ item.projectLink }}</p>
                                 <p>项目描述 : {{ item.projectSummary }}</p>
                                 <Button type="error" style="margin:.6rem 0rem 1rem" @click="DeleteProject(index)">删除</Button>
+                                <Button type="primary" style="margin:.6rem 0rem 1rem" @click="ChangeProject(index)">修改</Button>
+
+                                <!-- 添加一条 -->
+                                <div class="experience" style="border: none" v-if="ShowChangeProject">
+                                    <div class="project-table">
+                                        <div class="left-cell">
+                                            <p class="label-span"><span class="left-tips">*</span>项目名称 : </p>
+                                        </div>
+                                        <div class="right-cell">
+                                            <Input class="pro-tab" v-model="NewProject.projectName" placeholder="例如 : 开源 - 宅客( 开发中 ) - 独立开发" />
+                                        </div>
+                                        <div class="left-cell">
+                                            <p class="label-span"><span class="left-tips">*</span>担任职位 : </p>
+                                        </div>
+                                        <div class="right-cell">
+                                            <Input class="pro-tab" v-model="NewProject.projectJob" placeholder="例如 : 前端工程师" />
+                                        </div>
+                                        <div class="left-cell">
+                                            <p class="label-span"><span class="left-tips">*</span>技术栈 : </p>
+                                        </div>
+                                        <div class="right-cell">
+                                            <Input class="pro-tab" v-model="NewProject.projectSkill"  placeholder="例如 : Vue.js + Axios + iView UI + ThinkPHP5.1" />
+                                        </div>
+                                        <div class="left-cell">
+                                            <p class="label-span"><span class="left-tips">*</span>项目时间 : </p>
+                                        </div>
+                                        <div class="right-cell">
+                                            <DatePicker type="month" v-model="NewProject.StartTime" placeholder="Select date"></DatePicker>
+                                            - <DatePicker type="month" v-model="NewProject.EndTime" placeholder="Select date"></DatePicker>
+                                        </div>
+                                        <div class="left-cell">
+                                            <p class="label-span">链接地址 : </p>
+                                        </div>
+                                        <div class="right-cell">
+                                            <Input class="pro-tab" v-model="NewProject.projectLink" placeholder="建议填写" />
+                                        </div>
+                                        <div class="left-cell">
+                                            <p class="label-span"><span class="left-tips">*</span>项目描述 : </p>
+                                        </div>
+                                        <div class="right-cell">
+                                            <Input class="pro-tab" v-model="NewProject.projectSummary" type="textarea" :autosize="{minRows: 3,maxRows: 6}" placeholder="项目的基本介绍" />
+                                        </div>
+                                        <div class="left-cell">
+                                            <p class="label-span"><span class="left-tips">*</span>问题解决 : </p>
+                                        </div>
+                                        <div class="right-cell">
+                                            <Input class="pro-tab" v-model="NewProject.projectSolve" type="textarea" :autosize="{minRows: 3,maxRows: 6}" placeholder="例如 : {node socket.io实现群聊，采用PM2部署node.js，保证进程永久存活}" />
+                                            <p><span class="input-tips" style="margin-left: 0"> * 多个问题及解决以 { } 分割成一个句子</span></p>
+                                        </div>
+                                    </div>
+                                    <div align="center">
+                                        <Button type="ghost" @click="ShowChangeProject = false">取消</Button>
+                                        <Button type="dashed" @click="PreservationProject(index)">保存</Button>
+                                    </div>
+                                </div>
                             </div> 
         
                             <!-- <div class="experience">
@@ -207,7 +262,7 @@
                                 <p>公司名称 : {{ item.workName }}</p>  
                                 <p>担任职位 : {{ item.workJob }}</p>  
                                 <Button type="error" style="margin:.6rem 0rem 1rem" @click="DeleteWork(index)">删除</Button>
-                                <Button type="error" style="margin:.6rem 0rem 1rem" @click="ChangeWork(index)">修改</Button>
+                                <Button type="primary" style="margin:.6rem 0rem 1rem" @click="ChangeWork(index)">修改</Button>
 
                                 <!-- 修改信息 -->
                                 <div class="experience" style="border: none" v-if="ShowChangeWork">
@@ -241,7 +296,7 @@
                                     </div>
                                     <div align="center">
                                         <Button type="ghost" @click="ShowChangeWork = false">取消</Button>
-                                        <Button type="dashed" @click="PreservationWork">保存</Button>
+                                        <Button type="dashed" @click="PreservationWork(index)">保存</Button>
                                     </div>
                                 </div>
                             </div>
@@ -380,7 +435,29 @@ export default {
                         EndTime : '至今',
                     },
                 ],
-                WorkExper : [],
+                WorkExper : [
+                    {
+                        workName : '天津金米特科技股份有限公司',
+                        workJob : '前端工程师',
+                        workContent : '{专职负责公司web项目前端的开发}{利用HTML/CSS/JavaScript/HTML5等各种Web技术进行产品的界面开发}',
+                        StartTime : '2017-06',
+                        EndTime : '2018-01',
+                    },
+                    {
+                        workName : '天津金米特科技股份有限公司',
+                        workJob : '前端工程师',
+                        workContent : '{专职负责公司web项目前端的开发}{利用HTML/CSS/JavaScript/HTML5等各种Web技术进行产品的界面开发}',
+                        StartTime : '2017-06',
+                        EndTime : '2018-01',
+                    },
+                    {
+                        workName : '天津金米特科技股份有限公司',
+                        workJob : '前端工程师',
+                        workContent : '{专职负责公司web项目前端的开发}{利用HTML/CSS/JavaScript/HTML5等各种Web技术进行产品的界面开发}',
+                        StartTime : '2017-06',
+                        EndTime : '2018-01',
+                    }
+                ],
                 Evaluation : '',
             },
             WebSkill : [
@@ -529,6 +606,7 @@ export default {
             ShowAddProject : false,
             ShowAddWork : false,
             ShowChangeWork : false,
+            ShowChangeProject : false,
             ShowTemplateChoose : false,
             SampleNewList : [
                 {
@@ -622,6 +700,36 @@ export default {
                 }
             });
         },
+        //修改项目
+        ChangeProject (index) {
+            this.NewProject = {
+                projectName : this.Auth.Experience[index].projectName,
+                projectJob : this.Auth.Experience[index].projectJob,
+                projectSkill : this.Auth.Experience[index].projectSkill,
+                projectLink : this.Auth.Experience[index].projectLink,
+                projectSummary : this.Auth.Experience[index].projectSummary,
+                projectSolve : this.Auth.Experience[index].projectSolve,
+                StartTime : this.Auth.Experience[index].StartTime,
+                EndTime : this.Auth.Experience[index].EndTime,
+            }
+            // console.log(this.NewWork)
+            this.ShowChangeProject = true
+        },
+        PreservationProject (index) {
+            this.Auth.Experience.push({
+                projectName : this.NewProject.projectName,
+                projectJob : this.NewProject.projectJob,
+                projectSkill : this.NewProject.projectSkill,
+                projectLink : this.NewProject.projectLink,
+                projectSummary : this.NewProject.projectSummary,
+                projectSolve : this.NewProject.projectSolve,
+                StartTime : this.NewProject.StartTime,
+                EndTime : this.NewProject.EndTime,
+            })
+            this.NewProject = {}
+            this.ShowChangeProject = false
+            this.Auth.Experience.splice(index, 1)
+        },
         // 删除工作
         DeleteWork (index) {
             this.$Modal.confirm({
@@ -638,16 +746,17 @@ export default {
         },
         //修改工作
         ChangeWork (index) {
-            this.NewWork.push({
-                workName : item.workName,
-                workJob : item.workJob,
-                workContent : item.workContent,
-                StartTime : item.StartTime,
-                EndTime : item.EndTime,
-            })
+            this.NewWork = {
+                workName : this.Auth.WorkExper[index].workName,
+                workJob : this.Auth.WorkExper[index].workJob,
+                workContent : this.Auth.WorkExper[index].workContent,
+                StartTime : this.Auth.WorkExper[index].StartTime,
+                EndTime : this.Auth.WorkExper[index].EndTime,
+            }
+            console.log(this.NewWork)
             this.ShowChangeWork = true
         },
-        PreservationWork () {
+        PreservationWork (index) {
             this.Auth.WorkExper.push({
                 workName : this.NewWork.workName,
                 workJob : this.NewWork.workJob,

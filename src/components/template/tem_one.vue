@@ -22,11 +22,8 @@
           <li><i class="fa-li fa fa-envelope-open"></i>邮箱：{{ Auth.Email }}</li>
         </ul>
         <div class="left-title">获奖证书</div>
-        <ul class="fa-ul info">
-          <li><i class="fa-li fa fa-send"></i>英语四级</li>
-          <li><i class="fa-li fa fa-send"></i>湖南省程序编程大赛金奖</li>
-          <li><i class="fa-li fa fa-send"></i>中级软件工程师</li>
-          <li><i class="fa-li fa fa-send"></i>湖南科技大学校级奖学金</li>
+        <ul class="fa-ul info" v-for="(item,index) in Auth.Certificate" :key="index">
+          <li v-if="item.cer != ''"><i class="fa-li fa fa-send"></i>{{ item.cer }}</li>
         </ul>
       </div>
       <div class="right-wrapper">
@@ -45,7 +42,8 @@
               <p v-if="expr.projectLink != ''">2、<a style="color: #8c8c8c" :href="expr.projectLink" target="brank">{{ expr.projectLink }}</a></p>
               <p>3、技术栈 : {{ expr.projectSkill }}</p>
               <div v-for="(item, key) in expr.solveAnswer" :key="key">
-              <p>{{ key+3 }}、{{ item.solve }}</p></div>
+                <p>{{ key+3 }}、{{ item.solve }}</p>
+              </div>
             </div>
           </div>
         </div>

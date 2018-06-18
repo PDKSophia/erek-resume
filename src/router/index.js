@@ -23,6 +23,7 @@ import TemplateNinePage from '@/components/common/template_nine'            // �
 import UserTemplateRouterPage from '@/components/template/tem_router'          // 使用模板路由页
 import UserTemplateOnePage from '@/components/template/tem_one'                // 使用模板1
 import UserTemplateTwoPage from '@/components/template/tem_two'                // 使用模板2
+import UserTemplateThreePage from '@/components/template/tem_three'                // 使用模板3
 
 
 Vue.use(Router)
@@ -139,6 +140,11 @@ export default new Router({
           path: 'template_two',
           name: 'template_two',
           component: UserTemplateTwoPage,
+        },
+        {
+          path: 'template_three',
+          name: 'template_three',
+          component: UserTemplateThreePage,
         },
       ]
     }
