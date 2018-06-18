@@ -13,6 +13,10 @@ Vue.use(iView);
 // 引入Vuex状态管理
 import store from './store'
 
+// 引入PDF生成函数
+import htmlToPdf from './task/htmlToPdf'
+Vue.use(htmlToPdf)
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
