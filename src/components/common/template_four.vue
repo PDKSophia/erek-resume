@@ -24,7 +24,6 @@
             <span>信息管理专业</span>
             <span>本科学历</span>
           </p>
-          
         </div>
         <div class="column">
           <span class="item"></span>
