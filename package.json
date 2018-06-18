@@ -13,9 +13,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
-    "html2canvas": "^1.0.0-alpha.12",
     "iview": "^2.14.2",
-    "jspdf": "^1.4.1",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
