@@ -200,6 +200,89 @@
                             </div>
                             <Button type="ghost" v-else class="AddButton" @click="ShowAddProject = true">增加一条</Button>
                         </div>
+                        <!-- 工作经验 -->
+                        <div class="base-infomation">
+                            <p class="prompt-title">工作经验</p>
+                            <div class="experience" v-for="(item, index) in Auth.WorkExper" :key="index">
+                                <p>公司名称 : {{ item.workName }}</p>  
+                                <p>担任职位 : {{ item.workJob }}</p>  
+                                <Button type="error" style="margin:.6rem 0rem 1rem" @click="DeleteWork(index)">删除</Button>
+                                <Button type="error" style="margin:.6rem 0rem 1rem" @click="ChangeWork(index)">修改</Button>
+
+                                <!-- 修改信息 -->
+                                <div class="experience" style="border: none" v-if="ShowChangeWork">
+                                    <div class="project-table">
+                                        <div class="left-cell">
+                                            <p class="label-span"><span class="left-tips">*</span>公司名称 : </p>
+                                        </div>
+                                        <div class="right-cell">
+                                            <Input class="pro-tab" v-model="NewWork.workName" placeholder="例如 : 天津金米特科技股份有限公司" />
+                                        </div>
+                                        <div class="left-cell">
+                                            <p class="label-span"><span class="left-tips">*</span>担任职位 : </p>
+                                        </div>
+                                        <div class="right-cell">
+                                            <Input class="pro-tab" v-model="NewWork.workJob" placeholder="例如 : 前端工程师" />
+                                        </div>
+                                        <div class="left-cell">
+                                            <p class="label-span"><span class="left-tips">*</span>工作时间 : </p>
+                                        </div>
+                                        <div class="right-cell">
+                                            <DatePicker type="month" v-model="NewWork.StartTime" placeholder="Select date"></DatePicker>
+                                            - <DatePicker type="month" v-model="NewWork.EndTime" placeholder="Select date"></DatePicker>
+                                        </div>
+                                        <div class="left-cell">
+                                            <p class="label-span"><span class="left-tips">*</span>工作内容 : </p>
+                                        </div>
+                                        <div class="right-cell">
+                                            <Input class="pro-tab" v-model="NewWork.workContent" type="textarea" :autosize="{minRows: 3,maxRows: 6}" placeholder="例如 : {专职负责公司web项目前端的开发}" />
+                                            <p><span class="input-tips" style="margin-left: 0"> * 多个问题及解决以 { } 分割成一个句子</span></p>
+                                        </div>
+                                    </div>
+                                    <div align="center">
+                                        <Button type="ghost" @click="ShowChangeWork = false">取消</Button>
+                                        <Button type="dashed" @click="PreservationWork">保存</Button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 添加一条 -->
+                            <div class="experience" style="border: none" v-if="ShowAddWork">
+                                <div class="project-table">
+                                    <div class="left-cell">
+                                        <p class="label-span"><span class="left-tips">*</span>公司名称 : </p>
+                                    </div>
+                                    <div class="right-cell">
+                                        <Input class="pro-tab" v-model="NewWork.workName" placeholder="例如 : 天津金米特科技股份有限公司" />
+                                    </div>
+                                    <div class="left-cell">
+                                        <p class="label-span"><span class="left-tips">*</span>担任职位 : </p>
+                                    </div>
+                                    <div class="right-cell">
+                                        <Input class="pro-tab" v-model="NewWork.workJob" placeholder="例如 : 前端工程师" />
+                                    </div>
+                                    <div class="left-cell">
+                                        <p class="label-span"><span class="left-tips">*</span>工作时间 : </p>
+                                    </div>
+                                    <div class="right-cell">
+                                        <DatePicker type="month" v-model="NewWork.StartTime" placeholder="Select date"></DatePicker>
+                                        - <DatePicker type="month" v-model="NewWork.EndTime" placeholder="Select date"></DatePicker>
+                                    </div>
+                                    <div class="left-cell">
+                                        <p class="label-span"><span class="left-tips">*</span>工作内容 : </p>
+                                    </div>
+                                    <div class="right-cell">
+                                        <Input class="pro-tab" v-model="NewWork.workContent" type="textarea" :autosize="{minRows: 3,maxRows: 6}" placeholder="例如 : {专职负责公司web项目前端的开发}" />
+                                        <p><span class="input-tips" style="margin-left: 0"> * 多个问题及解决以 { } 分割成一个句子</span></p>
+                                    </div>
+                                </div>
+                                <div align="center">
+                                    <Button type="ghost" @click="ShowAddWork = false">取消</Button>
+                                    <Button type="dashed" @click="IncreaseWork">保存</Button>
+                                </div>
+                            </div>
+                            <Button type="ghost" v-else class="AddButton" @click="ShowAddWork = true">增加一条</Button>
+                        </div>
                         <!-- 个人评价 -->
                         <div class="base-infomation">
                             <p class="prompt-title">个人评价</p>
@@ -297,6 +380,7 @@ export default {
                         EndTime : '至今',
                     },
                 ],
+                WorkExper : [],
                 Evaluation : '',
             },
             WebSkill : [
@@ -435,7 +519,16 @@ export default {
                 projectSummary : '',
                 projectSolve : ''
             },
+            NewWork : {
+                workName : '',
+                workJob : '',
+                StartTime : '',
+                EndTime : '',
+                workContent : ''
+            },
             ShowAddProject : false,
+            ShowAddWork : false,
+            ShowChangeWork : false,
             ShowTemplateChoose : false,
             SampleNewList : [
                 {
@@ -502,6 +595,19 @@ export default {
             this.NewProject = {}
             this.ShowAddProject = false
         },
+        // 添加新工作经验数据信息
+        IncreaseWork () {
+            // 添加到用户的工作经验中
+            this.Auth.WorkExper.push({
+                workName : this.NewWork.workName,
+                workJob : this.NewWork.workJob,
+                workContent : this.NewWork.workContent,
+                StartTime : this.NewWork.StartTime,
+                EndTime : this.NewWork.EndTime,
+            })
+            this.NewWork = {}
+            this.ShowAddWork = false
+        },
         // 删除项目
         DeleteProject (index) {
             this.$Modal.confirm({
@@ -515,6 +621,43 @@ export default {
                     
                 }
             });
+        },
+        // 删除工作
+        DeleteWork (index) {
+            this.$Modal.confirm({
+                title: 'Yun Resume Title',
+                content: '<p>确定要删除此工作吗 ? </p>',
+                onOk: () => {
+                    this.Auth.WorkExper.splice(index, 1)
+                    this.$Message.success('删除成功');
+                },
+                onCancel: () => {
+                    
+                }
+            });
+        },
+        //修改工作
+        ChangeWork (index) {
+            this.NewWork.push({
+                workName : item.workName,
+                workJob : item.workJob,
+                workContent : item.workContent,
+                StartTime : item.StartTime,
+                EndTime : item.EndTime,
+            })
+            this.ShowChangeWork = true
+        },
+        PreservationWork () {
+            this.Auth.WorkExper.push({
+                workName : this.NewWork.workName,
+                workJob : this.NewWork.workJob,
+                workContent : this.NewWork.workContent,
+                StartTime : this.NewWork.StartTime,
+                EndTime : this.NewWork.EndTime,
+            })
+            this.NewWork = {}
+            this.ShowChangeWork = false
+            this.Auth.WorkExper.splice(index, 1)
         },
         // 保存所有
         SessionUserInfo () {
