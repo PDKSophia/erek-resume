@@ -1,6 +1,6 @@
 <template>
   <div class="box">
-    <div class="template">
+    <div id="pdfDom" class="template">
       <div class="left"></div>
       <div class="right">
         <div class="information-wrapper">
@@ -96,17 +96,35 @@
         </div>
       </div>
     </div>
+    <div class="btn-box"><Button class="btn" type="primary" @click="getPDF()">导出PDF</Button></div>
+    <Modal
+      title="通知"
+      v-model="modal"
+      :mask-closable="false"
+      @on-ok="getPdf()">
+      <p>当前简历内容已超过一页，是否确认打印该简历？</p>
+    </Modal>
+    <Modal
+      title="通知"
+      v-model="modal1"
+      :mask-closable="false">
+      <p>移动端无法导出正常简历，请在电脑中导出！</p>
+    </Modal>
   </div>
 </template>
 
 <script>
 import SessionAuth from '../../task/session_parse.js'
+import Browser from '../../task/browser.js'
 
 export default {
   data () {
     return {
         SessionTaskFinish : false,
-        Auth : {}
+        Auth : {},
+        htmlTitle : '简历',
+        modal : false,
+        modal1 : false
     }
   },
   methods : {
@@ -114,6 +132,19 @@ export default {
             this.Auth = SessionAuth.initGetter()
             // console.log(this.Auth)
             this.SessionTaskFinish = true
+        },
+        getPDF () {
+          if (Browser.versions.mobile) {
+            this.modal1 = true
+          } else {
+            var flag = this.getHeight()
+            if (flag == 1) {
+              this.modal = true
+            } 
+            if (flag == 0) {
+              this.getPdf()
+            }
+          }
         }
   },
   created () {
@@ -143,6 +174,16 @@ i {
   width: 100%;
   height: 100%;
   background-color: rgb(239, 238, 241);
+}
+.btn-box {
+  display: flex;
+  justify-content: center;
+}
+.btn {
+  width: 10%;
+  height: 3rem;
+  border-radius: 2rem;
+  margin: 1rem 0;
 }
 
 .template {
@@ -250,6 +291,16 @@ i {
     display: flex;
     flex-wrap: wrap;
     background-color: #fff;
+  }
+  .btn-box {
+    display: flex;
+    justify-content: center;
+  }
+  .btn {
+    width: 5rem;
+    height: 3rem;
+    border-radius: 2rem;
+    margin: .5rem 0;
   }
   .left {
     max-width: 0.6rem;
@@ -362,6 +413,16 @@ i {
     display: flex;
     flex-wrap: wrap;
     background-color: #fff;
+  }
+  .btn-box {
+    display: flex;
+    justify-content: center;
+  }
+  .btn {
+    width: 5rem;
+    height: 3rem;
+    border-radius: 2rem;
+    margin: .5rem 0;
   }
   .left {
     max-width: 0.6rem;
