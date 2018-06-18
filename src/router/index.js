@@ -22,7 +22,7 @@ import TemplateNinePage from '@/components/common/template_nine'            // �
 
 import UserTemplateRouterPage from '@/components/template/tem_router'          // 使用模板路由页
 import UserTemplateOnePage from '@/components/template/tem_one'                // 使用模板1
-import UserTemplateTwoPage from '@/components/template/tem_two'                // 使用模板2
+import UserTemplateTwoPage from '@/components/template/tem_two' // 使用模板2
 
 
 Vue.use(Router)
