@@ -1,6 +1,6 @@
 <template>
   <div class="box">
-    <div class="template" v-if="SessionTaskFinish">
+    <div id="pdfDom" class="template" v-if="SessionTaskFinish">
       <div class="left-wrapper">
         <div class="pic">
           <img :src="Auth.Avatar">
@@ -69,17 +69,35 @@
         </div>
       </div>
     </div>
+    <div class="btn-box"><Button class="btn" type="primary" @click="getPDF()">导出PDF</Button></div>
+    <Modal
+      title="通知"
+      v-model="modal"
+      :mask-closable="false"
+      @on-ok="getPdf()">
+      <p>当前简历内容已超过一页，是否确认打印该简历？</p>
+    </Modal>
+    <Modal
+      title="通知"
+      v-model="modal1"
+      :mask-closable="false">
+      <p>移动端无法导出正常简历，请在电脑中导出！</p>
+    </Modal>
   </div>
 </template>
 
 <script>
 import SessionAuth from '../../task/session_parse.js'
+import Browser from '../../task/browser.js'
 
 export default {
   data () {
     return {
         SessionTaskFinish : false,
-        Auth : {}
+        Auth : {},
+        htmlTitle : '简历',
+        modal : false,
+        modal1 : false
     }
   },
   methods : {
@@ -87,6 +105,19 @@ export default {
             this.Auth = SessionAuth.initGetter()
             // console.log(this.Auth)
             this.SessionTaskFinish = true
+        },
+        getPDF () {
+          if (Browser.versions.mobile) {
+            this.modal1 = true
+          } else {
+            var flag = this.getHeight()
+            if (flag == 1) {
+              this.modal = true
+            } 
+            if (flag == 0) {
+              this.getPdf()
+            }
+          }
         }
   },
   created () {
@@ -114,11 +145,23 @@ i {
   font-style: normal;
 }
 
+
+
 /* 通用 */
 .box {
   width: 100%;
   height: 100%;
   background: rgb(227, 230, 241);
+}
+.btn-box {
+  display: flex;
+  justify-content: center;
+}
+.btn {
+  width: 10%;
+  height: 3rem;
+  border-radius: 2rem;
+  margin: 1rem 0;
 }
 .template {
   height: 100%;
@@ -215,6 +258,18 @@ i {
     margin: 0;
     display: flex;
     flex-wrap: wrap;
+  }
+
+  .btn-box {
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn {
+    width: 5rem;
+    height: 3rem;
+    border-radius: 2rem;
+    margin: 0.5rem 0;
   }
 
   /* 左边 */
