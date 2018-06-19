@@ -130,7 +130,7 @@ const SessionAuth = {
             "熟悉前端相关技术(html/css/JS)，了解http协议以及相关开发调试工具",
             "前端基础知识扎实，掌握原生 JS、CSS、HTML",
             "熟悉HTML5、CSS3、JavaScript等Web开发技术，有浏览器兼容性等方面的实践经验",
-            "精通HTML/XHTML、CSS、JavaScript等网页制作技术，熟悉页面架构和布局"
+            "精通HTML/XHTML、CSS、JavaScript等网页制作技术，熟悉页面架构和布局",
         ]
         // 对技能的处理
         let skills = this.SearchSubstr(user.Skill, '、')
