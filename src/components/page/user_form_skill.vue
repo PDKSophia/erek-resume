@@ -738,8 +738,6 @@ export default {
                 EndTime : this.Auth.Experience[index].EndTime,
                 show : false
             }
-            // console.log(this.exWork)
-            // this.ShowChangeProject = true
             this.Auth.Experience[index].show = true
         },
         PreservationProject (index) {
@@ -782,8 +780,6 @@ export default {
                 show : false
             }
             this.Auth.WorkExper[index].show = true
-            // console.log(this.exWork)
-            // this.ShowChangeWork[index] = true
         },
         PreservationWork (index) {
             this.Auth.WorkExper.push({
