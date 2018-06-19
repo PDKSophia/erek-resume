@@ -98,14 +98,14 @@
     </div>
     <div class="btn-box"><Button class="btn" type="primary" @click="getPDF()">导出PDF</Button></div>
     <Modal
-      title="通知"
+      title="Yun Resume Title"
       v-model="modal"
       :mask-closable="false"
       @on-ok="getPdf()">
       <p>当前简历内容已超过一页，是否确认打印该简历？</p>
     </Modal>
     <Modal
-      title="通知"
+      title="Yun Resume Title"
       v-model="modal1"
       :mask-closable="false">
       <p>移动端无法导出正常简历，请在电脑中导出！</p>
