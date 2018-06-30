@@ -27,9 +27,19 @@ import ManageCtrlRoutePage from '@/components/manage/m_route'
 import ManageCtrlLoginPage from '@/components/manage/m_index'
 import ManageCtrlHomePage from '@/components/manage/m_home'
 
+<<<<<<< HEAD
 import ManageUserRoutePage from '@/components/manage/user/route'
 import ManageUserListPage from '@/components/manage/user/userlist'
 import ManageUserAccessPage from '@/components/manage/user/useraccess'
+=======
+import UserTemplateRouterPage from '@/components/template/tem_router'          // 使用模板路由页
+import UserTemplateOnePage from '@/components/template/tem_one'                // 使用模板1
+
+import UserTemplateTwoPage from '@/components/template/tem_two'                // 使用模板2
+import UserTemplateThreePage from '@/components/template/tem_three'                // 使用模板3
+
+
+>>>>>>> ab6e6448ffebfd61434b755d4584b3f501314159
 
 import ManageSettingRoutePage from '@/components/manage/setting/route'
 import ManageSettingThemePage from '@/components/manage/setting/theme'
@@ -150,6 +160,11 @@ export default new Router({
           path: 'template_two',
           name: 'template_two',
           component: UserTemplateTwoPage,
+        },
+        {
+          path: 'template_three',
+          name: 'template_three',
+          component: UserTemplateThreePage,
         },
       ]
     },

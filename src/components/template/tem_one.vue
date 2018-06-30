@@ -22,11 +22,8 @@
           <li><i class="fa-li fa fa-envelope-open"></i>邮箱：{{ Auth.Email }}</li>
         </ul>
         <div class="left-title">获奖证书</div>
-        <ul class="fa-ul info">
-          <li><i class="fa-li fa fa-send"></i>英语四级</li>
-          <li><i class="fa-li fa fa-send"></i>湖南省程序编程大赛金奖</li>
-          <li><i class="fa-li fa fa-send"></i>中级软件工程师</li>
-          <li><i class="fa-li fa fa-send"></i>湖南科技大学校级奖学金</li>
+        <ul class="fa-ul info" v-for="(item,index) in Auth.Certificate" :key="index">
+          <li v-if="item.cer != ''"><i class="fa-li fa fa-send"></i>{{ item.cer }}</li>
         </ul>
       </div>
       <div class="right-wrapper">
@@ -45,7 +42,8 @@
               <p v-if="expr.projectLink != ''">2、<a style="color: #8c8c8c" :href="expr.projectLink" target="brank">{{ expr.projectLink }}</a></p>
               <p>3、技术栈 : {{ expr.projectSkill }}</p>
               <div v-for="(item, key) in expr.solveAnswer" :key="key">
-              <p>{{ key+3 }}、{{ item.solve }}</p></div>
+                <p>{{ key+3 }}、{{ item.solve }}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -71,14 +69,14 @@
     </div>
     <div class="btn-box"><Button class="btn" type="primary" @click="getPDF()">导出PDF</Button></div>
     <Modal
-      title="通知"
+      title="Yun Resume Title"
       v-model="modal"
       :mask-closable="false"
       @on-ok="getPdf()">
       <p>当前简历内容已超过一页，是否确认打印该简历？</p>
     </Modal>
     <Modal
-      title="通知"
+      title="Yun Resume Title"
       v-model="modal1"
       :mask-closable="false">
       <p>移动端无法导出正常简历，请在电脑中导出！</p>
