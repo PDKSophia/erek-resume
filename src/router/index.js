@@ -4,27 +4,48 @@ import IndexPage from '@/components/index'                                    //
 
 import FormMajorPage from '@/components/form_major'                           // 用户选择专业
 import SamplePage from '@/components/sample'                                  // 案例页
-import ChooseTemplatePage from '@/components/choose_template'                     // 用户选择模板
-import IntroducePage from '@/components/page/introduce'                     // 介绍
-import UserSkillPage from '@/components/page/user_form_skill'                     // 完善用户信息
+import ChooseTemplatePage from '@/components/choose_template'                 // 用户选择模板
+import IntroducePage from '@/components/page/introduce'                       // 介绍
+import UserSkillPage from '@/components/page/user_form_skill'                 // 完善用户信息
 
 import TemplateRouterPage from '@/components/common/template_router'          // 模板样式页
 import TemplateOnePage from '@/components/common/template_one'                // 模板1
 import TemplateTwoPage from '@/components/common/template_two'                //模板2
 import TemplateThreePage from '@/components/common/template_three'            // 模板3
-import TemplateFourPage from '@/components/common/template_four'            // 模板4
-import TemplateFivePage from '@/components/common/template_five'            // 模板5
-import TemplateSixPage from '@/components/common/template_six'            // 模板6
+import TemplateFourPage from '@/components/common/template_four'              // 模板4
+import TemplateFivePage from '@/components/common/template_five'              // 模板5
+import TemplateSixPage from '@/components/common/template_six'                // 模板6
 import TemplateSevenPage from '@/components/common/template_seven'            // 模板7
 import TemplateEightPage from '@/components/common/template_eight'            // 模板8
-import TemplateNinePage from '@/components/common/template_nine'            // 模板9
+import TemplateNinePage from '@/components/common/template_nine'              // 模板9
+import UserTemplateRouterPage from '@/components/template/tem_router'         // 使用模板路由页
+import UserTemplateOnePage from '@/components/template/tem_one'               // 使用模板1
+import UserTemplateTwoPage from '@/components/template/tem_two'               // 使用模板2
 
+// 后台管理
+import ManageCtrlRoutePage from '@/components/manage/m_route'
+import ManageCtrlLoginPage from '@/components/manage/m_index'
+import ManageCtrlHomePage from '@/components/manage/m_home'
 
+<<<<<<< HEAD
+import ManageUserRoutePage from '@/components/manage/user/route'
+import ManageUserListPage from '@/components/manage/user/userlist'
+import ManageUserAccessPage from '@/components/manage/user/useraccess'
+=======
 import UserTemplateRouterPage from '@/components/template/tem_router'          // 使用模板路由页
 import UserTemplateOnePage from '@/components/template/tem_one'                // 使用模板1
-import UserTemplateTwoPage from '@/components/template/tem_two' // 使用模板2
+
+import UserTemplateTwoPage from '@/components/template/tem_two'                // 使用模板2
+import UserTemplateThreePage from '@/components/template/tem_three'                // 使用模板3
 
 
+>>>>>>> ab6e6448ffebfd61434b755d4584b3f501314159
+
+import ManageSettingRoutePage from '@/components/manage/setting/route'
+import ManageSettingThemePage from '@/components/manage/setting/theme'
+import ManageSettingInfoPage from '@/components/manage/setting/infomation'
+import ManageSettingLinkPage from '@/components/manage/setting/otherlink'
+ 
 Vue.use(Router)
 
 export default new Router({
@@ -140,7 +161,72 @@ export default new Router({
           name: 'template_two',
           component: UserTemplateTwoPage,
         },
+        {
+          path: 'template_three',
+          name: 'template_three',
+          component: UserTemplateThreePage,
+        },
       ]
-    }
+    },
+    // 后台管理
+    {
+      path : '/manage',
+      name : 'ManageCtrlRoutePage',
+      component : ManageCtrlRoutePage,
+      redirect : '/manage/Login',
+      children : [
+        {
+          path : 'Login',
+          name : 'ManageCtrlLoginPage',
+          component : ManageCtrlLoginPage
+        },
+        {
+          path : 'home',
+          name : 'ManageCtrlHomePage',
+          component : ManageCtrlHomePage,
+          children : [
+            {
+              path : 'user',
+              name : 'user',
+              component : ManageUserRoutePage,
+              children : [
+                {
+                  path : 'list',
+                  name : 'ManageUserListPage',
+                  component : ManageUserListPage 
+                },
+                {
+                  path : 'access',
+                  name : 'ManageUserAccessPage',
+                  component : ManageUserAccessPage 
+                },
+              ]
+            },
+            {
+              path : 'setting',
+              name : 'setting',
+              component : ManageSettingRoutePage,
+              children : [
+                {
+                  path : 'theme',
+                  name : 'ManageSettingThemePage',
+                  component : ManageSettingThemePage 
+                },
+                {
+                  path : 'webinfo',
+                  name : 'ManageSettingInfoPage',
+                  component : ManageSettingInfoPage 
+                },
+                {
+                  path : 'otherlink',
+                  name : 'ManageSettingLinkPage',
+                  component : ManageSettingLinkPage 
+                },
+              ]
+            }
+          ]
+        },
+      ]
+    },
   ]
 })

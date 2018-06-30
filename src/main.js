@@ -3,7 +3,10 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-
+import tool from '@/lib/tool'
+import api from '@/api'
+Object.defineProperty(Vue.prototype, '$api', {value: api})
+Object.defineProperty(Vue.prototype, '$tool', {value: tool})
 Vue.config.productionTip = false
 // 引入iView组件
 import iView from 'iview';
