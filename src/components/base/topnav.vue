@@ -26,7 +26,7 @@ export default {
 }
 .header p.title{
     color: white;
-    padding: 2.66rem 0rem 0rem 1rem;
+    padding: 2.36rem 0rem 0rem 1rem;
     font-size: 1.42rem;
 }
 p.t_left {

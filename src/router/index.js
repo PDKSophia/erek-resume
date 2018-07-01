@@ -21,31 +21,29 @@ import TemplateNinePage from '@/components/common/template_nine'              //
 import UserTemplateRouterPage from '@/components/template/tem_router'         // 使用模板路由页
 import UserTemplateOnePage from '@/components/template/tem_one'               // 使用模板1
 import UserTemplateTwoPage from '@/components/template/tem_two'               // 使用模板2
+import UserTemplateThreePage from '@/components/template/tem_three'           // 使用模板3
 
 // 后台管理
 import ManageCtrlRoutePage from '@/components/manage/m_route'
 import ManageCtrlLoginPage from '@/components/manage/m_index'
 import ManageCtrlHomePage from '@/components/manage/m_home'
 
-<<<<<<< HEAD
 import ManageUserRoutePage from '@/components/manage/user/route'
 import ManageUserListPage from '@/components/manage/user/userlist'
 import ManageUserAccessPage from '@/components/manage/user/useraccess'
-=======
-import UserTemplateRouterPage from '@/components/template/tem_router'          // 使用模板路由页
-import UserTemplateOnePage from '@/components/template/tem_one'                // 使用模板1
 
-import UserTemplateTwoPage from '@/components/template/tem_two'                // 使用模板2
-import UserTemplateThreePage from '@/components/template/tem_three'                // 使用模板3
+import ManageEnclosureRoutePage from '@/components/manage/enclosure/route'
+import ManageEnclosureDeveloperPage from '@/components/manage/enclosure/developer'
+import ManageEnclosureUploadFilePage from '@/components/manage/enclosure/uploadfile'
 
-
->>>>>>> ab6e6448ffebfd61434b755d4584b3f501314159
+import ManageTemplateRoutePage from '@/components/manage/template/route'
+import ManageTemplateAccessPage from '@/components/manage/template/tem_access'
 
 import ManageSettingRoutePage from '@/components/manage/setting/route'
 import ManageSettingThemePage from '@/components/manage/setting/theme'
-import ManageSettingInfoPage from '@/components/manage/setting/infomation'
+import ManageSettingInfoPage from '@/components/manage/setting/information'
 import ManageSettingLinkPage from '@/components/manage/setting/otherlink'
- 
+
 Vue.use(Router)
 
 export default new Router({
@@ -200,6 +198,35 @@ export default new Router({
                   name : 'ManageUserAccessPage',
                   component : ManageUserAccessPage 
                 },
+              ]
+            },
+            {
+              path : 'template',
+              name : 'template',
+              component : ManageTemplateRoutePage,
+              children : [
+                {
+                  path : 'access',
+                  name : 'ManageTemplateAccessPage',
+                  component : ManageTemplateAccessPage 
+                }
+              ]
+            },
+            {
+              path : 'enclosure',
+              name : 'enclosure',
+              component : ManageEnclosureRoutePage,
+              children : [
+                {
+                  path : 'developer',
+                  name : 'ManageEnclosureDeveloperPage',
+                  component : ManageEnclosureDeveloperPage 
+                },
+                {
+                  path : 'uploadfile',
+                  name : 'ManageEnclosureUploadFilePage',
+                  component : ManageEnclosureUploadFilePage 
+                }
               ]
             },
             {

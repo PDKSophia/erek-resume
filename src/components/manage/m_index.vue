@@ -19,8 +19,8 @@ export default {
     },
     data() {
         return {
-            manage_name : '',
-            manage_pwd : ''
+            manage_name : 'admin',
+            manage_pwd : 'admin'
         }
     },
     methods : {
