@@ -22,6 +22,16 @@ body {
   margin-top: 3rem;
   width:30%;
 }
+
+input.ivu-input {
+  height: 2.5rem;
+  padding: 4px 10px;
+  font-size: 12px;
+}
+.ivu-form-item{
+    margin-top:20px;
+    margin-bottom: 2rem;
+}
 /* 动画 */
 @keyframes swing
 {

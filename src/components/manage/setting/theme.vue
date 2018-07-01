@@ -2,7 +2,7 @@
     <div class="theme">
         <Tabs type="card"> 
             <TabPane label="Themes">
-                <RadioGroup v-model="theme">
+                <RadioGroup v-model="cur_theme" @on-change="SetTheme">
                     <Radio label="light" size="large"></Radio>
                     <Radio label="dark" size="large"></Radio>
                 </RadioGroup>
@@ -12,12 +12,34 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'vuex'
+
 export default {
     data () {
         return {
-            theme : 'light'
+            cur_theme : ''
         }
-    }
+    },
+    computed : mapState({
+        theme : state => state.global.theme,               // 当前主题
+    }),
+    watch : {
+        theme(val, oldval){
+            // console.log('旧的值是 ：' + oldval)
+            // console.log('新的值是 ：' + val)
+        }
+    },
+    methods : {
+        ...mapActions([
+            'SetManageTheme'
+        ]),
+        SetTheme() {
+            this.SetManageTheme(this.cur_theme)
+        }
+    },
+    mounted() {
+        this.cur_theme = this.theme
+    },
 }
 </script>
 

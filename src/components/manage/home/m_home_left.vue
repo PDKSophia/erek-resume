@@ -23,7 +23,7 @@
                     <Icon type="images"  size="16"></Icon>
                         Enclosure ( 附件 )
                 </template>
-                <MenuItem name="enclosure/develpoer">Developer ( 开发人员 ) </MenuItem>
+                <MenuItem name="enclosure/developer">Developer ( 开发人员 ) </MenuItem>
                 <MenuItem name="enclosure/uploadfile">Upload File ( 文件上传 ) </MenuItem>
             </Submenu>
 
@@ -41,18 +41,25 @@
     
 </template>
 <script>
-    export default {
-        data () {
-            return {
-                theme: 'light'
-            }
-        },
-        methods : {
-            handleSelect (name) {
-                this.$router.push({path : '/manage/home/' + name})
-            }
+import { mapState } from 'vuex'
+
+export default {
+    data () {
+        return {
         }
-    }
+    },
+    computed : mapState({
+        theme : state => state.global.theme,               // 当前主题
+    }),
+    methods : {
+        handleSelect (name) {
+        this.$router.push({path : '/manage/home/' + name})
+        }
+    },
+    mounted() {
+        console.log(this.theme)
+    },
+}
 </script>
 
 <style>
