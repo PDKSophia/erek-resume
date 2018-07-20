@@ -3,22 +3,10 @@
         <img src="../assets/yun.png" alt="">
         <p class="logo-name">快速了解</p>
         <div class="form">
-            <Select class="select-form"  v-model="UserSelect.School">
-                <Option v-for="item in SchoolList" :value="item.value" :key="item.value" class="option-form">{{ item.label }}</Option>
-            </Select> 
-            <span>-</span> 
-            
-            <Select id="Academy" class="select-form" v-model="UserSelect.Academy">
-                <Option v-for="item in AcademyList" :value="item.value" :key="item.value" class="option-form" disabled>{{ item.label }}</Option>
-            </Select> 
-            <span>-</span> 
-            <Select class="select-form" v-model="UserSelect.Major">
-                <Option v-for="item in MajorList" :value="item.value" :key="item.value" class="option-form">{{ item.label }}</Option>
-            </Select> 
-            <span>-</span> 
-            <Select class="select-form"  v-model="UserSelect.Job">
-                <Option v-for="item in JobList" :value="item.value" :key="item.value" class="option-form">{{ item.label }}</Option>
-            </Select> 
+            <input type="text" v-model="BasicUserInfo.School" placeholder="学校">
+            <input type="text" v-model="BasicUserInfo.Academy" placeholder="学院">
+            <input type="text" v-model="BasicUserInfo.Major" placeholder="专业">
+            <input type="text" v-model="BasicUserInfo.Job" placeholder="应聘职位">
         </div>
         <!-- 多级联动 -->
         <!-- <Cascader :data="AcademyMajorList" trigger="hover"></Cascader>  -->
@@ -31,27 +19,21 @@
 </template>
 
 <script>
-import store from '../store'
+import { mapState, mapActions } from 'vuex'
 
 export default {
-    store,
+    computed : mapState({
+        UserBasicInfo : state => state.user.UserBasicInfo
+    }),
     data () {
         return {
-            SchoolList : '',
-            AcademyList : '',
-            MajorList : '',
-            JobList : '',
-
-            UserSelect : {
-                School : '湖南科技大学',
-                Academy : '计算机科学与工程学院',
-                Major : '软件工程',
-                Job : '前端工程师'
-            },
-            AcademyMajorList : []
+            BasicUserInfo : {}
         }
     },
     methods : {
+        ...mapActions([
+            'SetBasicUserInfo'
+        ]),
         ToIndex () {
             this.$router.push({
                 path : '/'
@@ -59,9 +41,7 @@ export default {
         },
         ContinueUse () {
             this.$Message.success('开启专属你的旅行~')
-            this.$store.commit('ADD_USER_SELECT', this.UserSelect)
-            console.log(sessionStorage.getItem('Auth'))
-            console.log(this.$store.state.Auth)
+            this.SetBasicUserInfo(this.BasicUserInfo)
             setTimeout(()=> {
                 this.$router.push({
                     path : '/user_form_skill'
@@ -69,13 +49,13 @@ export default {
             }, 1500)
         },
     },
-    created () {
-        this.SchoolList  = this.$store.state.SchoolList
-        this.AcademyList = this.$store.state.AcademyList
-        this.MajorList   = this.$store.state.MajorList
-        // this.AcademyMajorList = this.$store.state.AcademyMajorList
-        this.JobList     = this.$store.state.JobList
-    }
+    mounted() {
+        if(sessionStorage.getItem('Auth') == '' || sessionStorage.getItem('Auth') == undefined) {
+            this.BasicUserInfo = this.UserBasicInfo
+        } else {
+            this.BasicUserInfo = JSON.parse(sessionStorage.getItem('Auth'))
+        }
+    },
 }
 </script>
 

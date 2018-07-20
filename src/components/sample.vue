@@ -90,23 +90,6 @@ export default {
                     avatar : require('../../image/模板6.jpg'),
                     text : 'Sample Template 6',
                     path : 'six'
-                }
-            ],
-            SampleHotList : [
-                {
-                    avatar : require('../../image/模板4.jpg'),
-                    text : 'Sample Template 4',
-                    path : 'four'
-                },
-                {
-                    avatar : require('../../image/模板5.jpg'),
-                    text : 'Sample Template 5',
-                    path : 'five'
-                },
-                {
-                    avatar : require('../../image/模板6.jpg'),
-                    text : 'Sample Template 6',
-                    path : 'six'
                 },
                 {
                     avatar : require('../../image/模板7.jpg'),
@@ -122,6 +105,23 @@ export default {
                     avatar : require('../../image/模板9.jpg'),
                     text : 'Sample Template 9',
                     path : 'nine'
+                }
+            ],
+            SampleHotList : [
+                {
+                    avatar : require('../../image/模板3.jpg'),
+                    text : 'Sample Template 3',
+                    path : 'three'
+                },
+                {
+                    avatar : require('../../image/模板5.jpg'),
+                    text : 'Sample Template 5',
+                    path : 'five'
+                },
+                {
+                    avatar : require('../../image/模板4.jpg'),
+                    text : 'Sample Template 4',
+                    path : 'four'
                 }
             ]
         }

@@ -11,7 +11,6 @@
         <li @click="ToLink('openUse')">使用</li>
       </ul>
     </div>
-    <!-- <open-user></open-user> -->
   </div>
 </template>
 

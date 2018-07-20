@@ -1,5 +1,4 @@
 import * as types from '../types'
-import { platform } from 'os';
 
 const state = {
     theme : 'light',
