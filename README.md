@@ -17,10 +17,14 @@
 
 
 
-# 说明 ? 
+## 说明 ? 
 ```bash
     此乃旧版本，v2新版本已经重构完成，(戳这里)[http://yun.pengdaokuan.cn/YunResume]
-``
+```
+
+## V2版本代码暂未开源
+
+戳这里: http://yun.pengdaokuan.cn/YunResume
 
 ## 使用
  1 ：git clone 
