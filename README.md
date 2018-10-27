@@ -19,12 +19,16 @@
 
 ## 说明 ? 
 ```bash
-    此乃旧版本，v2新版本已经重构完成，(戳这里)[http://yun.pengdaokuan.cn/YunResume]
+    此乃旧版本，v1.1新版本已经重构完成，(戳这里)[http://yun.pengdaokuan.cn/YunResume]
 ```
 
-## V2版本代码暂未开源
+## v1.1 版本代码暂未开源
 
 戳这里: http://yun.pengdaokuan.cn/YunResume
+
+## v2.0 版本正在重构
+
+戳这里: http://yun.pengdaokuan.cn/erek-resume
 
 ## 使用
  1 ：git clone 
