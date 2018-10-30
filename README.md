@@ -178,6 +178,7 @@ Erek-Resume 云简历平台是由一群热爱学习的开发者共同开发完�
 
 Erek-Editor: https://github.com/PDKSophia/erek-editror
 
+Vue-erek-manage: https://github.com/PDKSophia/vue-erek-manage
 
 版权所有Copyright © 2018 by PDK 
 
