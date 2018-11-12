@@ -25,20 +25,110 @@ Erek-Resume 云简历平台是由一群热爱学习的开发者共同开发完�
 
 <img src='https://github.com/PDKSophia/YunResume/raw/master/image/lo3.png'>
 
-<img src='https://github.com/PDKSophia/YunResume/raw/master/image/lo4.png'>
+<!-- <img src='https://github.com/PDKSophia/YunResume/raw/master/image/lo4.png'> -->
+
+## v2.0 版本说明
+
+### 演示地址
+[戳这里](http://yun.pengdaokuan.cn/erek-resume)
+
+### 技术栈
++ vue-cli
++ vuex
++ axios
++ vue-router
++ scss
++ element ui
++ ...
++ ...
+
+### 目标功能
+- [ ] 用户信息输入
+- [ ] 简历头像实时预览
+- [ ] 信息解析，填充模板
+- [ ] 根据用户信息推荐适合模板
+- [ ] 导出PDF
+
+
+### 文件架构
+```
+·
+├── package.json
+│ 
+├── public                          打包的数据  
+│ 
+├── src
+│   ├── assets                      图片等资源文件
+│   │                    
+│   ├── components                  通用组件
+│   │    ├─ErekResume                    
+│   │    └─ ... 
+│   │
+│   ├── router                      路由
+│   │
+│   ├── service                     与服务器相关文件
+│   │    ├─api                      
+│   │    ├─request                  
+│   │    └─ ...  
+│   │       
+│   ├── store                       vuex模块化 
+│   │      
+│   ├── UseComponents                 
+│   │    ├─BaseInfo                 基本信息                      
+│   │    ├─PersonInfo               个人信息
+│   │    ├─ProjectInfo              项目经验                      
+│   │    ├─WorkInfo                 工作经验
+│   │    └─ ...                
+│   │
+│   ├── utils                    
+│   │    ├─index.config.js          首页配置文件                      
+│   │    ├─navbar.config.js         所有navbar配置文件
+│   │    ├─theme.js                 主题颜色配置文件                     
+│   │    ├─tool.js                  全局函数文件，比如 加载框，提示框等
+│   │    └─ ... 
+│   │             
+│   ├── view
+│   │    ├─Index                    平台首页                      
+│   │    ├─Introduce                平台介绍
+│   │    ├─Use                      简历填写                  
+│   │    └─ ...                
+│   │
+│   ├──           
+│   └─
+│ 
+├── main.js                            
+│  
+├── App.vue                            
+│                   
+└─
+```
+
+### 项目环境
+```javascript
+    1 . Node.js 版本 v10.6.0 
+    2 . Vue-cli 版本 v3.0.0
+    3 . 其他依赖请移步 package.json
+    4 . 开发人员说明文档移步 DEVELOPER.md 文档
+```
+
+### 新功能
+- [ ] 首页主题设置
+- [ ] 最热模板、最新模板
+- [ ] 接入API，封装请求request
+
+ ### 修复问题
+- [ ] PDF清晰度问题
+- [ ] Vuex状态管理完善
+
+ ### 阶段性
++ 10.27 初始化项目，开始重构，安装各依赖，搭好架构，完成首页、介绍页、完成主题、响应式功能
+
++ 10.28 完成个人信息和基本信息的输入
+
++ 10.29 - 11.12 简历模板开发，后台搭建及开发
 
 
 -----
-
-## V1.0 版本说明
-### 技术栈
- + Vue
- + Axios
- + Vue-router
- + iView UI
- + Scss
- + Vuex
- + ...
 
 ## V1.1 版本暂未开源
 ### 演示地址
@@ -66,29 +156,36 @@ Erek-Resume 云简历平台是由一群热爱学习的开发者共同开发完�
 
 -------------------
 
-## v2.0 版本说明
-
-### 演示地址
-[戳这里](http://yun.pengdaokuan.cn/erek-resume)
-
+## V1.0 版本说明
 ### 技术栈
-+ vue-cli
-+ vuex
-+ axios
-+ vue-router
-+ scss
-+ element ui
-+ ...
-+ ...
+ + Vue
+ + Axios
+ + Vue-router
+ + iView UI
+ + Scss
+ + Vuex
+ + ...
 
-### 目标功能
-- [ ] 用户信息输入
-- [ ] 简历头像实时预览
-- [ ] 信息解析，填充模板
-- [ ] 根据用户信息推荐适合模板
-- [ ] 导出PDF
+-------------------
 
-### 文件架构
-```
-·
-├
+## 支持环境
+
+现代浏览器及 IE11。
+
+| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Opera |
+| --------- | --------- | --------- | --------- | --------- |
+| IE11, Edge| last 2 versions| last 2 versions| last 2 versions| last 2 versions
+
+## 相关链接
+- 博客 : http://blog.pengdaokuan.cn:4001
+ 
+- 掘金 : https://juejin.im/user/594ca8a35188250d892f4139
+ 
+- Erek-Editor: https://github.com/PDKSophia/erek-editror
+ 
+- Vue-erek-manage: https://github.com/PDKSophia/vue-erek-manage
+ 
+ 版权所有Copyright © 2018 by PDK 
+ 
+ All rights reserved。
+
