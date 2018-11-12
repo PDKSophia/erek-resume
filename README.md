@@ -12,7 +12,7 @@ Erek-Resume 云简历平台是由一群热爱学习的开发者共同开发完�
 
 ### 平台优势
 
-找不到好的简历模板 ? 你想做一份好一点的简历 ? 但是找不到好的模板 ? 找到了一份好的模板 ? 但是居然要会员、要破费 ? ... 最终找到了一份模板 , 但是不知道怎么写 ? 我们的优势 ? HTML 还原 WPS 模板简历 ! <font color='red'>不收费！</font><span style='color: red'>不</span>收费！<span style='color: red'>不</span>收费！可以直接转成 <span style='color: red'>PDF</span> 文档 ！！！ <span style='color: red'>随意</span>挑选自己喜欢的模板！
+找不到好的简历模板 ? 你想做一份好一点的简历 ? 但是找不到好的模板 ? 找到了一份好的模板 ? 但是居然要会员、要破费 ? ... 最终找到了一份模板 , 但是不知道怎么写 ? 我们的优势 ? HTML 还原 WPS 模板简历 ! <font color=#cc4b4b>不</font>收费！<font color=#cc4b4b>不</font>收费！<font color=#cc4b4b>不</font>收费！可以直接转成 <font color=#cc4b4b>PDF</font> 文档 ！！！ <font color=#cc4b4b>随意</font>挑选自己喜欢的模板！
 
 > 经过了两次的迭代重构，界面简单，性能方面进行了部分的优化
 
