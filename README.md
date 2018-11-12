@@ -12,7 +12,7 @@ Erek-Resume 云简历平台是由一群热爱学习的开发者共同开发完�
 
 ### 平台优势
 
-<p>找不到好的简历模板 ? 你想做一份好一点的简历 ? 但是找不到好的模板 ? 找到了一份好的模板 ? 但是居然要会员、要破费 ? ... 最终找到了一份模板 , 但是不知道怎么写 ? 我们的优势 ? HTML 还原 WPS 模板简历 ! <span style='color: red'>不</span>收费！<span style='color: red'>不</span>收费！<span style='color: red'>不</span>收费！可以直接转成 <span style='color: red'>PDF</span> 文档 ！！！ <span style='color: red'>随意</span>挑选自己喜欢的模板！</p>
+找不到好的简历模板 ? 你想做一份好一点的简历 ? 但是找不到好的模板 ? 找到了一份好的模板 ? 但是居然要会员、要破费 ? ... 最终找到了一份模板 , 但是不知道怎么写 ? 我们的优势 ? HTML 还原 WPS 模板简历 ! <font color='red'>不收费！</font><span style='color: red'>不</span>收费！<span style='color: red'>不</span>收费！可以直接转成 <span style='color: red'>PDF</span> 文档 ！！！ <span style='color: red'>随意</span>挑选自己喜欢的模板！
 
 > 经过了两次的迭代重构，界面简单，性能方面进行了部分的优化
 
@@ -91,96 +91,4 @@ Erek-Resume 云简历平台是由一群热爱学习的开发者共同开发完�
 ### 文件架构
 ```
 ·
-├── package.json
-│ 
-├── public                          打包的数据  
-│ 
-├── src
-│   ├── assets                      图片等资源文件
-│   │                    
-│   ├── components                  通用组件
-│   │    ├─ErekResume                    
-│   │    └─ ... 
-│   │
-│   ├── router                      路由
-│   │
-│   ├── service                     与服务器相关文件
-│   │    ├─api                      
-│   │    ├─request                  
-│   │    └─ ...  
-│   │       
-│   ├── store                       vuex模块化 
-│   │      
-│   ├── UseComponents                 
-│   │    ├─BaseInfo                 基本信息                      
-│   │    ├─PersonInfo               个人信息
-│   │    ├─ProjectInfo              项目经验                      
-│   │    ├─WorkInfo                 工作经验
-│   │    └─ ...                
-│   │
-│   ├── utils                    
-│   │    ├─index.config.js          首页配置文件                      
-│   │    ├─navbar.config.js         所有navbar配置文件
-│   │    ├─theme.js                 主题颜色配置文件                     
-│   │    ├─tool.js                  全局函数文件，比如 加载框，提示框等
-│   │    └─ ... 
-│   │             
-│   ├── view
-│   │    ├─Index                    平台首页                      
-│   │    ├─Introduce                平台介绍
-│   │    ├─Use                      简历填写                  
-│   │    └─ ...                
-│   │
-│   ├──           
-│   └─
-│ 
-├── main.js                            
-│  
-├── App.vue                            
-│                   
-└─
-```
-### 项目环境
-```javascript
-    1 . Node.js 版本 v10.6.0 
-
-    2 . Vue-cli 版本 v3.0.0
-
-    3 . 其他依赖请移步 package.json
-
-    4 . 开发人员说明文档移步 DEVELOPER.md 文档
-```
-### 新功能
-- [ ] 首页主题设置
-- [ ] 最热模板、最新模板
-- [ ] 接入API，封装请求request
-
-### 修复问题
-- [ ] PDF清晰度问题
-- [ ] Vuex状态管理完善
-
-### 阶段性
-+ 10.27 初始化项目，开始重构，安装各依赖，搭好架构，完成首页、介绍页、完成主题、响应式功能
-
-+ 10.28 完成个人信息和基本信息的输入
-
-### 支持环境
-
-现代浏览器及 IE11。
-
-| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Opera |
-| --------- | --------- | --------- | --------- | --------- |
-| IE11, Edge| last 2 versions| last 2 versions| last 2 versions| last 2 versions
-## 相关链接
-
-博客 : http://blog.pengdaokuan.cn:4001
-
-掘金 : https://juejin.im/user/594ca8a35188250d892f4139
-
-Erek-Editor: https://github.com/PDKSophia/erek-editror
-
-Vue-erek-manage: https://github.com/PDKSophia/vue-erek-manage
-
-版权所有Copyright © 2018 by PDK 
-
-All rights reserved。
+├
