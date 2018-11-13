@@ -47,6 +47,8 @@ Erek-Resume 云简历平台是由一群热爱学习的开发者共同开发完�
 
 <img src='https://github.com/PDKSophia/YunResume/raw/master/image/lo2.png'>
 
+<img src='https://github.com/PDKSophia/YunResume/raw/master/image/lo5.png'>
+
 <img src='https://github.com/PDKSophia/YunResume/raw/master/image/lo3.png'>
 
 <img src='https://github.com/PDKSophia/YunResume/raw/master/image/lo4.png'>
