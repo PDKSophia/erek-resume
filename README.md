@@ -8,7 +8,7 @@
 > 要我说这个技术难点，其实还真没什么难点，因为目前前期并未涉及到后端，纯前端的工作，同时博主对所有的输入框没有做验证，不输入就没信息，是你们要生成简历，如果你自己都不输入信息，那么简历肯定就是一片空白咯，还有！！一定要按照博主定义的格式填写，不然到时候解析等出问题，简历就丑啦 ~ 嘻嘻嘻 ~
 
 ### 平台介绍
-Erek-Resume 云简历平台是由一群热爱学习的开发者共同开发完成，致力于为简历差劲不懂如何制作简历的同学在线制作一份较为完美的简历，平台在2018.05月开始规划，并在六月底完成 v1.0 版本，在 7月底 进行迭代， 8月20号完成新版本的更新，于10月底回厂重构，并优化之前版本存在的问题
+Erek-Resume 云简历平台是由一群热爱学习的开发者共同开发完成，致力于为简历差劲不懂如何制作简历的同学在线制作一份较为完美的简历，平台在2018.05月开始规划，于六月底由彭道宽完成 v1.0 版本，在 7月底 进行迭代， 8月20号完成新版本的更新，后期新成员加入，于10月底回厂重构，并优化之前版本存在的问题，平台支持中英文
 
 ### 平台优势
 
@@ -16,16 +16,6 @@ Erek-Resume 云简历平台是由一群热爱学习的开发者共同开发完�
 
 > 经过了两次的迭代重构，界面简单，性能方面进行了部分的优化
 
-
-### 部分界面
-
-<img src='https://github.com/PDKSophia/YunResume/raw/master/image/lo1.png'>
-
-<img src='https://github.com/PDKSophia/YunResume/raw/master/image/lo2.png'>
-
-<img src='https://github.com/PDKSophia/YunResume/raw/master/image/lo3.png'>
-
-<!-- <img src='https://github.com/PDKSophia/YunResume/raw/master/image/lo4.png'> -->
 
 ## v2.0 版本说明
 
@@ -43,11 +33,22 @@ Erek-Resume 云简历平台是由一群热爱学习的开发者共同开发完�
 + ...
 
 ### 目标功能
-- [ ] 用户信息输入
+- [ ] 选择简历输入用户信息
 - [ ] 简历头像实时预览
 - [ ] 信息解析，填充模板
-- [ ] 根据用户信息推荐适合模板
 - [ ] 导出PDF
+- [ ] 平台支持中英文
+
+
+### 部分界面
+
+<img src='https://github.com/PDKSophia/YunResume/raw/master/image/lo1.png'>
+
+<img src='https://github.com/PDKSophia/YunResume/raw/master/image/lo2.png'>
+
+<img src='https://github.com/PDKSophia/YunResume/raw/master/image/lo3.png'>
+
+<img src='https://github.com/PDKSophia/YunResume/raw/master/image/lo4.png'>
 
 
 ### 文件架构
