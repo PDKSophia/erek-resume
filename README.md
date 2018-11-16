@@ -185,18 +185,23 @@ Erek-Resume 云简历平台是由一群热爱学习的开发者共同开发完�
 | --------- | --------- | --------- | --------- | --------- |
 | IE11, Edge| last 2 versions| last 2 versions| last 2 versions| last 2 versions
 
-## 相关链接
-- 博客 : http://blog.pengdaokuan.cn:4001
- 
-- 掘金 : https://juejin.im/user/594ca8a35188250d892f4139
- 
-- Erek-Editor: https://github.com/PDKSophia/erek-editror
- 
-- Vue-erek-manage: https://github.com/PDKSophia/vue-erek-manage
 
-- 图标制作地址: https://shields.io/#/
- 
- 版权所有Copyright © 2018 by PDK 
- 
- All rights reserved。
+### 相关链接
 
+博客 : http://blog.pengdaokuan.cn:4001
+ 
+掘金 : https://juejin.im/user/594ca8a35188250d892f4139
+ 
+Fok-Erek-AK : https://github.com/PDKSophia/Fok-Erek-AK
+
+Erek-Editor: https://github.com/PDKSophia/erek-editror
+ 
+Vue-erek-manage: https://github.com/PDKSophia/vue-erek-manage
+
+图标制作地址: https://shields.io/#/
+
+-----
+ 
+版权所有Copyright © 2018 by PDK 
+ 
+All rights reserved。
