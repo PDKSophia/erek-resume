@@ -1,6 +1,6 @@
 # Erek Resumes
 
-![](https://img.shields.io/badge/vue--erek-2.0.1-brightgreen.svg)
+![](https://img.shields.io/badge/erek--resume-2.0.1-red.svg)
 ![](https://img.shields.io/badge/vuex-3.0.1-blue.svg)
 ![](https://img.shields.io/badge/axios-0.18.0-orange.svg)
 ![](https://img.shields.io/badge/vue-2.5.2-blue.svg)
