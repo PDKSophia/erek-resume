@@ -56,23 +56,34 @@ Erek-Resume 云简历平台是由一群热爱学习的开发者共同开发完�
 
 <img src='https://github.com/PDKSophia/YunResume/raw/master/image/lo3.png'>
 
-<img src='https://github.com/PDKSophia/YunResume/raw/master/image/lo4.png'>
-
+<img src='https://github.com/PDKSophia/YunResume/raw/master/image/lo4.png'> 
 
 ### 文件架构
 ```
 ·
 ├── package.json
 │ 
-├── public                          打包的数据  
+├── public                            
 │ 
 ├── src
 │   ├── assets                      图片等资源文件
 │   │                    
 │   ├── components                  通用组件
 │   │    ├─ErekResume                    
+│   │    ├─ErekResumeForm           表单填写组件                    
 │   │    └─ ... 
 │   │
+│   ├── i18n                        中英文配置
+│   │    ├─ErekResume                                       
+│   │    └─ ... 
+│   │      
+│   ├── ResumeComponents            简历相关文件   
+│   │    ├─ResumeItem                                     
+│   │    ├─ResumeList              
+│   │    ├─ResumeSider                                
+│   │    ├─ResumeTemplate              
+│   │    └─ ...
+│   │   
 │   ├── router                      路由
 │   │
 │   ├── service                     与服务器相关文件
@@ -80,16 +91,14 @@ Erek-Resume 云简历平台是由一群热爱学习的开发者共同开发完�
 │   │    ├─request                  
 │   │    └─ ...  
 │   │       
-│   ├── store                       vuex模块化 
-│   │      
-│   ├── UseComponents                 
-│   │    ├─BaseInfo                 基本信息                      
-│   │    ├─PersonInfo               个人信息
-│   │    ├─ProjectInfo              项目经验                      
-│   │    ├─WorkInfo                 工作经验
-│   │    └─ ...                
+│   ├── store                       vuex模块化
+│   │    ├─modules                                
+│   │    ├─index.js                               
+│   │    ├─types.js              
+│   │    └─ ... 
 │   │
 │   ├── utils                    
+│   │    ├─check-session.js         缓存数据文件 
 │   │    ├─index.config.js          首页配置文件                      
 │   │    ├─navbar.config.js         所有navbar配置文件
 │   │    ├─theme.js                 主题颜色配置文件                     
@@ -99,7 +108,7 @@ Erek-Resume 云简历平台是由一群热爱学习的开发者共同开发完�
 │   ├── view
 │   │    ├─Index                    平台首页                      
 │   │    ├─Introduce                平台介绍
-│   │    ├─Use                      简历填写                  
+│   │    ├─Resume                   简历使用页                  
 │   │    └─ ...                
 │   │
 │   ├──           
@@ -122,12 +131,14 @@ Erek-Resume 云简历平台是由一群热爱学习的开发者共同开发完�
 
 ### 新功能
 - [ ] 首页主题设置
+- [ ] 中英文配置
 - [ ] 最热模板、最新模板
 - [ ] 接入API，封装请求request
 
  ### 修复问题
 - [ ] PDF清晰度问题
 - [ ] Vuex状态管理完善
+- [ ] 刷新丢失用户信息
 
  ### 阶段性
 + 10.27 初始化项目，开始重构，安装各依赖，搭好架构，完成首页、介绍页、完成主题、响应式功能
@@ -135,6 +146,10 @@ Erek-Resume 云简历平台是由一群热爱学习的开发者共同开发完�
 + 10.28 完成个人信息和基本信息的输入
 
 + 10.29 - 11.12 简历模板开发，后台搭建及开发
+
++ 11.13 - 11.17 简历9个模板开发完成
+
++ 11.18 - 11.28 简历9个模板的重构和优化，解决刷新丢失用户信息问题
 
 
 -----
