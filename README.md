@@ -1,14 +1,17 @@
 # Erek Resumes
 <div align='center'>
-    <img src='https://github.com/PDKSophia/YunResume/raw/master/image/logs.png' height=150> 
-</div>
+<img src='https://github.com/PDKSophia/YunResume/raw/master/image/icon.png' height=150 /> 
+<br>
+<img src='https://github.com/PDKSophia/YunResume/raw/master/image/logs.png' height=150 /> 
 
-![](https://img.shields.io/badge/erek--resume-2.0.1-red.svg)
-![](https://img.shields.io/badge/vuex-3.0.1-blue.svg)
-![](https://img.shields.io/badge/axios-0.18.0-orange.svg)
-![](https://img.shields.io/badge/vue-2.5.2-blue.svg)
-![](https://img.shields.io/badge/vue--i18n-8.3.1-yellow.svg)
-![](https://img.shields.io/badge/license-MIT-orange.svg)
+    ![](https://img.shields.io/badge/erek--resume-2.0.1-red.svg)
+    ![](https://img.shields.io/badge/vuex-3.0.1-blue.svg)
+    ![](https://img.shields.io/badge/axios-0.18.0-orange.svg)
+    ![](https://img.shields.io/badge/vue-2.5.2-blue.svg)
+    ![](https://img.shields.io/badge/vue--i18n-8.3.1-yellow.svg)
+    ![](https://img.shields.io/badge/license-MIT-orange.svg)
+
+</div>
 
 ### 平台由来
 博主因为公司HR说还需要找一些实习生，后面在年级中收到一些简历，但是恕我直言，简历确实有点看不过去，所以....突然有个想法，能不能做一个简历模板制作平台，虽然WPS有很多模板，但是有些需要花钱啊，甚至有些程序猿想做一个html版的简历，始终找不到合适的，自己写又懒得写，emmmmm.....所以就有了这个Erek Resumes 平台。
