@@ -1,4 +1,7 @@
 # Erek Resumes
+<div align='center'>
+    <img src='https://github.com/PDKSophia/YunResume/raw/master/image/logs.png' height=150> 
+</div>
 
 ![](https://img.shields.io/badge/erek--resume-2.0.1-red.svg)
 ![](https://img.shields.io/badge/vuex-3.0.1-blue.svg)
