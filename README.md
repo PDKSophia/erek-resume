@@ -1,7 +1,5 @@
 # Erek Resumes
 <div align='center'>
-<img src='https://github.com/PDKSophia/YunResume/raw/master/image/icon.png' height=150 /> 
-<br>
 <img src='https://github.com/PDKSophia/YunResume/raw/master/image/logs.png' height=150 /> 
 
 ![](https://img.shields.io/badge/erek--resume-2.0.1-red.svg)
