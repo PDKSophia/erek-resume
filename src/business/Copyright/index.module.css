@@ -1,0 +1,27 @@
+/**
+ * @Desc: 移动端-版权组件 CSS
+ * @Author: pengdaokuan
+ * @CreateDate:  2019-11-16
+ * @LastModify:  2019-11-16
+ */
+.footer {
+  background-color: #f4f4f4;
+  padding-bottom: 6px;
+  padding-top: 16px;
+}
+.copyright {
+  margin: 0 55px;
+  opacity: 0.6;
+  font-size: 14px;
+  color: #919299;
+  text-align: center;
+  line-height: 56px;
+}
+.filing {
+  opacity: 0.6;
+  font-size: 14px;
+  color: #919299;
+  text-align: center;
+  line-height: 24px;
+  padding: 3.4vw 0 4.2vw;
+}

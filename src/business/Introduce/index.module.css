@@ -1,0 +1,27 @@
+/**
+ * @Desc: 模块介绍
+ * @Author: pengdaokuan
+ * @CreateDate:  2019-11-28
+ * @LastModify:  2019-11-28
+ */
+.introduce {
+  text-align: left;
+  background-color: #ffffff;
+}
+.title {
+  font-size: 24px;
+  color: #49494d;
+  line-height: 36px;
+  margin-bottom: 12px;
+}
+.summary {
+  font-size: 14px;
+  color: #616266;
+  line-height: 26px;
+}
+.tips {
+  margin-top: 10px;
+  font-size: 10px;
+  color: #919299;
+  line-height: 14px;
+}
