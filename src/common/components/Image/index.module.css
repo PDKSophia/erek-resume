@@ -4,11 +4,11 @@
  * @CreateDate:  2019-11-28
  * @LastModify:  2019-11-28
  */
-.logo {
+.cover {
   width: 7.2rem;
   height: 7.2rem;
 }
-.logo > img {
+.cover > img {
   width: 100%;
   height: 100%;
 }
