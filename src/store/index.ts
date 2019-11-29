@@ -1,22 +1,10 @@
-import { createStore, applyMiddleware, combineReducers } from 'redux'
-import thunk from 'redux-thunk'
-// import { createLogger } from 'redux-logger'
+/**
+ * @Desc: Redux
+ * @Author: pengdaokuan
+ * @CreateTime: 2019-11-29
+ * @LastModify: 2019-11-29
+ */
+import { createStore } from "redux";
+import reducers from "./reducers";
 
-import user from './user'
-
-const rootReducer = combineReducers({
-  user
-})
-
-// const logger = createLogger()
-const middlewares = [thunk]
-
-// 非线上环境打印redux日志信息
-// if (process.env.NODE_ENV !== 'production') {
-//   middlewares.push(logger)
-// }
-
-export default function configStore() {
-  const store = createStore(rootReducer, applyMiddleware(...middlewares))
-  return store
-}
+export default createStore(reducers, {});
