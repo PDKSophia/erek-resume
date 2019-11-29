@@ -6,11 +6,25 @@
  */
 .container {
   height: 100vh;
-  width: 100vw;
   position: relative;
   text-align: center;
+  background-color: #27292c;
+}
+.content {
+  width: 100%;
+  padding-top: calc(3vh + 60px);
+}
+.logo {
+  width: 300px;
+  margin: 0 auto;
 }
 
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 .footer {
   position: fixed;
   bottom: 0;

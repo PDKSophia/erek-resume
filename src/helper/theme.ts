@@ -4,43 +4,51 @@
  * @CreateDate:  2019-11-28
  * @LastModify:  2019-11-28
  */
+import { ThemeListFace } from "./interface";
+
 export const themeType = {
-  DARK: 'dark',
-  BLUE: 'blue',
-  GREEN: 'green',
-  PURPLE: 'purple',
-  PRINCESS: 'princess'
-}
+  DARK: "dark",
+  BLUE: "blue",
+  GREEN: "green",
+  PURPLE: "purple",
+  PRINCESS: "princess"
+};
 
 /**
  * @property {bgColor} 背景色
  * @property {textColor} 文案主题色
  * @property {hoverColor} 悬浮button颜色
  */
-export const themeList = {
+
+export const themeList: ThemeListFace = {
   dark: {
-    bgColor: '#27292c',
-    textColor: '#aaaaaa',
-    hoverColor: '#27292c'
+    bgColor: "#232323",
+    textColor: "#ffffff",
+    hoverColor: "#27292c",
+    uniqueKey: "dark"
   },
   blue: {
-    bgColor: '#35495e',
-    textColor: '#6992bf',
-    hoverColor: '#88bcf1'
+    bgColor: "#35495e",
+    textColor: "#ffffff",
+    hoverColor: "#88bcf1",
+    uniqueKey: "blue"
   },
   green: {
-    bgColor: '#945454',
-    textColor: '#ffffff',
-    hoverColor: '#945454'
-  },
-  purple: {
-    bgColor: '#282446',
-    textColor: '#ffffff',
-    hoverColor: '#282446'
+    bgColor: "#416f5b",
+    textColor: "#ffffff",
+    hoverColor: "#416f5b",
+    uniqueKey: "green"
   },
   princess: {
-    bgColor: '#945454',
-    textColor: '#ffffff',
-    hoverColor: '#945454'
+    bgColor: "#945454",
+    textColor: "#ffffff",
+    hoverColor: "#945454",
+    uniqueKey: "princess"
+  },
+  purple: {
+    bgColor: "#282446",
+    textColor: "#ffffff",
+    hoverColor: "#282446",
+    uniqueKey: "purple"
   }
-}
+};
