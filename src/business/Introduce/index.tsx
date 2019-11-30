@@ -4,11 +4,11 @@
  * @CreateDate:  2019-11-28
  * @LastModify:  2019-11-28
  */
-import React from 'react'
-import styles from './index.module.css'
-import classnames from 'classnames/bind'
-import { introduceProps } from '../../helper/defaultProps'
-let cx = classnames.bind(styles)
+import React from "react";
+import styles from "./index.module.css";
+import classnames from "classnames/bind";
+import { introduceProps } from "../../lib/defaultProps";
+let cx = classnames.bind(styles);
 
 /**
  * @class Introduce
@@ -20,15 +20,15 @@ let cx = classnames.bind(styles)
  * @property {string} identity - 标识
  */
 interface Props {
-  title: Array<String>
-  summary: Array<String>
-  tips?: Array<String>
-  style?: object
-  identity?: string
+  title: Array<String>;
+  summary: Array<String>;
+  tips?: Array<String>;
+  style?: object;
+  identity?: string;
 }
 
 class Introduce extends React.PureComponent<Props> {
-  public static namespace: string = '模块介绍'
+  public static namespace: string = "模块介绍";
 
   public static defaultProps: Props = {
     title: introduceProps.TITLE,
@@ -36,10 +36,10 @@ class Introduce extends React.PureComponent<Props> {
     tips: introduceProps.TIPS,
     style: introduceProps.STYLE,
     identity: introduceProps.IDENTITY
-  }
+  };
 
   render() {
-    const { title, summary, style, identity, tips } = this.props
+    const { title, summary, style, identity, tips } = this.props;
     return (
       <div
         className={cx({
@@ -56,7 +56,7 @@ class Introduce extends React.PureComponent<Props> {
           {title &&
             title.length > 0 &&
             title.map((item: any, index: number) => {
-              return <p key={index}>{item}</p>
+              return <p key={index}>{item}</p>;
             })}
         </div>
         <div
@@ -67,7 +67,7 @@ class Introduce extends React.PureComponent<Props> {
           {summary &&
             summary.length > 0 &&
             summary.map((item: any, index: number) => {
-              return <p key={index}>{item}</p>
+              return <p key={index}>{item}</p>;
             })}
         </div>
         <div
@@ -78,12 +78,12 @@ class Introduce extends React.PureComponent<Props> {
           {tips &&
             tips.length > 0 &&
             tips.map((item: any, index: number) => {
-              return <p key={index}>{item}</p>
+              return <p key={index}>{item}</p>;
             })}
         </div>
       </div>
-    )
+    );
   }
 }
 
-export default Introduce
+export default Introduce;

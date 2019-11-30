@@ -7,8 +7,8 @@
 import React, { useState, useEffect } from "react";
 import styles from "./index.module.css";
 import classnames from "classnames/bind";
-import { themeList } from "../../helper/theme";
-import { ThemeStateFace } from "../../helper/interface";
+import { themeList } from "../../lib/theme";
+import { ThemeStateFace } from "../../lib/interface";
 let cx = classnames.bind(styles);
 
 /**

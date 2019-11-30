@@ -13,10 +13,10 @@ import Image from "../../common/components/Image";
 import ThemeBox from "../../business/ThemeBox";
 import Introduce from "../../business/Introduce";
 import Copyright from "../../business/Copyright";
-import { product } from "../../helper/constant";
+import { product } from "../../lib/constant";
 import { AppStoreType } from "../../store/reducers";
-import { themeList } from "../../helper/theme";
-import { ThemeStateFace } from "../../helper/interface";
+import { themeList } from "../../lib/theme";
+import { ThemeStateFace } from "../../lib/interface";
 let cx = classnames.bind(styles);
 
 /**

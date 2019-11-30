@@ -6,7 +6,7 @@
  */
 import React from "react";
 import styles from "./index.module.css";
-import { copyright } from "../../helper/constant";
+import { copyright } from "../../lib/constant";
 
 /**
  * @class Copyright
