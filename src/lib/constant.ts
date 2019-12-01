@@ -4,7 +4,29 @@
  * @CreateDate:  2019-11-23
  * @LastModify:  2019-11-23
  */
-export const product = {
+export const menu = [
+  {
+    url: '/',
+    key: 'intro',
+    text: '介绍',
+  },
+  {
+    url: '/',
+    key: 'resume',
+    text: '简历',
+  },
+  {
+    url: '/template',
+    key: 'template',
+    text: '模板',
+  },
+  {
+    url: '/',
+    key: 'code',
+    text: '源码',
+  }
+]
+ export const product = {
   LOGO: require('../assets/logo.png'),
   TITLE: ['Erek Resumes'],
   SUMMARY: ['一个模板简历制作平台, 让你的简历更加出众 ~'],

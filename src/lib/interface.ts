@@ -14,3 +14,9 @@ export interface ThemeStateFace {
 export interface ThemeListFace {
   [key: string]: any;
 }
+
+export interface MenuStateFace {
+  url: string
+  key: string
+  text: string
+}
