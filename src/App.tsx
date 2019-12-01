@@ -4,11 +4,14 @@
  * @CreateTime: 2019-11-23
  * @LastModify: 2019-11-23
  */
-import React from "react";
+
+ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Home from "./client/Home";
-import { Provider, useSelector } from "react-redux";
+import { Provider } from "react-redux";
 import store from "./store";
+import RouterComponent from "./routers";
+import Authority from './routers/Authority'
+
 /**
  * @class App
  * @extends {React.Component}
@@ -18,7 +21,8 @@ export default function App() {
     <Provider store={store}>
       <Router>
         <Switch>
-          <Route path="/" component={Home} exact />
+          <Route path="/" component={RouterComponent} exact />
+          <Route path="/login" component={Authority} exact />
         </Switch>
       </Router>
     </Provider>

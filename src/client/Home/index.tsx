@@ -2,7 +2,7 @@
  * @Desc: 首页
  * @Author: pengdaokuan
  * @CreateTime: 2019-11-23
- * @LastModify: 2019-11-28
+ * @LastModify: 2019-12-01
  */
 import React, { useEffect, useCallback } from "react";
 import styles from "./index.module.css";
@@ -13,6 +13,7 @@ import Image from "../../common/components/Image";
 import ThemeBox from "../../business/ThemeBox";
 import Introduce from "../../business/Introduce";
 import Copyright from "../../business/Copyright";
+import Menu from './Menu'
 import { product } from "../../lib/constant";
 import { AppStoreType } from "../../store/reducers";
 import { themeList } from "../../lib/theme";
@@ -24,7 +25,7 @@ let cx = classnames.bind(styles);
  * @extends {React.Hooks}
  */
 
-export default function Home() {
+export default function Home(props: any) {
   const dispatch = useDispatch();
   const currentTheme = useSelector(
     (state: AppStoreType) => state.themeStore.theme
@@ -48,7 +49,6 @@ export default function Home() {
   }, []);
 
   return (
-    <React.Fragment>
       <div
         className={cx({
           container: true
@@ -65,7 +65,6 @@ export default function Home() {
               logo: true,
               flex: true
             })}
-            onClick={() => console.log(123)}
           >
             <Image cover={product.LOGO} />
           </div>
@@ -91,18 +90,24 @@ export default function Home() {
           >
             <ThemeBox callbackFunc={themeCallbackFunc} />
           </div>
+          <div 
+            className={cx({
+              menu: true
+            })}
+          >
+            <Menu history={props.history} />
+          </div>
+        </div>
+        <div
+          className={cx({
+            footer: true
+          })}
+        >
+          <Copyright
+            bgColor={currentTheme.bgColor}
+            textColor={currentTheme.textColor}
+          />
         </div>
       </div>
-      <div
-        className={cx({
-          footer: true
-        })}
-      >
-        <Copyright
-          bgColor={currentTheme.bgColor}
-          textColor={currentTheme.textColor}
-        />
-      </div>
-    </React.Fragment>
   );
 }

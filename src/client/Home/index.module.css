@@ -12,11 +12,17 @@
 }
 .content {
   width: 100%;
-  padding-top: calc(3vh + 60px);
+  padding-top: calc(8vh + 60px);
 }
 .logo {
   width: 300px;
   margin: 0 auto;
+}
+.menu {
+  width: 300px;
+  margin: auto;
+  margin-top: 30px;
+  cursor: pointer;
 }
 
 .flex {
