@@ -1,0 +1,36 @@
+/**
+ * @Desc: 模板组件CSS
+ * @Author: pengdaokuan
+ * @CreateDate:  2019-12-01
+ * @LastModify:  2019-12-01
+ */
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-align: center;
+  background-color: #27292c;
+}
+.logo {
+  width: 300px;
+  margin: 0 auto;
+  padding-top: calc(8vh + 60px);
+}
+.menu {
+  width: 300px;
+  margin: auto;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
