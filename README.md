@@ -44,6 +44,23 @@ npm install
 npm start
 ```
 
+## 文档
+
+- [关于 Erek-Resume](./docs/README.md)
+- [快速开始](./docs/QuickStart.md)
+- [React Hooks](./docs/ReactHooks.md)
+  - [useState](./docs/ReactHooks.md)
+  - [useEffect](./docs/ReactHooks.md)
+  - [useCallback](./docs/ReactHooks.md)
+  - [useDispatch](./docs/ReactHooks.md)
+  - [useSelector](./docs/ReactHooks.md)
+  - [hooks 与 redux 结合](./docs/ReactHooks.md)
+- [功能逻辑](./docs/Action/README.md)
+  - [全局主题色的处理](./docs/Action/README.md)
+  - [简历输入模块设计](./docs/Action/README.md)
+  - [简历解析模块设计](./docs/Action/README.md)
+  - [数据过多时，如何考虑优先显示](./docs/Action/README.md)
+
 ## 部分界面
 
 <img src='https://github.com/PDKSophia/YunResume/raw/master/image/lo1.png'>
