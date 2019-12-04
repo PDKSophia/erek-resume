@@ -2,9 +2,9 @@
  * @Desc: 首页
  * @Author: pengdaokuan
  * @CreateTime: 2019-11-23
- * @LastModify: 2019-12-01
+ * @LastModify: 2019-12-04
  */
-import React, { useEffect, useCallback } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import styles from "./index.module.css";
 import classnames from "classnames/bind";
 import { useDispatch, useSelector } from "react-redux";
@@ -13,11 +13,13 @@ import Image from "../../common/components/Image";
 import ThemeBox from "../../business/ThemeBox";
 import Introduce from "../../business/Introduce";
 import Copyright from "../../business/Copyright";
-import Menu from './Menu'
+import Menu from "./Menu";
 import { product } from "../../lib/constant";
 import { AppStoreType } from "../../store/reducers";
 import { themeList } from "../../lib/theme";
 import { ThemeStateFace } from "../../lib/interface";
+import { useActiveTheme } from "../../common/hooks/useTheme";
+import { getSessionStorage, setSessionStorage } from "../../utils/index";
 let cx = classnames.bind(styles);
 
 /**
@@ -30,11 +32,15 @@ export default function Home(props: any) {
   const currentTheme = useSelector(
     (state: AppStoreType) => state.themeStore.theme
   );
+  const [useThemeCallbackResult] = useActiveTheme();
 
   useEffect(() => {
-    setThemeFunc(themeList.dark);
+    console.log(useThemeCallbackResult);
   }, []);
 
+  /**
+   * 设置当前主题
+   */
   function setThemeFunc(item: ThemeStateFace) {
     dispatch(
       themeAction.selectThemeState({
@@ -43,71 +49,74 @@ export default function Home(props: any) {
     );
   }
 
-  // theme 主题回调
+  /**
+   * themeBox 回调函数
+   */
   const themeCallbackFunc = useCallback((item: ThemeStateFace) => {
+    setSessionStorage("currentTheme", { ...item });
     setThemeFunc(item);
   }, []);
 
   return (
+    <div
+      className={cx({
+        container: true
+      })}
+      style={{ backgroundColor: currentTheme.bgColor }}
+    >
       <div
         className={cx({
-          container: true
+          content: true
         })}
-        style={{ backgroundColor: currentTheme.bgColor }}
       >
         <div
           className={cx({
-            content: true
+            logo: true,
+            flex: true
           })}
         >
-          <div
-            className={cx({
-              logo: true,
-              flex: true
-            })}
-          >
-            <Image cover={product.LOGO} />
-          </div>
-          <div
-            className={cx({
-              flex: true
-            })}
-          >
-            <Introduce
-              title={product.TITLE}
-              summary={product.SUMMARY}
-              style={{
-                textAlign: "center",
-                backgroundColor: currentTheme.bgColor,
-                color: currentTheme.textColor
-              }}
-            />
-          </div>
-          <div
-            className={cx({
-              flex: true
-            })}
-          >
-            <ThemeBox callbackFunc={themeCallbackFunc} />
-          </div>
-          <div 
-            className={cx({
-              menu: true
-            })}
-          >
-            <Menu history={props.history} />
-          </div>
+          <Image cover={product.LOGO} />
         </div>
         <div
           className={cx({
-            footer: true
+            flex: true
           })}
         >
-          <Copyright
-            bgColor={currentTheme.bgColor}
-            textColor={currentTheme.textColor}
+          <Introduce
+            title={product.TITLE}
+            summary={product.SUMMARY}
+            style={{
+              textAlign: "center",
+              backgroundColor: currentTheme.bgColor,
+              color: currentTheme.textColor
+            }}
           />
         </div>
+        <div
+          className={cx({
+            flex: true
+          })}
+        >
+          <ThemeBox callbackFunc={themeCallbackFunc} />
+        </div>
+        <div
+          className={cx({
+            menu: true
+          })}
+        >
+          <Menu history={props.history} />
+        </div>
       </div>
+      <div
+        className={cx({
+          footer: true
+        })}
+      >
+        <Copyright
+          bgColor={currentTheme.bgColor}
+          textColor={currentTheme.textColor}
+        />
+      </div>
+    </div>
   );
 }
