@@ -47,7 +47,7 @@ class Grid extends React.PureComponent<Props> {
         style={style}
       >
         {list &&
-          list.map((item: MenuStateFace) => {
+          [...list].map((item: MenuStateFace) => {
             return (
               <div
                 key={item.key}

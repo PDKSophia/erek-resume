@@ -48,6 +48,5 @@ export function useActiveTheme() {
   }
 
   setSessionStorage("activeTheme", activeTheme);
-  console.log(reduxTheme);
   return activeTheme;
 }

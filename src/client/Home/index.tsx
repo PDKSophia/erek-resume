@@ -16,10 +16,9 @@ import Copyright from "../../business/Copyright";
 import Menu from "./Menu";
 import { product } from "../../lib/constant";
 import { AppStoreType } from "../../store/reducers";
-import { themeList } from "../../lib/theme";
 import { ThemeStateFace } from "../../lib/interface";
 import { useActiveTheme } from "../../common/hooks/useTheme";
-import { getSessionStorage, setSessionStorage } from "../../utils/index";
+import { setSessionStorage } from "../../utils/index";
 let cx = classnames.bind(styles);
 
 /**
@@ -32,10 +31,10 @@ export default function Home(props: any) {
   const currentTheme = useSelector(
     (state: AppStoreType) => state.themeStore.theme
   );
-  const [useThemeCallbackResult] = useActiveTheme();
 
   useEffect(() => {
-    console.log(useThemeCallbackResult);
+    // 这里存在问题
+    // const useThemeCallbackResult = useActiveTheme();
   }, []);
 
   /**

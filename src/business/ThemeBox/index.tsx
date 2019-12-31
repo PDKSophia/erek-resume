@@ -48,7 +48,7 @@ export default function ThemeBox(props: Props) {
       })}
     >
       {list &&
-        list.map((item: ThemeStateFace, index: number) => {
+        [...list].map((item: ThemeStateFace, index: number) => {
           return (
             <div
               key={index}

@@ -55,7 +55,7 @@ class Introduce extends React.PureComponent<Props> {
         >
           {title &&
             title.length > 0 &&
-            title.map((item: any, index: number) => {
+            [...title].map((item: any, index: number) => {
               return <p key={index}>{item}</p>;
             })}
         </div>
@@ -66,7 +66,7 @@ class Introduce extends React.PureComponent<Props> {
         >
           {summary &&
             summary.length > 0 &&
-            summary.map((item: any, index: number) => {
+            [...summary].map((item: any, index: number) => {
               return <p key={index}>{item}</p>;
             })}
         </div>
@@ -77,7 +77,7 @@ class Introduce extends React.PureComponent<Props> {
         >
           {tips &&
             tips.length > 0 &&
-            tips.map((item: any, index: number) => {
+            [...tips].map((item: any, index: number) => {
               return <p key={index}>{item}</p>;
             })}
         </div>
