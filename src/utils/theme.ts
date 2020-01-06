@@ -6,7 +6,7 @@
  */
 
 import { themeList } from "../lib/theme";
-import { getSessionStorage } from "../utils";
+import { getLocalStorage } from "../utils";
 
 /**
  * 获取主题色
@@ -17,7 +17,7 @@ import { getSessionStorage } from "../utils";
 export function retrieveTheme() {
   let result: any = {};
   try {
-    let sessionTheme = getSessionStorage("currentTheme");
+    let sessionTheme = getLocalStorage("currentTheme");
     result = sessionTheme ? sessionTheme : themeList.dark;
   } catch (err) {
     result = { ...themeList.dark };

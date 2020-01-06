@@ -12,7 +12,7 @@ import store from "./store";
 import Home from "./client/Home";
 import Template from "./client/Template";
 import { retrieveTheme } from "./utils/theme";
-import { setSessionStorage } from "./utils/index";
+import { setLocalStorage } from "./utils/index";
 
 /**
  * @class App
@@ -21,7 +21,7 @@ import { setSessionStorage } from "./utils/index";
 export default function App() {
   useEffect(() => {
     const currentTheme = retrieveTheme();
-    setSessionStorage("currentTheme", currentTheme);
+    setLocalStorage("currentTheme", currentTheme);
   }, []);
 
   return (

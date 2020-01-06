@@ -18,7 +18,7 @@ import Menu from "./Menu";
 import { product } from "../../lib/constant";
 import { AppStoreType } from "../../store/reducers";
 import { ThemeStateFace } from "../../lib/interface";
-import { setSessionStorage } from "../../utils/index";
+import { setLocalStorage } from "../../utils/index";
 import { retrieveTheme } from "../../utils/theme";
 let cx = classnames.bind(styles);
 
@@ -35,7 +35,7 @@ export default function Home(props: any) {
 
   useEffect(() => {
     const activeTheme: any = !isEmpty(currentTheme) ? currentTheme : retrieveTheme()
-    setSessionStorage("currentTheme", activeTheme);
+    setLocalStorage("currentTheme", activeTheme);
     setThemeFunc(activeTheme);
   }, []);
 
@@ -50,7 +50,7 @@ export default function Home(props: any) {
 
    // themeBox 回调函数
   const themeCallbackFunc = useCallback((item: ThemeStateFace) => {
-    setSessionStorage("currentTheme", { ...item });
+    setLocalStorage("currentTheme", { ...item });
     setThemeFunc(item);
   }, []);
 

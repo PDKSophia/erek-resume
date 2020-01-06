@@ -20,24 +20,24 @@ export function isEmptyObject(obj: any) {
   return Object.keys(obj).length === 0 ? true : false;
 }
 /**
- * @desc 设置SessionStorage的key值
+ * @desc 设置LocalStorage的key值
  * @param {string} name - key
  * @param {string} value - vaule
  */
-export function setSessionStorage(name: string, value: any) {
+export function setLocalStorage(name: string, value: any) {
   if (value) {
-    sessionStorage.setItem(
+    localStorage.setItem(
       name,
       isString(value) ? value : JSON.stringify(value)
     );
   }
 }
 /**
- * @desc 获取SessionStorage的key值
+ * @desc 获取LocalStorage的key值
  * @param {string} name - key
  */
-export function getSessionStorage(name: string) {
-  let value = sessionStorage.getItem(name);
+export function getLocalStorage(name: string) {
+  let value = localStorage.getItem(name);
   if (value) {
     try {
       return JSON.parse(value);
