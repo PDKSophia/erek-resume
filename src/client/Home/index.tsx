@@ -7,6 +7,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import styles from "./index.module.css";
 import classnames from "classnames/bind";
+import { isEmpty } from "lodash";
 import { useDispatch, useSelector } from "react-redux";
 import * as themeAction from "../../store/theme/action";
 import Image from "../../common/components/Image";
@@ -17,8 +18,8 @@ import Menu from "./Menu";
 import { product } from "../../lib/constant";
 import { AppStoreType } from "../../store/reducers";
 import { ThemeStateFace } from "../../lib/interface";
-import { useActiveTheme } from "../../common/hooks/useTheme";
 import { setSessionStorage } from "../../utils/index";
+import { retrieveTheme } from "../../utils/theme";
 let cx = classnames.bind(styles);
 
 /**
@@ -33,13 +34,12 @@ export default function Home(props: any) {
   );
 
   useEffect(() => {
-    // 这里存在问题
-    // const useThemeCallbackResult = useActiveTheme();
+    const activeTheme: any = !isEmpty(currentTheme) ? currentTheme : retrieveTheme()
+    setSessionStorage("currentTheme", activeTheme);
+    setThemeFunc(activeTheme);
   }, []);
 
-  /**
-   * 设置当前主题
-   */
+  // 设置当前主题
   function setThemeFunc(item: ThemeStateFace) {
     dispatch(
       themeAction.selectThemeState({
@@ -48,9 +48,7 @@ export default function Home(props: any) {
     );
   }
 
-  /**
-   * themeBox 回调函数
-   */
+   // themeBox 回调函数
   const themeCallbackFunc = useCallback((item: ThemeStateFace) => {
     setSessionStorage("currentTheme", { ...item });
     setThemeFunc(item);

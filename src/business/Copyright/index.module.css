@@ -2,11 +2,11 @@
  * @Desc: 移动端-版权组件 CSS
  * @Author: pengdaokuan
  * @CreateDate:  2019-11-16
- * @LastModify:  2019-11-16
+ * @LastModify:  2020-01-06
  */
 .footer {
   background-color: #f4f4f4;
-  padding-bottom: 6px;
+  padding-bottom: 16px;
   padding-top: 16px;
 }
 .copyright {
