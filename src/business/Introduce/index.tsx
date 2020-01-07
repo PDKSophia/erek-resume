@@ -20,21 +20,21 @@ let cx = classnames.bind(styles);
  * @property {string} identity - 标识
  */
 interface Props {
-  title: Array<String>;
-  summary: Array<String>;
-  tips?: Array<String>;
   style?: object;
   identity?: string;
+  title: Array<String>;
+  tips?: Array<String>;
+  summary: Array<String>;
 }
 
 class Introduce extends React.PureComponent<Props> {
   public static namespace: string = "模块介绍";
 
   public static defaultProps: Props = {
-    title: introduceProps.TITLE,
-    summary: introduceProps.SUMMARY,
     tips: introduceProps.TIPS,
     style: introduceProps.STYLE,
+    title: introduceProps.TITLE,
+    summary: introduceProps.SUMMARY,
     identity: introduceProps.IDENTITY
   };
 

@@ -7,24 +7,24 @@
 import React from "react";
 import styles from "./index.module.css";
 import classnames from "classnames/bind";
-import { gridProps } from '../../lib/defaultProps'
-import { MenuStateFace } from '../../lib/interface'
+import { gridProps } from "../../lib/defaultProps";
+import { MenuStateFace } from "../../lib/interface";
 let cx = classnames.bind(styles);
 
 /**
  * @hooks Grid
- * @extends {React.Hooks}
+ * @extends {React.Component}
  * @property {array} list - 数据
  * @property {object} style - 样式
  * @property {number} columns - 栅格数
  * @property {Function} callbackFunc - 回调函数
- * 
+ *
  */
 interface Props {
-  list: Array<MenuStateFace>
-  style?: object
-  columns?: number
-  callbackFunc?: Function
+  list: Array<MenuStateFace>;
+  style?: object;
+  columns?: number;
+  callbackFunc?: Function;
 }
 
 class Grid extends React.PureComponent<Props> {
@@ -37,7 +37,7 @@ class Grid extends React.PureComponent<Props> {
   };
 
   render() {
-    const { list, style, columns, callbackFunc } = this.props
+    const { list, style, columns, callbackFunc } = this.props;
     return (
       <div
         className={cx({
@@ -58,13 +58,13 @@ class Grid extends React.PureComponent<Props> {
                   [`columns-${columns}`]: true
                 })}
               >
-              {item.text}
+                {item.text}
               </div>
             );
           })}
       </div>
-    )
+    );
   }
 }
 
-export default Grid
+export default Grid;
