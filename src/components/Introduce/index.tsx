@@ -7,7 +7,7 @@
 import React from "react";
 import styles from "./index.module.css";
 import classnames from "classnames/bind";
-import { introduceProps } from "../../lib/defaultProps";
+import { introduceProps } from "../../common/constants/defaultProps";
 let cx = classnames.bind(styles);
 
 /**

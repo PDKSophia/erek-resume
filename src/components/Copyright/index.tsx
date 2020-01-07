@@ -7,7 +7,7 @@
 import React from "react";
 import styles from "./index.module.css";
 import { useSelector } from "react-redux";
-import { COPYRIGHT } from "../../lib/constant";
+import { COPYRIGHT } from "../../common/constants";
 import { AppStoreType } from "../../store/reducers";
 
 /**

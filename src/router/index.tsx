@@ -10,10 +10,12 @@ import { Route, Switch } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setLocalStorage } from "../utils";
 import { getCurrentTheme } from "../utils/theme";
-import Home from "../client/Home";
-import Template from "../client/Template";
-import { ThemeStateFace } from "../lib/interface";
+import { ThemeStateFace } from "../config/interface";
 import * as themeAction from "../store/theme/action";
+// 页面
+import Home from "../client/Home";
+import Platform from "../client/Platform";
+import Template from "../client/Template";
 
 /**
  * @class App
@@ -41,6 +43,7 @@ export default function App() {
     <div>
       <Switch>
         <Route path="/home" component={Home} />
+        <Route path="/platform" component={Platform} />
         <Route path="/template" component={Template} />
       </Switch>
     </div>

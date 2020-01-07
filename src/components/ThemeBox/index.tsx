@@ -7,9 +7,9 @@
 import React, { useState, useEffect } from "react";
 import styles from "./index.module.css";
 import classnames from "classnames/bind";
-import { themeList } from "../../lib/theme";
-import { ThemeStateFace } from "../../lib/interface";
-import { getThemeList } from '../../utils/theme'
+import { themeList } from "../../config/theme";
+import { ThemeStateFace } from "../../config/interface";
+import { getThemeList } from "../../utils/theme";
 let cx = classnames.bind(styles);
 
 /**

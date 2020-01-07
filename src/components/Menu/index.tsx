@@ -8,7 +8,7 @@ import React, { useCallback } from "react";
 import Grid from "../Grid";
 import { useSelector } from "react-redux";
 import { AppStoreType } from "../../store/reducers";
-import { MenuStateFace } from "../../lib/interface";
+import { MenuStateFace } from "../../config/interface";
 
 declare interface Props {
   list: Array<MenuStateFace>;

@@ -7,8 +7,8 @@
 import React from "react";
 import styles from "./index.module.css";
 import classnames from "classnames/bind";
-import { gridProps } from "../../lib/defaultProps";
-import { MenuStateFace } from "../../lib/interface";
+import { gridProps } from "../../common/constants/defaultProps";
+import { MenuStateFace } from "../../config/interface";
 let cx = classnames.bind(styles);
 
 /**

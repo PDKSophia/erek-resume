@@ -5,7 +5,7 @@
  * @LastModify: 2020-01-06
  */
 
-import { themeList } from "../lib/theme";
+import { themeList } from "../config/theme";
 import { getLocalStorage } from "../utils";
 
 /**
