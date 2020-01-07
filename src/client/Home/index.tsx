@@ -2,9 +2,9 @@
  * @Desc: 首页
  * @Author: pengdaokuan
  * @CreateTime: 2019-11-23
- * @LastModify: 2019-12-04
+ * @LastModify: 2020-01-07
  */
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useEffect, useCallback } from "react";
 import styles from "./index.module.css";
 import classnames from "classnames/bind";
 import { isEmpty } from "lodash";
@@ -14,12 +14,12 @@ import Image from "../../common/components/Image";
 import ThemeBox from "../../business/ThemeBox";
 import Introduce from "../../business/Introduce";
 import Copyright from "../../business/Copyright";
-import Menu from "./Menu";
-import { product } from "../../lib/constant";
+import Menu from "../../business/Menu";
+import { PRODUCT_MENU, PRODUCT } from "../../lib/constant";
 import { AppStoreType } from "../../store/reducers";
 import { ThemeStateFace } from "../../lib/interface";
 import { setLocalStorage } from "../../utils/index";
-import { retrieveTheme } from "../../utils/theme";
+import { getCurrentTheme } from "../../utils/theme";
 let cx = classnames.bind(styles);
 
 /**
@@ -34,13 +34,15 @@ export default function Home(props: any) {
   );
 
   useEffect(() => {
-    const activeTheme: any = !isEmpty(currentTheme) ? currentTheme : retrieveTheme()
+    const activeTheme: any = !isEmpty(currentTheme)
+      ? currentTheme
+      : getCurrentTheme();
     setLocalStorage("currentTheme", activeTheme);
-    setThemeFunc(activeTheme);
+    setCurrentTheme(activeTheme);
   }, []);
 
   // 设置当前主题
-  function setThemeFunc(item: ThemeStateFace) {
+  function setCurrentTheme(item: ThemeStateFace) {
     dispatch(
       themeAction.selectThemeState({
         ...item
@@ -48,10 +50,10 @@ export default function Home(props: any) {
     );
   }
 
-   // themeBox 回调函数
+  // themeBox 回调函数
   const themeCallbackFunc = useCallback((item: ThemeStateFace) => {
     setLocalStorage("currentTheme", { ...item });
-    setThemeFunc(item);
+    setCurrentTheme(item);
   }, []);
 
   return (
@@ -72,7 +74,7 @@ export default function Home(props: any) {
             flex: true
           })}
         >
-          <Image cover={product.LOGO} />
+          <Image cover={PRODUCT.LOGO} />
         </div>
         <div
           className={cx({
@@ -80,8 +82,8 @@ export default function Home(props: any) {
           })}
         >
           <Introduce
-            title={product.TITLE}
-            summary={product.SUMMARY}
+            title={PRODUCT.TITLE}
+            summary={PRODUCT.SUMMARY}
             style={{
               textAlign: "center",
               backgroundColor: currentTheme.bgColor,
@@ -101,7 +103,7 @@ export default function Home(props: any) {
             menu: true
           })}
         >
-          <Menu history={props.history} />
+          <Menu list={PRODUCT_MENU} columns={4} history={props.history} />
         </div>
       </div>
       <div
