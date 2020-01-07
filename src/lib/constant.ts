@@ -4,7 +4,8 @@
  * @CreateDate:  2019-11-23
  * @LastModify:  2019-11-23
  */
-export const menu = [
+// 菜单栏
+export const PRODUCT_MENU = [
   {
     url: '/',
     key: 'intro',
@@ -26,13 +27,42 @@ export const menu = [
     text: '源码',
   }
 ]
- export const product = {
+
+// 首页介绍文案
+export const PRODUCT = {
   LOGO: require('../assets/logo.png'),
   TITLE: ['Erek Resumes'],
   SUMMARY: ['一个模板简历制作平台, 让你的简历更加出众 ~'],
 }
 
-export const author = {
+// 模板介绍文案
+export const TEMPLATE = {
+  LOGO: require('../assets/logo.png'),
+  TITLE: ['Learn About'],
+  SUMMARY: [''],
+}
+
+// 模板菜单栏
+export const TEMPLATE_MENU = [
+  {
+    url: '/',
+    key: 'hot',
+    text: '热门模板',
+  },
+  {
+    url: '/',
+    key: 'new',
+    text: '最新模板',
+  },
+  {
+    url: '/',
+    key: 'used',
+    text: '使用过的',
+  }
+]
+
+// 作者信息
+export const AUTHOR = {
   NAME: '彭道宽',
   WEIBO: '彭道宽',
   WECHAR: 'PPPengDK',
@@ -41,7 +71,8 @@ export const author = {
   JUEJIN: 'https://juejin.im/user/594ca8a35188250d892f4139'
 }
 
-export const copyright = {
+// 版权信息
+export const COPYRIGHT = {
   PLATFORM: 'github',
   FROMDATE: '2019',
   CURRENTDATE: '2019'
