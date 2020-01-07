@@ -5,12 +5,11 @@
  * @LastModify: 2020-01-07
  */
 
-import React, { useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import React from "react";
+import { BrowserRouter, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import store from "./store";
 import RouterComponent from "./router";
-
 /**
  * @class App
  * @extends {React.Hooks}
@@ -18,11 +17,9 @@ import RouterComponent from "./router";
 export default function App() {
   return (
     <Provider store={store}>
-      <Router>
-        <Switch>
-          <Route path="/" component={RouterComponent} exact />
-        </Switch>
-      </Router>
+      <BrowserRouter>
+        <Route path="/" component={RouterComponent} />
+      </BrowserRouter>
     </Provider>
   );
 }
