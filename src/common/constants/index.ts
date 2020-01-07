@@ -35,7 +35,43 @@ export const PRODUCT_MENU = [
   }
 ];
 
-// 模板介绍文案
+// 平台介绍文案
+export const PLATFROM = {
+  LOGO: require("../../assets/logo.png"),
+  TITLE: ["平台简介"],
+  SUMMARY: [""]
+};
+
+// 平台介绍菜单栏
+export const PLATFROM_MENU = [
+  {
+    url: "/home",
+    key: "home",
+    text: "首页"
+  },
+  {
+    url: "/",
+    key: "hot",
+    text: "平台由来"
+  },
+  {
+    url: "/",
+    key: "new",
+    text: "更新日志"
+  },
+  {
+    url: "/",
+    key: "developer",
+    text: "开发人员"
+  }
+];
+// layout布局
+export const LAYPUT_MAPS = {
+  TEXT_COVER: "text_cover", // 左文右图
+  COVER_TEXT: "cover_text" // 左图右文
+};
+
+// 模板文案
 export const TEMPLATE = {
   LOGO: require("../../assets/logo.png"),
   TITLE: ["Template List"],

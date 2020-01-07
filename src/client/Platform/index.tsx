@@ -9,10 +9,11 @@ import styles from "./index.module.css";
 import classnames from "classnames/bind";
 import { useSelector } from "react-redux";
 import { AppStoreType } from "../../store/reducers";
-import { TEMPLATE_MENU, TEMPLATE } from "../../common/constants";
+import { PLATFROM_MENU, PLATFROM, LAYPUT_MAPS } from "../../common/constants";
 import Image from "../../common/components/Image";
 import Introduce from "../../components/Introduce";
 import Menu from "../../components/Menu";
+import Layout from "./components/Layout";
 let cx = classnames.bind(styles);
 
 export default function Platform(props: any) {
@@ -21,44 +22,34 @@ export default function Platform(props: any) {
   );
 
   return (
-    <div
-      className={cx({
-        container: true
-      })}
-      style={{
-        backgroundColor: currentTheme.bgColor,
-        color: currentTheme.textColor
-      }}
-    >
+    <div>
       <div
-        className={cx({
-          logo: true,
-          flex: true
-        })}
+        className={cx("container")}
+        style={{
+          backgroundColor: currentTheme.bgColor,
+          color: currentTheme.textColor
+        }}
       >
-        <Image cover={TEMPLATE.LOGO} />
+        <div className={cx("logo", "flex")}>
+          <Image cover={PLATFROM.LOGO} />
+        </div>
+        <div className={cx("flex")}>
+          <Introduce
+            title={PLATFROM.TITLE}
+            summary={PLATFROM.SUMMARY}
+            style={{
+              textAlign: "center",
+              backgroundColor: currentTheme.bgColor,
+              color: currentTheme.textColor
+            }}
+          />
+        </div>
+        <div className={cx("menu")}>
+          <Menu list={PLATFROM_MENU} columns={4} history={props.history} />
+        </div>
       </div>
-      <div
-        className={cx({
-          flex: true
-        })}
-      >
-        <Introduce
-          title={TEMPLATE.TITLE}
-          summary={TEMPLATE.SUMMARY}
-          style={{
-            textAlign: "center",
-            backgroundColor: currentTheme.bgColor,
-            color: currentTheme.textColor
-          }}
-        />
-      </div>
-      <div
-        className={cx({
-          menu: true
-        })}
-      >
-        <Menu list={TEMPLATE_MENU} columns={4} history={props.history} />
+      <div className={cx("layout")}>
+        <Layout layout={LAYPUT_MAPS.TEXT_COVER} />
       </div>
     </div>
   );
