@@ -38,7 +38,7 @@ export const PRODUCT_MENU = [
 // 平台介绍文案
 export const PLATFROM = {
   LOGO: require("../../assets/logo.png"),
-  TITLE: ["平台简介"],
+  TITLE: ["了解一下~"],
   SUMMARY: [""]
 };
 
@@ -52,7 +52,7 @@ export const PLATFROM_MENU = [
   {
     url: "/",
     key: "hot",
-    text: "平台由来"
+    text: "平台简介"
   },
   {
     url: "/",
@@ -83,17 +83,17 @@ export const TEMPLATE_MENU = [
   {
     url: "/home",
     key: "home",
-    text: "回到首页"
+    text: "首页"
   },
   {
     url: "/",
     key: "hot",
-    text: "热门模板"
+    text: "热门"
   },
   {
     url: "/",
     key: "new",
-    text: "最新模板"
+    text: "最新"
   },
   {
     url: "/",

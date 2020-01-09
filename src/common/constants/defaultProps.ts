@@ -22,3 +22,9 @@ export const introduceProps = {
   SUMMARY: ["一个模板简历制作平台, 让你的简历更加出众 ~"],
   IDENTITY: "product-introduce"
 };
+/* -----------------Commons Introduce Components--------------- */
+export const titleProps = {
+  TITLE: "erek-resume",
+  SIZE: "middle",
+  UNDERLINE: true
+};
