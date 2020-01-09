@@ -1,0 +1,58 @@
+/**
+ * @Desc: 标题组件-CSS
+ * @Author: pengdaokuan
+ * @CreateTime: 2019-11-18
+ * @LastModify: 2019-11-18
+ */
+.container {
+  width: 100%;
+  text-align: center;
+}
+.title {
+  margin: 0 auto;
+  line-height: 50px;
+  color: #49494d;
+}
+.content {
+  color: #616266;
+  text-align: center;
+  line-height: 28px;
+  margin-top: 16px;
+}
+.underline {
+  width: 80px;
+  height: 4px;
+  background: #f5a631;
+  border-radius: 2px;
+  margin: 12px auto 0;
+}
+.title-little {
+  font-size: 24px;
+}
+.title-small {
+  font-size: 28px;
+}
+.title-middle {
+  font-size: 30px;
+}
+.title-big {
+  font-size: 32px;
+}
+.title-super {
+  font-size: 36px;
+}
+.content-little {
+  font-size: 14px;
+}
+.content-small {
+  font-size: 16px;
+}
+.content-middle {
+  font-size: 18px;
+}
+.content-big {
+  font-size: 20px;
+}
+.content-super {
+  font-size: 22px;
+}
