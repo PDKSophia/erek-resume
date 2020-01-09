@@ -13,7 +13,7 @@ import { PLATFROM_MENU, PLATFROM, LAYPUT_MAPS } from "../../common/constants";
 import Image from "../../common/components/Image";
 import Introduce from "../../components/Introduce";
 import Menu from "../../components/Menu";
-import Layout from "./components/Layout";
+import Synopsis from "./components/Synopsis";
 let cx = classnames.bind(styles);
 
 export default function Platform(props: any) {
@@ -48,8 +48,8 @@ export default function Platform(props: any) {
           <Menu list={PLATFROM_MENU} columns={4} history={props.history} />
         </div>
       </div>
-      <div className={cx("layout")}>
-        <Layout layout={LAYPUT_MAPS.TEXT_COVER} />
+      <div className={cx("synopsis")}>
+        <Synopsis />
       </div>
     </div>
   );

@@ -20,3 +20,12 @@ export interface MenuStateFace {
   key: string;
   text: string;
 }
+
+export interface TitleStateFace  {
+  title: string;
+  size?: string;
+  style?: object;
+  summary?: string;
+  underline?: boolean;
+  theme?: any
+}

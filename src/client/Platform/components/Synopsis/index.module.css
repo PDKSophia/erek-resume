@@ -1,0 +1,13 @@
+.container {
+  margin-bottom: 24px;
+}
+.block {
+    
+}
+.block > .content {
+  line-height: 14px;
+  line-height: 28px;
+  color: #49494d;
+  margin: 24px auto;
+  max-width: 800px;
+}

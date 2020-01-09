@@ -24,6 +24,10 @@
   cursor: pointer;
 }
 
+.synopsis {
+  margin: 24px;
+}
+
 .flex {
   display: flex;
   justify-content: center;
