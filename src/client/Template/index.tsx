@@ -20,30 +20,22 @@ export default function Template(props: any) {
   const currentTheme = useSelector(
     (state: AppStoreType) => state.themeStore.theme
   );
+  function callbackFunc(item: any) {
+    console.log(item);
+  }
 
   return (
     <div
-      className={cx({
-        container: true
-      })}
+      className={cx("container")}
       style={{
         backgroundColor: currentTheme.bgColor,
         color: currentTheme.textColor
       }}
     >
-      <div
-        className={cx({
-          logo: true,
-          flex: true
-        })}
-      >
+      <div className={cx("logo", "flex")}>
         <Image cover={TEMPLATE.LOGO} />
       </div>
-      <div
-        className={cx({
-          flex: true
-        })}
-      >
+      <div className={cx("flex")}>
         <Introduce
           title={TEMPLATE.TITLE}
           summary={TEMPLATE.SUMMARY}
@@ -54,12 +46,8 @@ export default function Template(props: any) {
           }}
         />
       </div>
-      <div
-        className={cx({
-          menu: true
-        })}
-      >
-        <Menu list={TEMPLATE_MENU} columns={4} history={props.history} />
+      <div className={cx("menu")}>
+        <Menu list={TEMPLATE_MENU} columns={4} callbackFunc={callbackFunc} />
       </div>
     </div>
   );

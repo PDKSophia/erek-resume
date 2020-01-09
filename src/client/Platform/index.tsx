@@ -20,7 +20,9 @@ export default function Platform(props: any) {
   const currentTheme = useSelector(
     (state: AppStoreType) => state.themeStore.theme
   );
-
+  function callbackFunc(item: any) {
+    console.log(item);
+  }
   return (
     <div>
       <div
@@ -45,7 +47,7 @@ export default function Platform(props: any) {
           />
         </div>
         <div className={cx("menu")}>
-          <Menu list={PLATFROM_MENU} columns={4} history={props.history} />
+          <Menu list={PLATFROM_MENU} columns={4} callbackFunc={callbackFunc} />
         </div>
       </div>
       <div className={cx("synopsis")}>

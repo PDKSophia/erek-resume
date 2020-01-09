@@ -13,7 +13,7 @@ import { MenuStateFace } from "../../config/interface";
 declare interface Props {
   list: Array<MenuStateFace>;
   columns?: number;
-  history: any;
+  callbackFunc: Function
 }
 
 export default function Menu(props: Props) {
@@ -22,9 +22,7 @@ export default function Menu(props: Props) {
   );
 
   const handleClickMenu = useCallback((item: MenuStateFace) => {
-    if (props.history) {
-      props.history.push(item.url);
-    }
+    props.callbackFunc && props.callbackFunc(item)
   }, []);
 
   return (

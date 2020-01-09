@@ -56,31 +56,20 @@ export default function Home(props: any) {
     setCurrentTheme(item);
   }, []);
 
+  function callbackFunc(item: any) {
+    console.log(item);
+  }
+
   return (
     <div
-      className={cx({
-        container: true
-      })}
+      className={cx("container")}
       style={{ backgroundColor: currentTheme.bgColor }}
     >
-      <div
-        className={cx({
-          content: true
-        })}
-      >
-        <div
-          className={cx({
-            logo: true,
-            flex: true
-          })}
-        >
+      <div className={cx("content")}>
+        <div className={cx("logo", "flex")}>
           <Image cover={PRODUCT.LOGO} />
         </div>
-        <div
-          className={cx({
-            flex: true
-          })}
-        >
+        <div className={cx("flex")}>
           <Introduce
             title={PRODUCT.TITLE}
             summary={PRODUCT.SUMMARY}
@@ -91,19 +80,11 @@ export default function Home(props: any) {
             }}
           />
         </div>
-        <div
-          className={cx({
-            flex: true
-          })}
-        >
+        <div className={cx("flex")}>
           <ThemeBox callbackFunc={themeCallbackFunc} />
         </div>
-        <div
-          className={cx({
-            menu: true
-          })}
-        >
-          <Menu list={PRODUCT_MENU} columns={4} history={props.history} />
+        <div className={cx("menu")}>
+          <Menu list={PRODUCT_MENU} columns={4} callbackFunc={callbackFunc} />
         </div>
       </div>
       <div

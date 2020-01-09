@@ -2,12 +2,13 @@
   margin-bottom: 24px;
 }
 .block {
-    
+  margin: 36px 0;
+  clear: both;
 }
 .block > .content {
   line-height: 14px;
-  line-height: 28px;
+  line-height: 30px;
   color: #49494d;
-  margin: 24px auto;
+  margin: 24px auto 100px;
   max-width: 800px;
 }
