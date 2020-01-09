@@ -50,25 +50,26 @@ export const PLATFROM_MENU = [
     text: "首页"
   },
   {
-    url: "/",
-    key: "hot",
+    url: "/synopsis",
+    key: "synopsis",
     text: "平台简介"
   },
   {
-    url: "/",
-    key: "new",
+    url: "/update-log",
+    key: "update-log",
     text: "更新日志"
   },
   {
-    url: "/",
+    url: "/developer",
     key: "developer",
     text: "开发人员"
   }
 ];
-// layout布局
-export const LAYPUT_MAPS = {
-  TEXT_COVER: "text_cover", // 左文右图
-  COVER_TEXT: "cover_text" // 左图右文
+export const PLATFORM_MAPS = {
+  HOME: "home",
+  SYNOPSIS: "synopsis",
+  UPDATELOG: "update-log",
+  DEVELOPER: "developer"
 };
 
 // 模板文案
