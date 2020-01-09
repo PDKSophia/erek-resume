@@ -26,10 +26,7 @@ export function isEmptyObject(obj: any) {
  */
 export function setLocalStorage(name: string, value: any) {
   if (value) {
-    localStorage.setItem(
-      name,
-      isString(value) ? value : JSON.stringify(value)
-    );
+    localStorage.setItem(name, isString(value) ? value : JSON.stringify(value));
   }
 }
 /**
@@ -47,4 +44,26 @@ export function getLocalStorage(name: string) {
   } else {
     return null;
   }
+}
+
+/**
+ * @desc 对文本正则匹配关键字keyword,高亮keyword
+ * @param {String} text
+ * @param {String} keyword
+ * @returns {Array}
+ */
+export function handleRegKeyword(text: string, keyword: string) {
+  const regResult = text.replace(
+    new RegExp(
+      `>[^<]*?${keyword}[^>]*?<|^[^<]*?${keyword}|${keyword}[^>]*?$`,
+      "gi"
+    ),
+    (value: string) => {
+      return value.replace(
+        new RegExp(`(${keyword})`, "gi"),
+        `<span style="color:#ff7551;">$1</span>`
+      );
+    }
+  );
+  return regResult;
 }
