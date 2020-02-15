@@ -4,6 +4,44 @@
  * @CreateDate:  2020-01-09
  * @LastModify:  2020-01-09
  */
+// 平台介绍文案
+export const PLATFROM = {
+  LOGO: require("../../app/assets/logo.png"),
+  TITLE: ["了解一下~"],
+  SUMMARY: [""]
+};
+
+// 平台介绍菜单栏
+export const PLATFROM_MENU = [
+  {
+    url: "/home",
+    key: "home",
+    text: "首页"
+  },
+  {
+    url: "/synopsis",
+    key: "synopsis",
+    text: "平台简介"
+  },
+  {
+    url: "/update-log",
+    key: "update-log",
+    text: "更新日志"
+  },
+  {
+    url: "/developer",
+    key: "developer",
+    text: "开发人员"
+  }
+];
+
+export const PLATFORM_MAPS = {
+  HOME: "home",
+  SYNOPSIS: "synopsis",
+  UPDATELOG: "update-log",
+  DEVELOPER: "developer"
+};
+
 export const PLATFORM_INTRODUCE = {
   TITLE: "平台简介",
   CONTENT: [

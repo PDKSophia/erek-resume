@@ -8,8 +8,8 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 import { Provider } from "react-redux";
-import store from "./store";
-import RouterComponent from "./router";
+import store from "./app/store";
+import RouterComponent from "./app/router";
 /**
  * @class App
  * @extends {React.Hooks}

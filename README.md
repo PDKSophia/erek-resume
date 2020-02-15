@@ -42,6 +42,9 @@ npm install
 
 // 启动项目
 npm start
+
+// 打开浏览器，输入
+http://localhost:3000/home
 ```
 
 ## 文档
@@ -94,58 +97,22 @@ npm start
 ├── public
 │
 ├── src
-│   ├── assets                      图片等资源文件
-│   │
-│   ├── business                    业务组件
+│   ├── app                         主项目
+│   │    ├── assets                 图片等资源文件
+│   │    ├── client                 相关页面
+│   │    ├── components             业务组件
+│   │    ├── config                 业务相关配置
+│   │    ├── mock                   Mock数据
+│   │    ├── router                 路由文件
+│   │    ├── server                 服务器文件
+│   │    ├── store                  Redux
+│   │    └─ ...
 │   │
 │   ├── common                      公共模块
 │   │    ├─components               公共组件
-│   │    │    ├─Image
-│   │    │    └─ ...
-│   │    │
-│   │    ├─hooks                    自定义hooks
-│   │    │   ├─useTheme
-│   │    │   └─ ...
-│   │    │
-│   │    ├─templates                公共模板
-│   │    │
+│   │    ├─constants                全局常量
+│   │    ├─utils                    Utils处理
 │   │    └─ ...
-│   │
-│   ├── lib
-│   │    ├─constant                 常量定义
-│   │    ├─defaultProps             默认的Props
-│   │    ├─interface                一些常用的interface
-│   │    ├─theme                    主题色调
-│   │    └─ ...
-│   │
-│   ├── store                       redux
-│   │    ├─theme
-│   │    │   ├─action
-│   │    │   ├─reducer
-│   │    │   └─ ...
-│   │    ├─actionsType
-│   │    ├─index
-│   │    ├─reducers
-│   │    └─ ...
-│   │
-│   ├── utils                       utils处理函数
-│   │    ├─index
-│   │    └─ ...
-│   │
-│   ├── client
-│   │    ├─Home                     平台首页
-│   │    │   └─ ...
-│   │    │
-│   │    ├─Introduce                平台介绍
-│   │    │   └─ ...
-│   │    │
-│   │    ├─Template                 模板列表
-│   │    │   └─ ...
-│   │    │
-│   │    └─ ...
-│   │
-│   ├──
-│   └─
 │
 ├── index.tsx
 │

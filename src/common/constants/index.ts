@@ -6,7 +6,7 @@
  */
 // 首页介绍文案
 export const PRODUCT = {
-  LOGO: require("../../assets/logo.png"),
+  LOGO: require("../../app/assets/logo.png"),
   TITLE: ["Erek Resumes"],
   SUMMARY: ["一个模板简历制作平台, 让你的简历更加出众 ~"]
 };
@@ -35,46 +35,9 @@ export const PRODUCT_MENU = [
   }
 ];
 
-// 平台介绍文案
-export const PLATFROM = {
-  LOGO: require("../../assets/logo.png"),
-  TITLE: ["了解一下~"],
-  SUMMARY: [""]
-};
-
-// 平台介绍菜单栏
-export const PLATFROM_MENU = [
-  {
-    url: "/home",
-    key: "home",
-    text: "首页"
-  },
-  {
-    url: "/synopsis",
-    key: "synopsis",
-    text: "平台简介"
-  },
-  {
-    url: "/update-log",
-    key: "update-log",
-    text: "更新日志"
-  },
-  {
-    url: "/developer",
-    key: "developer",
-    text: "开发人员"
-  }
-];
-export const PLATFORM_MAPS = {
-  HOME: "home",
-  SYNOPSIS: "synopsis",
-  UPDATELOG: "update-log",
-  DEVELOPER: "developer"
-};
-
 // 模板文案
 export const TEMPLATE = {
-  LOGO: require("../../assets/logo.png"),
+  LOGO: require("../../app/assets/logo.png"),
   TITLE: ["Template List"],
   SUMMARY: [""]
 };

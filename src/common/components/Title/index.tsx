@@ -8,8 +8,8 @@ import React from "react";
 import styles from "./index.module.css";
 import classnames from "classnames/bind";
 import { connect } from "react-redux";
-import { AppStoreType } from "../../../store/reducers";
-import { TitleStateFace } from "../../../config/interface";
+import { AppStoreType } from "../../../app/store/reducers";
+import { TitleStateFace } from "../../../app/config/interface";
 import { titleProps } from "../../constants/defaultProps";
 const cx = classnames.bind(styles);
 
