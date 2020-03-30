@@ -7,23 +7,20 @@
 import * as actionTypes from "../actionsType";
 import { ThemeStateType } from "../theme/reducer";
 
-export function setTheme(theme: ThemeStateType["theme"]) {
+// 赋值当前主题
+export function changeThemeState(theme: ThemeStateType["theme"]) {
   return {
-    type: actionTypes.SET_THEME,
+    type: actionTypes.CHANGE_THEME,
     payload: {
       theme
     }
   };
 }
-export function selectThemeState(data: {
-  bgColor: string;
-  textColor: string;
-  hoverColor: string;
-}) {
+
+// 直接修改redux
+export function storeLibProps(params: any) {
   return {
-    type: actionTypes.SELECT_THEME,
-    payload: {
-      data: data
-    }
-  };
+    type: actionTypes.STORE_PROPS,
+    payload: params
+  }
 }

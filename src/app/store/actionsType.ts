@@ -4,5 +4,5 @@
  * @CreateTime: 2019-11-29
  * @LastModify: 2019-11-29
  */
-export const SELECT_THEME = "SELECT_THEME";
-export const SET_THEME = "SELECT_THEME";
+export const CHANGE_THEME = "CHANGE_THEME";
+export const STORE_PROPS = "STORE_PROPS";
