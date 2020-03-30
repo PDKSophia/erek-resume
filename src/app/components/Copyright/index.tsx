@@ -1,13 +1,13 @@
 /**
- * @Desc: 版权组件
- * @Author: pengdaokuan
- * @CreateDate:  2019-11-28
- * @LastModify:  2020-01-07
+ * @desc 版权组件
+ * @author pengdaokuan
+ * @createDate  2020-03-28
+ * @lastModify  2020-03-29
  */
 import React from "react";
 import styles from "./index.module.css";
 import { useSelector } from "react-redux";
-import { COPYRIGHT } from "../../../common/constants";
+import { copyright } from "../../../common/constants";
 import { AppStoreType } from "../../store/reducers";
 
 /**
@@ -39,7 +39,7 @@ export default function Copyright(props: Props) {
       }}
     >
       <p className={styles.copyright}>
-        Copyright © {COPYRIGHT.FROMDATE}-{COPYRIGHT.CURRENTDATE}
+        Copyright © {copyright.fromdate}-{copyright.endDate}
         All Rights Reserved. Copyright By pengdaokuan
       </p>
     </div>

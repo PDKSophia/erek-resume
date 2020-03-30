@@ -1,14 +1,13 @@
 /**
- * @Desc: Grid 布局盒子
- * @Author: pengdaokuan
- * @CreateDate:  2019-12-01
- * @LastModify:  2019-12-01
+ * @desc Grid 布局盒子
+ * @author pengdaokuan
+ * @createDate  2019-12-01
+ * @lastModify  2019-12-01
  */
 import React from "react";
 import styles from "./index.module.css";
 import classnames from "classnames/bind";
-import { gridProps } from "../../../common/constants/defaultProps";
-import { MenuStateFace } from "../../../app/config/interface";
+import { AbstructGridItemProps } from '../../../config-interface/index'
 let cx = classnames.bind(styles);
 
 /**
@@ -17,54 +16,37 @@ let cx = classnames.bind(styles);
  * @property {array} list - 数据
  * @property {object} style - 样式
  * @property {number} columns - 栅格数
- * @property {Function} callbackFunc - 回调函数
+ * @property {Function} onClickGrid - 回调函数
  *
  */
-interface Props {
-  list: Array<MenuStateFace>;
-  style?: object;
+interface AbstractGridProps {
+  list: Array<AbstructGridItemProps>;
+  style?: React.CSSProperties;
   columns?: number;
-  callbackFunc?: Function;
+  onClickGrid?: Function;
 }
 
-class Grid extends React.PureComponent<Props> {
-  public static namespace: string = "栅格布局";
-
-  public static defaultProps: Props = {
-    list: gridProps.LIST,
-    style: gridProps.STYLE,
-    columns: gridProps.COLUMNS
-  };
-
-  render() {
-    const { list, style, columns, callbackFunc } = this.props;
-    return (
-      <div
-        className={cx({
-          grid: true,
-          flex: true
+function Grid({ list, style, columns, onClickGrid }: AbstractGridProps) {
+  return (
+    <div style={style} className={`${styles.grid} ${styles.flex}`}>
+      {list &&
+        [...list].map((g: AbstructGridItemProps) => {
+          return (
+            <div
+              key={g.key}
+              onClick={() => {
+                onClickGrid && onClickGrid(g);
+              }}
+              className={cx({
+                [`columns-${columns}`]: true
+              })}
+            >
+              {g.text}
+            </div>
+          );
         })}
-        style={style}
-      >
-        {list &&
-          [...list].map((item: MenuStateFace) => {
-            return (
-              <div
-                key={item.key}
-                onClick={() => {
-                  callbackFunc && callbackFunc(item);
-                }}
-                className={cx({
-                  [`columns-${columns}`]: true
-                })}
-              >
-                {item.text}
-              </div>
-            );
-          })}
-      </div>
-    );
-  }
+    </div>
+  );
 }
 
 export default Grid;

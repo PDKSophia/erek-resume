@@ -1,18 +1,15 @@
 /**
- * @Desc: Synopsis 概要介绍组件
- * @Author: pengdaokuan
- * @CreateDate:  2020-01-09
- * @LastModify:  2020-01-09
+ * @desc Synopsis 概要介绍
+ * @author pengdaokuan
+ * @createDate 2020-03-28
+ * @lastModify 2020-03-28
  */
 import React from "react";
 import style from "./index.module.css";
 import { isEmpty } from "lodash";
-import Title from "../../../../../common/components/Title";
+import MainTitle from "../../../../../common/components/MainTitle";
 import { handleRegKeyword } from "../../../../../common/utils";
-import {
-  PLATFORM_INTRODUCE,
-  PLATFORM_ADVANTAGE
-} from "../../../../../common/constants/platform";
+import { platIntro, platAdvan } from "../../../../../common/constants/index";
 
 function Synopsis() {
   return (
@@ -31,11 +28,11 @@ function Synopsis() {
 const IntroduceMemo = React.memo(() => {
   return (
     <React.Fragment>
-      <Title title={PLATFORM_INTRODUCE.TITLE} size="little" />
+      <MainTitle title={platIntro.title} size="little" />
       <div className={style.content}>
-        {PLATFORM_INTRODUCE && !isEmpty(PLATFORM_INTRODUCE.CONTENT) && (
+        {platIntro && !isEmpty(platIntro.content) && (
           <React.Fragment>
-            {PLATFORM_INTRODUCE.CONTENT.map((text: any, index: number) => {
+            {platIntro.content.map((text: any, index: number) => {
               return <p key={index}>{text}</p>;
             })}
           </React.Fragment>
@@ -49,11 +46,11 @@ const IntroduceMemo = React.memo(() => {
 const AdvantageMemo = React.memo(() => {
   return (
     <React.Fragment>
-      <Title title={PLATFORM_ADVANTAGE.TITLE} size="little" />
+      <MainTitle title={platAdvan.title} size="little" />
       <div className={style.content}>
-        {PLATFORM_ADVANTAGE && !isEmpty(PLATFORM_ADVANTAGE.CONTENT) && (
+        {platAdvan && !isEmpty(platAdvan.content) && (
           <React.Fragment>
-            {PLATFORM_ADVANTAGE.CONTENT.map((text: any, index: number) => {
+            {platAdvan.content.map((text: any, index: number) => {
               return (
                 <div
                   key={index}

@@ -1,28 +1,25 @@
 /**
- * @Desc: 首页
- * @Author: pengdaokuan
- * @CreateTime: 2019-11-23
- * @LastModify: 2020-01-07
+ * @desc 首页
+ * @author pengdaokuan
+ * @createDate 2020-03-28
+ * @lastModify 2020-03-28
  */
-import React, { useEffect, useCallback } from "react";
+import React, { useCallback } from "react";
 import styles from "./index.module.css";
-import classnames from "classnames/bind";
-import { isEmpty } from "lodash";
 // 组件引入
-import Menu from "../../components/Menu";
-import Image from "../../../common/components/Image";
-import ThemeBox from "../../components/ThemeBox";
-import Introduce from "../../components/Introduce";
+import Gird from "../../components/Grid";
+import Photograph from "../../../common/components/Photograph";
+import ThemeBox from "../../../common/components/ThemeBox";
+import Intro from "../../components/Intro";
 import Copyright from "../../components/Copyright";
 // redux引入
-import * as themeAction from "../../store/theme/action";
-import { useDispatch, useSelector } from "react-redux";
-import { AppStoreType } from "../../store/reducers";
 import { setLocalStorage } from "../../../common/utils/index";
-import { getCurrentTheme } from "../../../common/utils/theme";
-import { ThemeStateFace } from "../../../app/config/interface";
-import { PRODUCT_MENU, PRODUCT } from "../../../common/constants";
-let cx = classnames.bind(styles);
+import { AbstructThemeItemProps } from "../../../config-interface/index";
+import { screen, screenWrite, screenMenu } from "../../../common/constants";
+import {
+  useStoreTheme,
+  useStoreLibProps
+} from "../../../common/hooks/useTheme";
 
 /**
  * @hooks Home
@@ -30,75 +27,85 @@ let cx = classnames.bind(styles);
  */
 
 export default function Home(props: any) {
-  const dispatch = useDispatch();
-  const currentTheme = useSelector(
-    (state: AppStoreType) => state.themeStore.theme
-  );
+  const [theme] = useStoreTheme();
+  const storeThemeProps = useStoreLibProps();
 
-  useEffect(() => {
-    const activeTheme: any = !isEmpty(currentTheme)
-      ? currentTheme
-      : getCurrentTheme();
-    setLocalStorage("currentTheme", activeTheme);
-    setCurrentTheme(activeTheme);
+  const onSelectTheme = useCallback((theme: AbstructThemeItemProps) => {
+    setLocalStorage("currentTheme", theme);
+    storeThemeProps(theme);
   }, []);
 
-  // 设置当前主题
-  function setCurrentTheme(item: ThemeStateFace) {
-    dispatch(
-      themeAction.selectThemeState({
-        ...item
-      })
-    );
-  }
-
-  // themeBox 回调函数
-  const useThemeCallback = useCallback((item: ThemeStateFace) => {
-    setLocalStorage("currentTheme", { ...item });
-    setCurrentTheme(item);
-  }, []);
-
-  function useMenuCallback(data: any) {
-    props.history.push(data.url);
+  function onClickGrid(target: any) {
+    props.history.push(target.url);
   }
 
   return (
     <div
-      className={cx("container")}
-      style={{ backgroundColor: currentTheme.bgColor }}
+      className={styles.container}
+      style={{ backgroundColor: theme.bgColor }}
     >
-      <div className={cx("content")}>
-        <div className={cx("logo", "flex")}>
-          <Image cover={PRODUCT.LOGO} />
-        </div>
-        <div className={cx("flex")}>
-          <Introduce
-            title={PRODUCT.TITLE}
-            summary={PRODUCT.SUMMARY}
-            style={{
-              textAlign: "center",
-              backgroundColor: currentTheme.bgColor,
-              color: currentTheme.textColor
-            }}
-          />
-        </div>
-        <div className={cx("flex")}>
-          <ThemeBox callbackFunc={useThemeCallback} />
-        </div>
-        <div className={cx("menu")}>
-          <Menu
-            columns={4}
-            list={PRODUCT_MENU}
-            callbackFunc={useMenuCallback}
-          />
-        </div>
-      </div>
-      <div className={cx("footer")}>
-        <Copyright
-          bgColor={currentTheme.bgColor}
-          textColor={currentTheme.textColor}
-        />
+      <div className={styles.content}>
+        <LogoMemo />
+        <ContentMemo theme={theme} />
+        <ThemeMemo onSelectTheme={onSelectTheme} />
+        <GridMemo onClickGrid={onClickGrid} />
+        <FooterMemo theme={theme} />
       </div>
     </div>
   );
 }
+
+export const LogoMemo = React.memo(() => {
+  return (
+    <div className={`${styles.logo} ${styles.flex}`}>
+      <Photograph src={screenWrite[screen.index].logo} />
+    </div>
+  );
+});
+
+export const ContentMemo = React.memo((props: any) => {
+  return (
+    <div className={styles.flex}>
+      <Intro
+        title={screenWrite[screen.index].title}
+        summary={screenWrite[screen.index].summary}
+        style={{
+          textAlign: "center",
+          backgroundColor: props.theme.bgColor,
+          color: props.theme.textColor
+        }}
+      />
+    </div>
+  );
+});
+
+export const ThemeMemo = React.memo((props: any) => {
+  return (
+    <div className={styles.flex}>
+      <ThemeBox onSelectTheme={props.onThemeSelect} />
+    </div>
+  );
+});
+
+export const GridMemo = React.memo((props: any) => {
+  return (
+    <div className={styles.menu}>
+      <Gird
+        columns={4}
+        list={screenMenu[screen.index]}
+        onClickGrid={props.onClickGrid}
+      />
+    </div>
+  );
+});
+
+export const FooterMemo = React.memo((props: any) => {
+  return (
+    <div className={styles.footer}>
+      <Copyright
+        bgColor={props.theme.bgColor}
+        textColor={props.theme.textColor}
+      />
+    </div>
+  );
+});

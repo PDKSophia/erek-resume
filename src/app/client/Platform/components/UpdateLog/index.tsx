@@ -1,25 +1,25 @@
 /**
- * @Desc: UpdateLog 更新日志
- * @Author: pengdaokuan
- * @CreateDate:  2020-01-09
- * @LastModify:  2020-01-09
+ * @desc UpdateLog 更新日志
+ * @author pengdaokuan
+ * @createDate 2020-03-28
+ * @lastModify 2020-03-28
  */
 
 import React from "react";
 import style from "./index.module.css";
 import { isEmpty } from "lodash";
-import Title from "../../../../../common/components/Title";
+import MainTitle from "../../../../../common/components/MainTitle";
 import Timelines from "../../../../../common/components/Timelines";
-import { UPDATE_LOG } from "../../../../../common/constants/updateLog";
+import { updateLogs } from "../../../../../logs/update";
 
 function UpdateLog() {
   return (
     <div className={style.container}>
       <div className={style.block}>
-        <Title title="更新日志" size="little" />
+        <MainTitle title="更新日志" size="little" />
         <div className={style.content}>
-          {UPDATE_LOG && !isEmpty(UPDATE_LOG) && (
-            <Timelines list={UPDATE_LOG} />
+          {updateLogs && !isEmpty(updateLogs) && (
+            <Timelines list={updateLogs} />
           )}
         </div>
       </div>

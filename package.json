@@ -58,6 +58,7 @@
     "@babel/plugin-proposal-decorators": "^7.7.4",
     "@types/react-router-dom": "^5.1.2",
     "customize-cra": "^0.9.1",
+    "eslint-import-resolver-alias": "^1.1.2",
     "react-app-rewired": "^2.1.5",
     "webpack-build-notifier": "^2.0.0"
   }

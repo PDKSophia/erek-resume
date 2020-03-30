@@ -58,6 +58,10 @@ http://localhost:3000/home
   - [useDispatch](./docs/ReactHooks.md)
   - [useSelector](./docs/ReactHooks.md)
   - [hooks 与 redux 结合](./docs/ReactHooks.md)
+  - [自定义 Hooks](./docs/ReactHooks.md)
+- [组件设计](./docs/Component.md)
+  - [组件设计模式](./docs/Component.md)
+  - [借鉴 Ant Design](./docs/Component.md)
 - [功能逻辑](./docs/Action/README.md)
   - [全局主题色的处理](./docs/Action/README.md)
   - [简历输入模块设计](./docs/Action/README.md)
@@ -96,22 +100,33 @@ http://localhost:3000/home
 │
 ├── public
 │
+├── docs                            文档
+│
 ├── src
 │   ├── app                         主项目
 │   │    ├── assets                 图片等资源文件
 │   │    ├── client                 相关页面
 │   │    ├── components             业务组件
-│   │    ├── config                 业务相关配置
 │   │    ├── mock                   Mock数据
 │   │    ├── router                 路由文件
-│   │    ├── server                 服务器文件
+│   │    ├── service                服务器文件
 │   │    ├── store                  Redux
 │   │    └─ ...
 │   │
 │   ├── common                      公共模块
 │   │    ├─components               公共组件
 │   │    ├─constants                全局常量
+│   │    ├─hooks                    自定义hooks
 │   │    ├─utils                    Utils处理
+│   │    └─ ...
+│   │
+│   ├── config-interface            常用的interface
+│   │    ├─index
+│   │    └─ ...
+│   │
+│   ├── logs
+│   │    ├─error                    错误日志
+│   │    ├─update                   更新日志
 │   │    └─ ...
 │
 ├── index.tsx

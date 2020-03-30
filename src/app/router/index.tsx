@@ -1,17 +1,13 @@
 /**
  * @Desc: 入口文件
  * @Author: pengdaokuan
- * @CreateTime: 2019-01-07
- * @LastModify: 2020-01-07
+ * @CreateTime: 2020-03-28
+ * @LastModify: 2020-03-28
  */
 
 import React, { useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { setLocalStorage } from "../../common/utils";
-import { getCurrentTheme } from "../../common/utils/theme";
-import { ThemeStateFace } from "../config/interface";
-import * as themeAction from "../store/theme/action";
+import { useInitTheme } from "../../common/hooks/useTheme";
 // 页面
 import Home from "../client/Home";
 import Platform from "../client/Platform";
@@ -22,22 +18,11 @@ import Template from "../client/Template";
  * @extends {React.Component}
  */
 export default function App() {
-  const dispatch = useDispatch();
+  const initTheme = useInitTheme();
 
   useEffect(() => {
-    const currentTheme = getCurrentTheme();
-    setLocalStorage("currentTheme", currentTheme);
-    setCurrentTheme(currentTheme);
+    initTheme();
   }, []);
-
-  // 设置当前主题
-  function setCurrentTheme(item: ThemeStateFace) {
-    dispatch(
-      themeAction.selectThemeState({
-        ...item
-      })
-    );
-  }
 
   return (
     <div>

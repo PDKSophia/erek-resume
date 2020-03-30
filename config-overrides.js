@@ -13,12 +13,13 @@ const {
   override,
   // fixBabelImports,
   addWebpackAlias,
-  addDecoratorsLegacy,
+  addDecoratorsLegacy
   // addWebpackPlugin
   // addLessLoader
-} = require('customize-cra')
-const path = require('path')
-const WebpackBuildNotifierPlugin = require('webpack-build-notifier')
+} = require("customize-cra");
+const path = require("path");
+const resolve = dir => path.join(__dirname, ".", dir);
+const WebpackBuildNotifierPlugin = require("webpack-build-notifier");
 
 module.exports = override(
   // fixBabelImports('import', {
@@ -28,13 +29,10 @@ module.exports = override(
   // }),
 
   addWebpackAlias({
-    business: path.resolve(__dirname, 'src/business'),
-    components: path.resolve(__dirname, 'src/common/components'),
-    helper: path.resolve(__dirname, 'src/common/helper'),
-    utils: path.resolve(__dirname, 'src/common/utils')
+    ["@common"]: resolve("src/common")
   }),
 
-  addDecoratorsLegacy(),
+  addDecoratorsLegacy()
   // addLessLoader({
   //   javascriptEnabled: true,
   //   modifyVars: { '@primary-color': '#1DA57A' }
@@ -46,4 +44,4 @@ module.exports = override(
   //     suppressSuccess: true
   //   })
   // )
-)
+);

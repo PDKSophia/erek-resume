@@ -1,11 +1,10 @@
 /**
- * @Desc: 开发人员
- * @Author: pengdaokuan
- * @CreateDate:  2020-02-15
- * @LastModify:  2020-02-15
+ * @desc Developer 开发人员
+ * @author pengdaokuan
+ * @createDate 2020-03-28
+ * @lastModify 2020-03-28
  */
 import React from "react";
-import Title from "../../../../../common/components/Title";
 
 export default function Developer() {
   return <div>
