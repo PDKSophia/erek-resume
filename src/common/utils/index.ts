@@ -1,9 +1,11 @@
 /**
- * @Desc: Utils
- * @Author: pengdaokuan
- * @CreateTime: 2019-12-03
- * @LastModify: 2019-12-03
+ * @desc Utils
+ * @author pengdaokuan
+ * @createDate 2020-03-28
+ * @lastModify 2020-03-28
  */
+import { themeList } from "../../common/constants/theme";
+
 /**
  * @desc 判断某个值是否为字符串类型
  * @param {any} value - 判断的值
@@ -66,4 +68,15 @@ export function handleRegKeyword(text: string, keyword: string) {
     }
   );
   return regResult;
+}
+
+/**
+ * 遍历Object，构造themelist主题色调数组
+ */
+export function getThemeList() {
+  const arr: any = [];
+  Object.keys(themeList).forEach((item: string) => {
+    arr.push({ ...themeList[item] });
+  });
+  return arr;
 }
