@@ -1,0 +1,8 @@
+.phone {
+  width: 6.6rem;
+  height: 6.6rem;
+}
+.phone > img {
+  width: 100%;
+  height: 100%;
+}
