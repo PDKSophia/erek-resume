@@ -1,7 +1,13 @@
 {
   "name": "erek-resume",
-  "version": "0.1.0",
+  "version": "2.0.1",
   "private": true,
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-scripts eject"
+  },
   "dependencies": {
     "@types/classnames": "^2.2.9",
     "@types/jest": "24.0.23",
@@ -32,12 +38,6 @@
     "redux-thunk": "^2.3.0",
     "seamless-immutable": "^7.1.4",
     "typescript": "3.7.2"
-  },
-  "scripts": {
-    "start": "react-app-rewired start",
-    "build": "react-app-rewired build",
-    "test": "react-app-rewired test",
-    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -17,11 +17,14 @@ import Template from "../client/Template";
  * @class App
  * @extends {React.Component}
  */
-export default function App() {
+export default function App(props: any) {
   const initTheme = useInitTheme();
 
   useEffect(() => {
     initTheme();
+    setTimeout(() => {
+      props.history.push('/home')
+    }, 0)
   }, []);
 
   return (

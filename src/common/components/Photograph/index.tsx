@@ -1,8 +1,8 @@
 /**
- * @Desc: Photograph
- * @Author: pengdaokuan
- * @CreateDate:  2020-03-28
- * @LastModify:  2020-03-28
+ * @desc Photograph
+ * @author pengdaokuan
+ * @createDate 2020-03-28
+ * @lastModify 2020-03-28
  */
 import React from "react";
 import styles from "./index.module.css";

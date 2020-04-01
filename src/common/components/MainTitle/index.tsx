@@ -2,7 +2,7 @@
  * @desc 模块标题组件
  * @author pengdaokuan
  * @createTime 2020-03-28
- * @LlastModify 2020-04-01
+ * @lastModify 2020-04-01
  */
 import React from "react";
 import styles from "./index.module.css";
