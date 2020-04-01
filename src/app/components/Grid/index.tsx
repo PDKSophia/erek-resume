@@ -1,13 +1,14 @@
 /**
  * @desc Grid 布局盒子
  * @author pengdaokuan
- * @createDate  2019-12-01
- * @lastModify  2019-12-01
+ * @createDate  2020-04-01
+ * @lastModify  2020-04-01
  */
 import React from "react";
 import styles from "./index.module.css";
 import classnames from "classnames/bind";
-import { AbstructGridItemProps } from '../../../config-interface/index'
+import { useStoreTheme } from "../../../common/hooks/useTheme";
+import { AbstructGridItemProps } from "../../../config-interface/index";
 let cx = classnames.bind(styles);
 
 /**
@@ -27,6 +28,7 @@ interface AbstractGridProps {
 }
 
 function Grid({ list, style, columns, onClickGrid }: AbstractGridProps) {
+  const [theme] = useStoreTheme();
   return (
     <div style={style} className={`${styles.grid} ${styles.flex}`}>
       {list &&
@@ -34,6 +36,7 @@ function Grid({ list, style, columns, onClickGrid }: AbstractGridProps) {
           return (
             <div
               key={g.key}
+              style={{ color: theme.textColor }}
               onClick={() => {
                 onClickGrid && onClickGrid(g);
               }}

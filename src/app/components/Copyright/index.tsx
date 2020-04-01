@@ -6,9 +6,8 @@
  */
 import React from "react";
 import styles from "./index.module.css";
-import { useSelector } from "react-redux";
+import { useStoreTheme } from "../../../common/hooks/useTheme";
 import { copyright } from "../../../common/constants";
-import { AppStoreType } from "../../store/reducers";
 
 /**
  * @class Copyright
@@ -23,12 +22,9 @@ interface Props {
 }
 
 export default function Copyright(props: Props) {
-  const currentTheme = useSelector(
-    (state: AppStoreType) => state.themeStore.theme
-  );
-
-  const bgColor = props.bgColor || currentTheme.bgColor;
-  const textColor = props.textColor || currentTheme.textColor;
+  const [theme] = useStoreTheme();
+  const bgColor = props.bgColor || theme.bgColor;
+  const textColor = props.textColor || theme.textColor;
 
   return (
     <div
