@@ -17,7 +17,7 @@ import {
 } from "../../../common/constants/index";
 import { useStoreTheme } from "../../../common/hooks/useTheme";
 
-function Template() {
+function Template(props: any) {
   const [tab, setTab] = useState(template.hot);
   const [theme] = useStoreTheme();
 
@@ -25,7 +25,7 @@ function Template() {
     if (target.key !== template.home) {
       setTab(target.key);
     } else {
-      window.location.href = target.url;
+      props.history.push(target.url);
     }
   }
 

@@ -19,6 +19,12 @@ export const platform = {
   developer: "developer"
 };
 
+// 简历页
+export const resume = {
+  home: "home",
+  intro: "intro",
+  guide: "guide"
+};
 // 模板页
 export const template = {
   home: "home",
@@ -39,8 +45,8 @@ export const screenWrite = {
   },
   resume: {
     logo: require("../../app/assets/logo.png"),
-    title: ["Erek Resumes"],
-    summary: ["一个模板简历制作平台, 让你的简历更加出众 ~"]
+    title: ["制作简历"],
+    summary: ["选择喜欢的模板，开始制作你的简历吧 ~"]
   },
   template: {
     logo: require("../../app/assets/logo.png"),
@@ -57,7 +63,7 @@ export const screenMenu = {
       text: "介绍"
     },
     {
-      url: "/",
+      url: "/resume",
       key: "resume",
       text: "简历"
     },
@@ -94,7 +100,23 @@ export const screenMenu = {
       text: "开发人员"
     }
   ],
-  resume: [],
+  resume: [
+    {
+      url: "/home",
+      key: "home",
+      text: "首页"
+    },
+    {
+      url: "/platform",
+      key: "intro",
+      text: "平台介绍"
+    },
+    {
+      url: "/guide",
+      key: "guide",
+      text: "使用说明"
+    }
+  ],
   template: [
     {
       url: "/home",
