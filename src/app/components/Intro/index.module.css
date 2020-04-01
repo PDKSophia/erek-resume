@@ -9,13 +9,13 @@
   background-color: #ffffff;
 }
 .title {
-  font-size: 24px;
-  line-height: 36px;
-  margin-bottom: 12px;
+  font-size: 1.48rem;
+  line-height: 3.2rem;
 }
 .summary {
-  font-size: 14px;
-  line-height: 26px;
+  margin-top: 1.2rem;
+  font-size: 1rem;
+  line-height: 2rem;
 }
 .tips {
   margin-top: 10px;

@@ -11,29 +11,35 @@ import Intro from "../../components/Intro";
 import Gird from "../../components/Grid";
 import {
   screen,
-  platform,
+  template,
   screenWrite,
   screenMenu
 } from "../../../common/constants/index";
 import { useStoreTheme } from "../../../common/hooks/useTheme";
 
 function Template() {
-  const [tab, setTab] = useState(platform.synopsis);
+  const [tab, setTab] = useState(template.hot);
   const [theme] = useStoreTheme();
 
   function onClickGrid(target: any) {
-    if (target.key !== platform.home) {
+    if (target.key !== template.home) {
       setTab(target.key);
     } else {
       window.location.href = target.url;
     }
   }
+
+  let nstyle: React.CSSProperties = {};
+  if (theme) {
+    nstyle = {
+      color: theme.textColor,
+      backgroundColor: theme.bgColor
+    };
+  }
+
   return (
     <React.Fragment>
-      <div
-        className={styles.container}
-        style={{ backgroundColor: theme.bgColor, color: theme.textColor }}
-      >
+      <div className={styles.container} style={nstyle}>
         <LogoMemo />
         <ContentMemo theme={theme} />
         <GridMemo onClickGrid={onClickGrid} />
@@ -51,17 +57,17 @@ export const LogoMemo = React.memo(() => {
 });
 
 export const ContentMemo = React.memo((props: any) => {
+  let nstyle: React.CSSProperties = {};
+  if (props.theme) {
+    nstyle = {
+      textAlign: "center",
+      color: props.theme.textColor,
+      backgroundColor: props.theme.bgColor
+    };
+  }
   return (
     <div className={styles.flex}>
-      <Intro
-        title={screenWrite[screen.template].title}
-        summary={screenWrite[screen.template].summary}
-        style={{
-          textAlign: "center",
-          backgroundColor: props.theme.bgColor,
-          color: props.theme.textColor
-        }}
-      />
+      <Intro style={nstyle} title={screenWrite[screen.template].title} />
     </div>
   );
 });

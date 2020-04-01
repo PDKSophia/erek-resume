@@ -104,12 +104,12 @@ export const screenMenu = {
     {
       url: "/",
       key: "hot",
-      text: "热门"
+      text: "热门模板"
     },
     {
       url: "/",
       key: "new",
-      text: "最新"
+      text: "刚出炉的"
     },
     {
       url: "/",

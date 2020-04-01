@@ -26,10 +26,12 @@ function ThemeBox({ onSelectTheme }: AbstractThemeBoxProps) {
       {list &&
         [...list].map((t: AbstructThemeItemProps, index: number) => {
           return (
-            <div
+            <span
               key={index}
               style={{ backgroundColor: t.bgColor }}
-              className={`${theme.uniqueKey === t.uniqueKey && "active"}`}
+              className={`${
+                theme.uniqueKey === t.uniqueKey ? styles.active : ""
+              }`}
               onClick={() => {
                 onSelectTheme && onSelectTheme(t);
               }}

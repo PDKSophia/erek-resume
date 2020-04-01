@@ -22,7 +22,7 @@ export const themeType = {
 
 export const themeList: AbstructThemeListProps = {
   dark: {
-    bgColor: "#232323",
+    bgColor: "#27292c",
     textColor: "#ffffff",
     hoverColor: "#27292c",
     uniqueKey: "dark"
@@ -46,9 +46,9 @@ export const themeList: AbstructThemeListProps = {
     uniqueKey: "princess"
   },
   purple: {
-    bgColor: "#282446",
+    bgColor: "#54546c",
     textColor: "#ffffff",
-    hoverColor: "#282446",
+    hoverColor: "#54546c",
     uniqueKey: "purple"
   }
 };

@@ -19,13 +19,15 @@
   width: 300px;
   margin: 0 auto;
 }
+.theme {
+  margin: 2.2rem 0;
+}
 .menu {
   width: 300px;
   margin: auto;
-  margin-top: 30px;
+  margin-top: 2rem;
   cursor: pointer;
 }
-
 .flex {
   display: flex;
   justify-content: center;

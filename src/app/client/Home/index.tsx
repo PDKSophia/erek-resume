@@ -81,7 +81,7 @@ export const ContentMemo = React.memo((props: any) => {
 
 export const ThemeMemo = React.memo((props: any) => {
   return (
-    <div className={styles.flex}>
+    <div className={`${styles.flex} ${styles.theme}`} >
       <ThemeBox onSelectTheme={props.onSelectTheme} />
     </div>
   );
