@@ -19,7 +19,7 @@ export function useInitTheme() {
   let useResult = sessionTheme ? sessionTheme : themeList.dark;
   return () => {
     setLocalStorage("currentTheme", useResult);
-    dispatch(storeLibProps(useResult));
+    dispatch(storeLibProps({ theme: useResult }));
   };
 }
 
