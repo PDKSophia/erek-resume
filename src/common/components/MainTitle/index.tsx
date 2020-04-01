@@ -1,13 +1,14 @@
 /**
- * @Desc: 模块标题组件
- * @Author: pengdaokuan
- * @CreateTime: 2020-03-28
- * @LastModify: 2020-03-28
+ * @desc 模块标题组件
+ * @author pengdaokuan
+ * @createTime 2020-03-28
+ * @LlastModify 2020-04-01
  */
 import React from "react";
-import "./index.module.css";
+import styles from "./index.module.css";
 import classnames from "classnames/bind";
 import { useStoreTheme } from "../../hooks/useTheme";
+let cx = classnames.bind(styles);
 
 /**
  * @class Title
@@ -43,7 +44,7 @@ function MainTitle({
   if (title) {
     titleNode = (
       <div
-        className={classnames("title", {
+        className={cx("title", {
           [`title-${size}`]: true
         })}
       >
@@ -55,7 +56,7 @@ function MainTitle({
   if (summary) {
     summaryNode = (
       <div
-        className={classnames("content", {
+        className={cx("content", {
           [`content-${size}`]: true
         })}
       >
@@ -67,14 +68,14 @@ function MainTitle({
   if (underline) {
     underlineNode = (
       <div
-        className={classnames("underline")}
+        className={cx("underline")}
         style={{ backgroundColor: theme.bgColor }}
       />
     );
   }
 
   return (
-    <div style={style} className={classnames("container")}>
+    <div style={style} className={cx("container")}>
       {titleNode}
       {summaryNode}
       {underlineNode}
