@@ -30,9 +30,9 @@ export default function Home(props: any) {
   const [theme] = useStoreTheme();
   const storeThemeProps = useStoreLibProps();
 
-  const onSelectTheme = useCallback((theme: AbstructThemeItemProps) => {
-    setLocalStorage("currentTheme", theme);
-    storeThemeProps(theme);
+  const onSelectTheme = useCallback((value: AbstructThemeItemProps) => {
+    setLocalStorage("currentTheme", value);
+    storeThemeProps({ theme: value });
   }, []);
 
   function onClickGrid(target: any) {
@@ -82,7 +82,7 @@ export const ContentMemo = React.memo((props: any) => {
 export const ThemeMemo = React.memo((props: any) => {
   return (
     <div className={styles.flex}>
-      <ThemeBox onSelectTheme={props.onThemeSelect} />
+      <ThemeBox onSelectTheme={props.onSelectTheme} />
     </div>
   );
 });
