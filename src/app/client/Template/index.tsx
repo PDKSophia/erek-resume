@@ -1,5 +1,5 @@
 /**
- * @desc 平台介绍
+ * @desc 模板列表
  * @author pengdaokuan
  * @createDate 2020-03-28
  * @lastModify 2020-03-28

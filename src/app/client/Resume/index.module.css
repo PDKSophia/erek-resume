@@ -29,3 +29,8 @@
   bottom: 0;
   width: 100%;
 }
+
+/* 简历列表 */
+.list {
+  margin: 24px;
+}

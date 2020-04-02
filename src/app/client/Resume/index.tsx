@@ -4,14 +4,14 @@
  * @createDate 2020-04-01
  * @lastModify 2020-04-01
  */
-import React, { useState } from "react";
+import React from "react";
 import styles from "./index.module.css";
 import Photograph from "../../../common/components/Photograph";
 import Intro from "../../components/Intro";
 import Gird from "../../components/Grid";
+import ResumeList from "./ResumeList";
 import {
   screen,
-  resume,
   screenWrite,
   screenMenu
 } from "../../../common/constants/index";
@@ -38,6 +38,9 @@ function Resume(props: any) {
         <LogoMemo />
         <ContentMemo theme={theme} />
         <GridMemo onClickGrid={onClickGrid} />
+      </div>
+      <div className={styles.list}>
+        <ResumeList />
       </div>
     </React.Fragment>
   );
