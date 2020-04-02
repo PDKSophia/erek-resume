@@ -1,3 +1,5 @@
+import { any } from "prop-types";
+
 /**
  * @desc interface
  * @author pengdaokuan
@@ -22,3 +24,13 @@ export interface AbstructGridItemProps {
   text: string;
 }
 
+export interface AbstructResumeListProps {
+  [key: string]: any;
+}
+
+export interface AbstructResumeItemProps {
+  id: string;
+  text: string;
+  cover: string;
+  uniqueKey: string;
+}
