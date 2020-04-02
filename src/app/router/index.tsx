@@ -23,9 +23,6 @@ export default function App(props: any) {
 
   useEffect(() => {
     initTheme();
-    setTimeout(() => {
-      props.history.push("/home");
-    }, 0);
   }, []);
 
   return (

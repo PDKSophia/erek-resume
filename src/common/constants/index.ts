@@ -4,6 +4,8 @@
  * @createDate  2020-03-28
  * @lastModify  2020-03-28
  */
+export const prefixCls = "erek-resume";
+
 export const screen = {
   index: "index", // 首页
   intro: "intro", // 介绍页
