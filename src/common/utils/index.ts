@@ -80,3 +80,24 @@ export function getThemeList() {
   });
   return arr;
 }
+
+/**
+ * 判断当前浏览器类型
+ */
+export function getBrower() {
+  const { userAgent } = window.navigator;
+  const device = {
+    trident: userAgent.includes("Trident"), //IE内核
+    presto: userAgent.includes("Presto"), //opera内核
+    iPad: userAgent.includes("iPad"), //是否iPad
+    iPhone: userAgent.includes("iPhone"), //是否为iPhone或者QQHD浏览器
+    webKit: userAgent.includes("AppleWebKit"), //苹果、谷歌内核
+    webApp: userAgent.indexOf("Safari") === -1, //是否web应该程序，没有头部与底部
+    mobile: !!userAgent.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+    ios: !!userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+    android: userAgent.includes("Android") || userAgent.includes("Linux"), //android终端或uc浏览器
+    gecko: userAgent.includes("Gecko") && userAgent.indexOf("KHTML") === -1, //火狐内核
+    is: (key: string) => device[key]
+  };
+  return device;
+}
