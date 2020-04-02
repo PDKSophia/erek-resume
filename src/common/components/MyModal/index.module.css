@@ -1,0 +1,10 @@
+.body {
+  height: calc(100vh - 60px - 68px - 47px);
+  min-height: 314px;
+  display: flex;
+  flex-direction: column;
+}
+.body > .ctx {
+  flex: 1;
+  overflow: auto;
+}

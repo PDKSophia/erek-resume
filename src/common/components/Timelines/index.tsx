@@ -27,7 +27,7 @@ function Timelines(props: Props) {
             return (
               <Timeline.Item color="green" key={idx}>
                 <p>
-                  📢 {item[0]}: 版本[v{item[1]}] 主要内容为:
+                  {item[0]}: 版本[v{item[1]}] 主要内容为:
                 </p>
                 {isArray(item[2]) &&
                   !isEmpty(item[2]) &&
