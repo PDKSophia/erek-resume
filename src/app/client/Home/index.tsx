@@ -19,7 +19,7 @@ import { screen, screenWrite, screenMenu } from "../../../common/constants";
 import {
   useStoreTheme,
   useStoreLibProps
-} from "../../../common/hooks/useTheme";
+} from "@src/common/hooks/useTheme";
 
 /**
  * @hooks Home

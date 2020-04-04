@@ -18,18 +18,17 @@ const {
   // addLessLoader
 } = require("customize-cra");
 const path = require("path");
-const resolve = dir => path.join(__dirname, ".", dir);
-const WebpackBuildNotifierPlugin = require("webpack-build-notifier");
+// const WebpackBuildNotifierPlugin = require("webpack-build-notifier");
 
 module.exports = override(
-  fixBabelImports('import', {
-    libraryName: 'antd',
-    libraryDirectory: 'es',
-    style: 'css'
+  fixBabelImports("import", {
+    libraryName: "antd",
+    libraryDirectory: "es",
+    style: "css"
   }),
 
   addWebpackAlias({
-    ["@common"]: resolve("src/common")
+    "@src": path.resolve(__dirname, "src/")
   }),
 
   addDecoratorsLegacy()
@@ -39,7 +38,7 @@ module.exports = override(
   // })
 
   // addWebpackPlugin(
-  //   new WebpackBuildNotifierPlugin({
+  // new WebpackBuildNotifierPlugin({
   //     title: 'My Project Webpack Build',
   //     suppressSuccess: true
   //   })
