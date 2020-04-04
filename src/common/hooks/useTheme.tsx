@@ -3,8 +3,8 @@
  */
 import { themeList } from "../constants/theme";
 import { useDispatch, useSelector } from "react-redux";
-import { AppStoreType } from "../../app/store/reducers";
-import { storeLibProps } from "../../app/store/theme/action";
+import { AppStoreType } from "@src/app/store/reducers";
+import { storeLibProps } from "@src/app/store/theme/action";
 import { getLocalStorage, setLocalStorage } from "../utils/index";
 
 /**

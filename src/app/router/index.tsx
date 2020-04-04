@@ -7,12 +7,12 @@
 
 import React, { useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
-import { useInitTheme } from "../../common/hooks/useTheme";
+import { useInitTheme } from "@src/common/hooks/useTheme";
 // 页面
-import Home from "../client/Home";
-import Platform from "../client/Platform";
-import Resume from "../client/Resume";
-import Template from "../client/Template";
+import Home from "@src/app/client/Home";
+import Platform from "@src/app/client/Platform";
+import Resume from "@src/app/client/Resume";
+import Template from "@src/app/client/Template";
 
 /**
  * @class App

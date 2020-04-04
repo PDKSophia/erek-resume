@@ -36,22 +36,22 @@ export const template = {
 
 export const screenWrite = {
   index: {
-    logo: require("../../app/assets/logo.png"),
+    logo: require("@src/app/assets/logo.png"),
     title: ["Erek Resumes"],
     summary: ["一个模板简历制作平台, 让你的简历更加出众 ~"]
   },
   intro: {
-    logo: require("../../app/assets/logo.png"),
+    logo: require("@src/app/assets/logo.png"),
     title: ["了解一下"],
     summary: []
   },
   resume: {
-    logo: require("../../app/assets/logo.png"),
+    logo: require("@src/app/assets/logo.png"),
     title: ["制作简历"],
     summary: ["选择喜欢的模板，开始制作你的简历吧 ~"]
   },
   template: {
-    logo: require("../../app/assets/logo.png"),
+    logo: require("@src/app/assets/logo.png"),
     title: ["Template List"],
     summary: ["一个模板简历制作平台, 让你的简历更加出众 ~"]
   }

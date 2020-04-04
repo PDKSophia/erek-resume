@@ -7,19 +7,16 @@
 import React, { useCallback } from "react";
 import styles from "./index.module.css";
 // 组件引入
-import Gird from "../../components/Grid";
-import Photograph from "../../../common/components/Photograph";
-import ThemeBox from "../../../common/components/ThemeBox";
-import Intro from "../../components/Intro";
-import Copyright from "../../components/Copyright";
+import Gird from "@src/app/components/Grid";
+import Photograph from "@src/common/components/Photograph";
+import ThemeBox from "@src/common/components/ThemeBox";
+import Intro from "@src/app/components/Intro";
+import Copyright from "@src/app/components/Copyright";
 // redux引入
-import { setLocalStorage } from "../../../common/utils/index";
-import { AbstructThemeItemProps } from "../../../config-interface/index";
-import { screen, screenWrite, screenMenu } from "../../../common/constants";
-import {
-  useStoreTheme,
-  useStoreLibProps
-} from "@src/common/hooks/useTheme";
+import { setLocalStorage } from "@src/common/utils/index";
+import { AbstructThemeItemProps } from "@src/config-interface/index";
+import { screen, screenWrite, screenMenu } from "@src/common/constants";
+import { useStoreTheme, useStoreLibProps } from "@src/common/hooks/useTheme";
 
 /**
  * @hooks Home
@@ -81,7 +78,7 @@ export const ContentMemo = React.memo((props: any) => {
 
 export const ThemeMemo = React.memo((props: any) => {
   return (
-    <div className={`${styles.flex} ${styles.theme}`} >
+    <div className={`${styles.flex} ${styles.theme}`}>
       <ThemeBox onSelectTheme={props.onSelectTheme} />
     </div>
   );

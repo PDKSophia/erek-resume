@@ -6,8 +6,8 @@
  */
 import React from "react";
 import styles from "./index.module.css";
-import { useStoreTheme } from "../../../common/hooks/useTheme";
-import { copyright } from "../../../common/constants";
+import { useStoreTheme } from "@src/common/hooks/useTheme";
+import { copyright } from "@src/common/constants";
 
 /**
  * @class Copyright

@@ -5,20 +5,17 @@
  * @lastModify 2020-04-02
  */
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import styles from "./index.module.css";
 import classnames from "classnames/bind";
-import List from "../../../components/ReStore/List";
-import { getBrower } from "../../../../common/utils";
-import * as themeActions from "../../../store/theme/action";
-import {
-  deviceTips,
-  authorityTips
-} from "../../../../common/constants/resumelist";
-import MyModal from "../../../../common/components/MyModal";
-import { AppStoreType } from "../../../store/reducers";
-import { resumeList } from "../../../../common/constants/resumelist";
-import { AbstructResumeItemProps } from "../../../../config-interface/index";
+import List from "@src/app/components/ReStore/List";
+import MyModal from "@src/common/components/MyModal";
+import { useDispatch, useSelector } from "react-redux";
+import * as themeActions from "@src/app/store/theme/action";
+import { getBrower } from "@src/common/utils";
+import { AppStoreType } from "@src/app/store/reducers";
+import { resumeList } from "@src/common/constants/resumelist";
+import { AbstructResumeItemProps } from "@src/config-interface/index";
+import { deviceTips, authorityTips } from "@src/common/constants/resumelist";
 let cx = classnames.bind(styles);
 
 function ResumeList() {

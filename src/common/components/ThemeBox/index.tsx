@@ -6,9 +6,9 @@
  */
 import React from "react";
 import styles from "./index.module.css";
-import { getThemeList } from "../../utils";
-import { useStoreTheme } from "../../hooks/useTheme";
-import { AbstructThemeItemProps } from "../../../config-interface/index";
+import { getThemeList } from "@src/common/utils";
+import { useStoreTheme } from "@src/common/hooks/useTheme";
+import { AbstructThemeItemProps } from "@src/config-interface/index";
 /**
  * ThemeBox 直连redux
  * @extends {React.Hooks}

@@ -7,7 +7,7 @@
 import React from "react";
 import styles from "./index.module.css";
 import classnames from "classnames/bind";
-import { useStoreTheme } from "../../hooks/useTheme";
+import { useStoreTheme } from "@src/common/hooks/useTheme";
 let cx = classnames.bind(styles);
 
 /**

@@ -4,7 +4,7 @@
  * @createDate 2020-03-28
  * @lastModify 2020-03-28
  */
-import { themeList } from "../../common/constants/theme";
+import { themeList } from "@src/common/constants/theme";
 
 /**
  * @desc 判断某个值是否为字符串类型

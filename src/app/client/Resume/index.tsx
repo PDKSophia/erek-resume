@@ -6,16 +6,12 @@
  */
 import React from "react";
 import styles from "./index.module.css";
-import Photograph from "../../../common/components/Photograph";
-import Intro from "../../components/Intro";
-import Gird from "../../components/Grid";
 import ResumeList from "./ResumeList";
-import {
-  screen,
-  screenWrite,
-  screenMenu
-} from "../../../common/constants/index";
-import { useStoreTheme } from "../../../common/hooks/useTheme";
+import Gird from "@src/app/components/Grid";
+import Intro from "@src/app/components/Intro";
+import Photograph from "@src/common/components/Photograph";
+import { useStoreTheme } from "@src/common/hooks/useTheme";
+import { screen, screenWrite, screenMenu } from "@src/common/constants/index";
 
 function Resume(props: any) {
   const [theme] = useStoreTheme();

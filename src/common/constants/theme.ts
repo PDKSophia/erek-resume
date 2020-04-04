@@ -4,7 +4,7 @@
  * @createDate 2020-03-28
  * @lastModify 2020-03-28
  */
-import { AbstructThemeListProps } from "../../config-interface/index";
+import { AbstructThemeListProps } from "@src/config-interface/index";
 
 export const themeType = {
   DARK: "dark",

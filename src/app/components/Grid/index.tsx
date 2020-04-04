@@ -7,8 +7,8 @@
 import React from "react";
 import styles from "./index.module.css";
 import classnames from "classnames/bind";
-import { useStoreTheme } from "../../../common/hooks/useTheme";
-import { AbstructGridItemProps } from "../../../config-interface/index";
+import { useStoreTheme } from "@src/common/hooks/useTheme";
+import { AbstructGridItemProps } from "@src/config-interface/index";
 let cx = classnames.bind(styles);
 
 /**

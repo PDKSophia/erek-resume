@@ -8,9 +8,9 @@
 import React from "react";
 import style from "./index.module.css";
 import { isEmpty } from "lodash";
-import MainTitle from "../../../../../common/components/MainTitle";
-import Timelines from "../../../../../common/components/Timelines";
-import { updateLogs } from "../../../../../logs/update";
+import MainTitle from "@src/common/components/MainTitle";
+import Timelines from "@src/common/components/Timelines";
+import { updateLogs } from "@src/logs/update";
 
 function UpdateLog() {
   return (

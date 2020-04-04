@@ -6,7 +6,7 @@
  */
 import React from "react";
 import styles from "./index.module.css";
-import { AbstructResumeItemProps } from "../../../../config-interface";
+import { AbstructResumeItemProps } from "@src/config-interface";
 
 /**
  * @extends {React.hooks}

@@ -6,9 +6,9 @@
  */
 import React, { useState } from "react";
 import styles from "./index.module.css";
-import Photograph from "../../../common/components/Photograph";
-import Intro from "../../components/Intro";
-import Gird from "../../components/Grid";
+import Photograph from "@src/common/components/Photograph";
+import Intro from "@src/app/components/Intro";
+import Gird from "@src/app/components/Grid";
 import Synopsis from "./components/Synopsis";
 import UpdateLog from "./components/UpdateLog";
 import Developer from "./components/Developer";
@@ -17,8 +17,8 @@ import {
   platform,
   screenWrite,
   screenMenu
-} from "../../../common/constants/index";
-import { useStoreTheme } from "../../../common/hooks/useTheme";
+} from "@src/common/constants/index";
+import { useStoreTheme } from "@src/common/hooks/useTheme";
 
 function Platform(props: any) {
   const [tab, setTab] = useState(platform.synopsis);

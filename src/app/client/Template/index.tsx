@@ -6,16 +6,16 @@
  */
 import React, { useState } from "react";
 import styles from "./index.module.css";
-import Photograph from "../../../common/components/Photograph";
-import Intro from "../../components/Intro";
-import Gird from "../../components/Grid";
+import Photograph from "@src/common/components/Photograph";
+import Intro from "@src/app/components/Intro";
+import Gird from "@src/app/components/Grid";
 import {
   screen,
   template,
   screenWrite,
   screenMenu
-} from "../../../common/constants/index";
-import { useStoreTheme } from "../../../common/hooks/useTheme";
+} from "@src/common/constants";
+import { useStoreTheme } from "@src/common/hooks/useTheme";
 
 function Template(props: any) {
   const [tab, setTab] = useState(template.hot);

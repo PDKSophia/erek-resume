@@ -7,9 +7,9 @@
 import React from "react";
 import style from "./index.module.css";
 import { isEmpty } from "lodash";
-import MainTitle from "../../../../../common/components/MainTitle";
-import { handleRegKeyword } from "../../../../../common/utils";
-import { platIntro, platAdvan } from "../../../../../common/constants/index";
+import MainTitle from "@src/common/components/MainTitle";
+import { handleRegKeyword } from "@src/common/utils";
+import { platIntro, platAdvan } from "@src/common/constants/index";
 
 function Synopsis() {
   return (
