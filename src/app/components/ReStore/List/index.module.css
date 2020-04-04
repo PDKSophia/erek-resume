@@ -19,6 +19,7 @@
   font-size: 14px;
   cursor: pointer;
   transition: all 0.3s;
+  box-sizing: border-box;
 }
 .list > .item > img {
   position: absolute;
@@ -31,8 +32,8 @@
 .list > .item > .mask {
   position: absolute;
   z-index: 1;
-  width: 200px;
-  height: 260px;
+  width: 188px;
+  height: 248px;
   top: 0;
   left: 0;
   background: rgba(0, 192, 145, 0.2);
