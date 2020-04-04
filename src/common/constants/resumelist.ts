@@ -6,6 +6,10 @@
  */
 import { prefixCls } from "../constants/index";
 import { AbstructResumeItemProps } from "../../config-interface/index";
+
+export const deviceTips = "当前设备不支持简历制作功能，请换至电脑端进行制作";
+export const authorityTips = "平台需要获取您的个人信息，平台承诺不会将您信息泄漏，您是否同意此操作 ？";
+
 /**
  * @property {bgColor} 背景色
  * @property {textColor} 文案主题色

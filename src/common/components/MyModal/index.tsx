@@ -5,14 +5,14 @@
  * @lastModify 2020-04-02
  */
 import React from "react";
+import { createPortal } from "react-dom";
 import { Modal } from "antd";
-import styles from "./index.module.css";
 
 const WIDTH_EMUN = {
-  sm: 520,
-  md: 640,
-  bg: 864,
-  lg: 1200
+  sm: 420,
+  md: 520,
+  bg: 640,
+  lg: 864
 };
 const MAXHEIGHT_EMUN = {
   sm: 430,
@@ -26,7 +26,9 @@ const MAXHEIGHT_EMUN = {
  * @extends {React.hooks}
  * @property {String} title - 标题
  * @property {String} size - 大小
+ * @property {String} visible - 是否显示
  * @property {Number} zIndex - 层级大小
+ * @property {boolean} centered - 垂直居中展示 Modal
  * @property {String} wrapClassName - 自定义样式别名
  * @property {String/ReactNode} children
  * @property {String/ReactNode} footer - 底部内容，当不需要默认底部按钮时，可以设为 footer={null}
@@ -34,29 +36,32 @@ const MAXHEIGHT_EMUN = {
 function MyModal({
   title = "erek-resume 提示您",
   size = "sm",
+  visible,
   zIndex = 11,
+  centered = false,
   wrapClassName,
   footer,
   children,
   onCancel
 }: any) {
-  console.log(title);
-  return (
+  return createPortal(
     <Modal
       title={title}
-      visible={true}
-      centered={true}
-      footer={null}
+      visible={visible}
       zIndex={zIndex}
+      keyboard={false}
+      centered={centered}
       onCancel={onCancel}
       width={WIDTH_EMUN[size]}
+      maskClosable={false}
       wrapClassName={wrapClassName}
+      footer={footer}
     >
       <div className="body" style={{ maxHeight: MAXHEIGHT_EMUN[size] }}>
         <div className="ctx">{children}</div>
-        {footer}
       </div>
-    </Modal>
+    </Modal>,
+    document.body
   );
 }
 

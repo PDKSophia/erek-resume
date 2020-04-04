@@ -11,10 +11,12 @@ export interface ThemeStateType {
   theme: {
     [propName: string]: any;
   };
+  isAuth: boolean;
 }
 
 export const initialState = Immutable<ThemeStateType>({
-  theme: {}
+  theme: {},
+  isAuth: false
 });
 
 function themeStore(
@@ -25,6 +27,8 @@ function themeStore(
   switch (action.type) {
     case actionTypes.STORE_PROPS:
       return Immutable.replace(state, payload);
+    case actionTypes.SET_AUTHORITY:
+      return state.set("isAuth", payload);
     default:
       return state;
   }
