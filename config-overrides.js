@@ -11,7 +11,7 @@
 
 const {
   override,
-  // fixBabelImports,
+  fixBabelImports,
   addWebpackAlias,
   addDecoratorsLegacy
   // addWebpackPlugin
@@ -22,11 +22,11 @@ const resolve = dir => path.join(__dirname, ".", dir);
 const WebpackBuildNotifierPlugin = require("webpack-build-notifier");
 
 module.exports = override(
-  // fixBabelImports('import', {
-  //   libraryName: 'antd',
-  //   libraryDirectory: 'es',
-  //   style: true
-  // }),
+  fixBabelImports('import', {
+    libraryName: 'antd',
+    libraryDirectory: 'es',
+    style: 'css'
+  }),
 
   addWebpackAlias({
     ["@common"]: resolve("src/common")
