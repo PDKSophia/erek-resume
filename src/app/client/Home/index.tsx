@@ -13,8 +13,8 @@ import ThemeBox from "@src/common/components/ThemeBox";
 import Intro from "@src/app/components/Intro";
 import Copyright from "@src/app/components/Copyright";
 // redux引入
-import { setLocalStorage } from "@src/common/utils/index";
-import { AbstructThemeItemProps } from "@src/config-interface/index";
+import { setLocalStorage, isUrl } from "@src/common/utils";
+import { AbstructThemeItemProps } from "@src/config-interface";
 import { screen, screenWrite, screenMenu } from "@src/common/constants";
 import { useStoreTheme, useStoreLibProps } from "@src/common/hooks/useTheme";
 
@@ -33,7 +33,11 @@ export default function Home(props: any) {
   }, []);
 
   function onClickGrid(target: any) {
-    props.history.push(target.url);
+    if (isUrl(target.url)) {
+      window.open(target.url, "_blank");
+    } else {
+      props.history.push(target.url);
+    }
   }
 
   return (

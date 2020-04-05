@@ -75,7 +75,7 @@ export const screenMenu = {
       text: "模板"
     },
     {
-      url: "/",
+      url: "https://github.com/PDKSophia/erek-resume",
       key: "code",
       text: "源码"
     }

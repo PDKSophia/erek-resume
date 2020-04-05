@@ -15,13 +15,6 @@ function isString(value: any) {
 }
 
 /**
- * @desc 检查某对象是否为空对象
- * @param {Object} obj - 检查对象
- */
-export function isEmptyObject(obj: any) {
-  return Object.keys(obj).length === 0 ? true : false;
-}
-/**
  * @desc 设置LocalStorage的key值
  * @param {string} name - key
  * @param {string} value - vaule
@@ -100,4 +93,13 @@ export function getBrower() {
     is: (key: string) => device[key]
   };
   return device;
+}
+
+/**
+ * @desc 判断是否属于外部连接
+ * @param {string} url - 链接
+ */
+export function isUrl(url: string) {
+  let regRule = /(http|https):\/\/([\w.]+\/?)\S*/;
+  return regRule.test(url.toLowerCase());
 }
