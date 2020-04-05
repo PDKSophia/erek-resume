@@ -1,31 +1,34 @@
 /**
  * @desc 时间轴组件
  * @author pengdaokuan
- * @createTime: 2020-01-09
- * @lastModify: 2020-01-09
+ * @createTime 2020-01-09
+ * @lastModify 2020-01-09
  */
 import React from "react";
 import { Timeline } from "antd";
 import { isEmpty, isArray } from "lodash";
+import { useStoreTheme } from "@src/common/hooks/useTheme";
 
 /**
  * 时间轴组件
  * @extends {React.Hooks}
  * @property {Array} list - 数据
  */
-declare interface Props {
+declare interface AbstructTimeLineProps {
   list?: Array<Object>;
 }
 
-function Timelines(props: Props) {
+function Timelines({ list }: AbstructTimeLineProps) {
+  const [theme] = useStoreTheme();
+
   return (
     <React.Fragment>
       <Timeline>
-        {props.list &&
-          !isEmpty(props.list) &&
-          props.list.map((item: any, idx: number) => {
+        {list &&
+          !isEmpty(list) &&
+          list.map((item: any, idx: number) => {
             return (
-              <Timeline.Item color="green" key={idx}>
+              <Timeline.Item color={theme.bgColor} key={idx}>
                 <p>
                   {item[0]}: 版本[v{item[1]}] 主要内容为:
                 </p>
