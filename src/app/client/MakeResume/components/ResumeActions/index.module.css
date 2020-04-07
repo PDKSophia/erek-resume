@@ -1,0 +1,15 @@
+.container {
+  margin: 0 5cm 12px;
+  width: 20.9cm;
+  background-color: #fff;
+  padding: 12px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container > .back {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 16px;
+  cursor: pointer;
+}

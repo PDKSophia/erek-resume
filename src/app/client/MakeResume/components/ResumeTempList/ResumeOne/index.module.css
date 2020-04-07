@@ -1,0 +1,30 @@
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+}
+/* 左侧 */
+.container > .left {
+  width: 27%;
+}
+.container > .left > .avatar {
+  width: 100%;
+  height: 4.5cm;
+  text-align: center;
+  background-color: #eee;
+}
+.container > .left > .fillColor {
+  width: 100%;
+  height: 1cm;
+  background-color: rgb(250, 225, 4);
+}
+.container > .left > .basedata {
+  width: 100%;
+  height: 24.1cm;
+  color: #fff;
+  background-color: #01426f;
+}
