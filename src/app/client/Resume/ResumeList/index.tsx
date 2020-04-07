@@ -6,6 +6,7 @@
  */
 import React, { useState } from "react";
 import styles from "./index.module.css";
+import { withRouter } from "react-router-dom";
 import classnames from "classnames/bind";
 import List from "@src/app/components/ReStore/List";
 import MyModal from "@src/common/components/MyModal";
@@ -18,7 +19,7 @@ import { AbstructResumeItemProps } from "@src/config-interface/index";
 import { deviceTips, authorityTips } from "@src/common/constants/resumelist";
 let cx = classnames.bind(styles);
 
-function ResumeList() {
+function ResumeList(props: any) {
   const [isAuthModal, setAuthModal] = useState(false);
   const [isDeviceModal, setDeviceModal] = useState(false);
 
@@ -32,7 +33,7 @@ function ResumeList() {
       if (!isAuth) {
         setAuthModal(true);
       } else {
-        console.log("选中当前的简历模板");
+        props.history.push("/make-resume");
       }
     }
   }
@@ -45,6 +46,7 @@ function ResumeList() {
   function onAuthOk() {
     setAuthModal(false);
     dispatch(themeActions.setAuthority(true));
+    props.history.push("/make-resume");
   }
   return (
     <div className={styles.container}>
@@ -97,4 +99,4 @@ function ResumeList() {
   );
 }
 
-export default ResumeList;
+export default withRouter(ResumeList);

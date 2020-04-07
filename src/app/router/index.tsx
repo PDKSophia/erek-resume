@@ -13,6 +13,7 @@ import Home from "@src/app/client/Home";
 import Platform from "@src/app/client/Platform";
 import Resume from "@src/app/client/Resume";
 import Template from "@src/app/client/Template";
+import MakeResume from "@src/app/client/MakeResume";
 
 /**
  * @class App
@@ -32,6 +33,7 @@ export default function App(props: any) {
         <Route path="/resume" component={Resume} />
         <Route path="/platform" component={Platform} />
         <Route path="/template" component={Template} />
+        <Route path="/make-resume" component={MakeResume} />
       </Switch>
     </div>
   );
