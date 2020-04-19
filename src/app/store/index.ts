@@ -1,8 +1,8 @@
 /**
- * @Desc: Redux
- * @Author: pengdaokuan
- * @CreateTime: 2019-11-29
- * @LastModify: 2019-11-29
+ * @desc Redux
+ * @author pengdaokuan
+ * @createTime 2020-03-28
+ * @lastModify 2020-03-28
  */
 import { createStore } from "redux";
 import reducers from "./reducers";

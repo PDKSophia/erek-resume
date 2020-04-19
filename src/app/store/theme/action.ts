@@ -1,8 +1,8 @@
 /**
- * @Desc: 主题 theme action
- * @Author: pengdaokuan
- * @CreateTime: 2019-11-29
- * @LastModify: 2019-11-29
+ * @desc Redux
+ * @author pengdaokuan
+ * @createTime 2020-03-28
+ * @lastModify 2020-04-05
  */
 import * as actionTypes from "../actionsType";
 

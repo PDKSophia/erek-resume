@@ -12,6 +12,8 @@ import Avatar from "./components/Avatar";
 import BaseInfo from "./components/BaseInfo";
 import Contact from "./components/Contact";
 import IntentionJob from "./components/IntentionJob";
+import Certificate from "./components/Certificate";
+
 let cx = classnames.bind(styles);
 
 function ResumeOne(props: any) {
@@ -27,7 +29,7 @@ function ResumeOne(props: any) {
           <BaseInfo />
           <Contact />
           <IntentionJob />
-          <BaseInfo />
+          <Certificate />
         </div>
       </div>
     </div>
