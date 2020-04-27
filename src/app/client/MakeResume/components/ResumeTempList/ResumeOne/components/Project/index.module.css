@@ -1,0 +1,57 @@
+.flex {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.82rem;
+  flex-wrap: wrap;
+}
+.content {
+  width: 100%;
+  position: relative;
+}
+.content > .label {
+  padding-bottom: 0.5rem;
+  color: #01426f;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0px;
+  border-bottom: 0.1rem solid #eee;
+}
+.content > .list {
+  padding-top: 1rem;
+  padding-bottom: 1.5rem;
+  font-size: 0.7rem;
+}
+.content > .list p {
+  margin-bottom: 0px;
+}
+.content > .list .left {
+  width: 25%;
+}
+.content > .list .left > p:first-child {
+  margin-bottom: 0.3rem;
+  height: 1rem;
+  line-height: 1rem;
+  color: #01426f;
+  font-weight: bold;
+}
+.content > .list .right {
+  width: 75%;
+}
+.content > .list .right > p:first-child {
+  margin-bottom: 0.3rem;
+  height: 1rem;
+  line-height: 1rem;
+  color: #01426f;
+  font-weight: bold;
+}
+.content > .list .text {
+  width: 100%;
+}
+.content > .list .text > ul.utext {
+  line-height: 20px;
+}
+/* 技能清单 */
+.content > .list .text > ul.utext > li.liname {
+  list-style: outside;
+  margin-left: 1.2rem;
+}

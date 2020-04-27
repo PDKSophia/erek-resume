@@ -2,7 +2,7 @@
  * @desc 模板1
  * @author pengdaokuan
  * @createTime 2020-04-06
- * @lastModify 2020-04-06
+ * @lastModify 2020-04-19
  */
 import React from "react";
 import styles from "./index.module.css";
@@ -13,6 +13,11 @@ import BaseInfo from "./components/BaseInfo";
 import Contact from "./components/Contact";
 import IntentionJob from "./components/IntentionJob";
 import Certificate from "./components/Certificate";
+import Synopsis from "./components/Synopsis";
+import Skill from "./components/Skill";
+import Post from "./components/Post";
+import Project from "./components/Project";
+import Work from "./components/Work";
 
 let cx = classnames.bind(styles);
 
@@ -30,6 +35,16 @@ function ResumeOne(props: any) {
           <Contact />
           <IntentionJob />
           <Certificate />
+        </div>
+      </div>
+      {/* 内容 */}
+      <div className={styles.center}>
+        <Synopsis />
+        <div className={styles.listdata}>
+          <Skill />
+          <Post />
+          <Project />
+          <Work />
         </div>
       </div>
     </div>

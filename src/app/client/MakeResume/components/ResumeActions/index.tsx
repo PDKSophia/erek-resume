@@ -10,9 +10,12 @@ import { Button, Icon } from "antd";
 import { withRouter } from "react-router-dom";
 
 function ResumeActions(props: any) {
+  function goBack() {
+    props.history && props.history.goBack();
+  }
   return (
     <div className={styles.container}>
-      <div className={styles.back}>
+      <div className={styles.back} onClick={goBack}>
         <Icon type="left" />
         返回
       </div>

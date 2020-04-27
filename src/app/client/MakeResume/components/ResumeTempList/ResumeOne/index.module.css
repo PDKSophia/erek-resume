@@ -28,3 +28,12 @@
   color: #fff;
   background-color: #01426f;
 }
+
+/* 内容区域 */
+.container > .center {
+  width: 72%;
+}
+.container > .center > .listdata {
+  margin-top: 2.5rem;
+  padding: 0 5%;
+}

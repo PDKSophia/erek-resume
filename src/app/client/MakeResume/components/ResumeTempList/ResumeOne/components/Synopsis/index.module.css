@@ -1,0 +1,22 @@
+.content {
+  padding: 0 5%;
+  padding-top: 0.5cm;
+}
+.content > p.name {
+  margin-bottom: 0.5rem;
+  color: #01426f;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+.content > p.job {
+  margin-bottom: 0.5rem;
+  color: #01426f;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.content > p.summary {
+  margin-top: 1rem;
+  color: rgba(0, 0, 0, 0.72);
+  font-size: 0.72rem;
+  line-height: 20px;
+}
