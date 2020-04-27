@@ -1,8 +1,8 @@
 /**
- * @Desc: 扩展 webpack
- * @Author: pengdaokuan
- * @CreateDate:  2019-11-23
- * @LastModify:  2019-11-23
+ * @desc 扩展 webpack
+ * @author pengdaokuan
+ * @createDate  2020-04-05
+ * @lastModify  2020-04-05
  */
 
 // 注意: 新的react-app-rewired@2.x版本的关系。react-app-rewired删除所有方法的injectBabelPlugin

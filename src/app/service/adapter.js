@@ -1,8 +1,8 @@
 /**
- * Desc: Adapter requestAPI
- * Author: pengdaokuan
- * CreateTime: 2020-01-04
- * LastModify: 2020-01-04
+ * @desc Adapter requestAPI
+ * @author pengdaokuan
+ * @createTime 2020-01-04
+ * @lastModify 2020-01-04
  */
 /**
  * 普通方法调用

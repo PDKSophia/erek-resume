@@ -1,8 +1,8 @@
 /**
- * @Desc 请求文件
- * @Author pengdaokuan
- * @CreateTime 2020-01-09
- * @LastModify 2020-01-09
+ * @desc 请求文件
+ * @author pengdaokuan
+ * @createTime 2020-01-09
+ * @lastModify 2020-01-09
  */
 import axios from "axios";
 import deepExtend from "deep-extend";
