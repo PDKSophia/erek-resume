@@ -19,7 +19,7 @@
 .content > .list {
   padding-top: 1rem;
   padding-bottom: 1.5rem;
-  font-size: 0.7rem;
+  font-size: 0.74rem;
 }
 .content > .list p {
   margin-bottom: 0px;
@@ -48,7 +48,7 @@
   width: 100%;
 }
 .content > .list .text > ul.utext {
-  line-height: 20px;
+  line-height: 1.36rem;
 }
 /* 技能清单 */
 .content > .list .text > ul.utext > li.liname {

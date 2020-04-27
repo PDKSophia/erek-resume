@@ -16,7 +16,7 @@
 }
 .content > p.summary {
   margin-top: 1rem;
-  color: rgba(0, 0, 0, 0.72);
-  font-size: 0.72rem;
-  line-height: 20px;
+  color: rgba(0, 0, 0, 0.8);
+  line-height: 1.36rem;
+  font-size: 0.74rem;
 }
