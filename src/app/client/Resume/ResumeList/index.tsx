@@ -9,6 +9,7 @@ import styles from "./index.module.css";
 import { withRouter } from "react-router-dom";
 import classnames from "classnames/bind";
 import List from "@src/app/components/ReStore/List";
+import Button from "@src/common/components/Button";
 import MyModal from "@src/common/components/MyModal";
 import { useDispatch, useSelector } from "react-redux";
 import * as themeActions from "@src/app/store/theme/action";
@@ -51,7 +52,6 @@ function ResumeList(props: any) {
   return (
     <div className={styles.container}>
       <List resumeList={resumeList} onClickResume={onClickResume} />
-
       <MyModal
         visible={isDeviceModal}
         onCancel={onDeviceClose}
@@ -61,9 +61,8 @@ function ResumeList(props: any) {
             className={cx("btn", {
               "precent-100": true
             })}
-            onClick={onDeviceClose}
           >
-            确定
+            <Button text="确定" onClick={onDeviceClose} />
           </div>
         ]}
       >
@@ -74,22 +73,12 @@ function ResumeList(props: any) {
         onCancel={onAuthClose}
         footer={[
           <div
-            key="auth-cancel"
-            className={cx("btn", {
-              "precent-50": true
-            })}
-            onClick={onAuthClose}
-          >
-            取消
-          </div>,
-          <div
             key="auth-ok"
             className={cx("btn", {
-              "precent-50": true
+              "precent-100": true
             })}
-            onClick={onAuthOk}
           >
-            确定
+            <Button text="我已阅读并同意" size="big" onClick={onAuthOk} />
           </div>
         ]}
       >

@@ -6,8 +6,9 @@
  */
 import React from "react";
 import styles from "./index.module.css";
-import { Button, Icon } from "antd";
+import { Icon } from "antd";
 import { withRouter } from "react-router-dom";
+import Button from "@src/common/components/Button";
 
 function ResumeActions(props: any) {
   function goBack() {
@@ -19,7 +20,7 @@ function ResumeActions(props: any) {
         <Icon type="left" />
         返回
       </div>
-      <Button type="primary">导出PDF</Button>
+      <Button size="middle" text="导出PDF" />
     </div>
   );
 }

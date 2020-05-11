@@ -7,22 +7,16 @@
   line-height: 28px;
 }
 .btn {
-  height: 24px;
-  line-height: 24px;
   background: white;
   text-align: center;
-  font-size: 12px;
   cursor: pointer;
   display: inline-block;
   color: rgba(0, 0, 0, 0.8);
 }
 .precent-100 {
   width: 100%;
+  text-align: center;
 }
-.precent-50 {
-  width: 50%;
-  border-right: 1px solid rgba(0, 0, 0, 0.1);
-}
-.precent-50:last-child {
-  border: none;
+:global(.ant-modal-footer) {
+  padding: 40px;
 }
