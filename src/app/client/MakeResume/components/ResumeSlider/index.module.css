@@ -1,0 +1,61 @@
+p {
+  margin: 0;
+}
+.label {
+  width: 230px;
+  top: 80px;
+  position: absolute;
+  left: 26.8cm;
+  background-color: #fff;
+  border-radius: 6px;
+  padding: 12px 0;
+  text-align: center;
+}
+.label > .gradient {
+  background: linear-gradient(to right, red, blue);
+  color: transparent;
+  -webkit-background-clip: text;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.cell {
+  width: 230px;
+  line-height: 30px;
+  font-size: 14px;
+  color: #232323;
+  position: absolute;
+  top: 150px;
+  left: 26.8cm;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 6px;
+}
+.cell > .text {
+  text-align: left;
+  margin: 6px 12px 12px;
+  font-size: 15px;
+  color: #333;
+  margin-bottom: 12px;
+}
+.cell > .progress {
+  margin: 6px 12px 18px;
+}
+
+.cell > .actions {
+  list-style: none;
+}
+.cell > .actions > .btn {
+  font-size: 14px;
+  color: #262626;
+  padding: 6px;
+}
+
+.cell > .actions > .btn:hover {
+  background-color: #f4f4f4;
+  color: #262626;
+  cursor: pointer;
+}
+.cell > .actions > .btn:last-child {
+  padding-bottom: 16px !important;
+}
