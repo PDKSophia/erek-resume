@@ -69,7 +69,7 @@ http://localhost:3000/home
 - [平台用到的设计模式](./docs/DesignPatterns.md)
   - [发布-订阅模式](./docs/DesignPatterns.md)
   - [装饰者模式](./docs/DesignPatterns.md)
-  - [单例模式](./docs/DesignPatterns.md)
+  - [单例模式-反馈，参考教师空间](./docs/DesignPatterns.md)
 - [功能逻辑](./docs/Action/README.md)
   - [全局主题色的处理](./docs/Action/README.md)
   - [简历输入模块设计](./docs/Action/README.md)

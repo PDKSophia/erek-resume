@@ -9,11 +9,11 @@ import React, { useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
 import { useInitTheme } from "@src/common/hooks/useTheme";
 // 页面
-import Home from "@src/app/client/Home";
-import Platform from "@src/app/client/Platform";
-import Resume from "@src/app/client/Resume";
-import Template from "@src/app/client/Template";
-import MakeResume from "@src/app/client/MakeResume";
+import Home from "@src/app/container/Home";
+import Platform from "@src/app/container/Platform";
+import Resume from "@src/app/container/Resume";
+import Template from "@src/app/container/Template";
+import MakeResume from "@src/app/container/MakeResume";
 
 /**
  * @class App

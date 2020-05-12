@@ -2,7 +2,7 @@
  * @desc 简历模板制作主入口
  * @author pengdaokuan
  * @createTime 2020-04-05
- * @lastModify 2020-04-05
+ * @lastModify 2020-05-11
  */
 import React from "react";
 import styles from "./index.module.css";
