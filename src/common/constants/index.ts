@@ -175,3 +175,16 @@ export const copyright = {
   fromdate: "2019",
   endDate: new Date().getFullYear()
 };
+
+export const sliderActionMaps = {
+  PERSONAL: "PERSONAL", // 个人基本信息
+  EDUCATION: "EDUCATION", // 教育信息
+  WORK_PERFER: "WORK_PERFER", // 工作期望
+  SCHOOL_EXPERIENCE: "SCHOOL_EXPERIENCE", // 在校经历
+  PROJECT_EXPERIENCE: "PROJECT_EXPERIENCE", // 项目经验
+  WORK_EXPERIENCE: "WORK_EXPERIENCE", // 工作经历
+  CERTIFICATE: "CERTIFICATE", // 获奖证书
+  EVALUATION: "EVALUATION", // 个人评价
+  SKILL: "SKILL", // 掌握技能
+  TEST_DEMO: "TEST_DEMO" // 测试用例
+};

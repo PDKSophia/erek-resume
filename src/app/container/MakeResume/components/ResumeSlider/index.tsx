@@ -8,8 +8,15 @@ import React from "react";
 import styles from "./index.module.css";
 import { Progress } from "antd";
 import { withRouter } from "react-router-dom";
+import { sliderActionMaps } from "@src/common/constants";
 
 function ResumeSlider() {
+  function onButtonAction(type: string) {
+    switch (type) {
+      case sliderActionMaps.PERSONAL:
+        break;
+    }
+  }
   return (
     <React.Fragment>
       <div className={styles.label}>
@@ -21,16 +28,66 @@ function ResumeSlider() {
           <Progress percent={50} status="active" />
         </div>
         <ul className={styles.actions}>
-          <li className={styles.btn}>个人信息</li>
-          <li className={styles.btn}>教育信息</li>
-          <li className={styles.btn}>求职意向</li>
-          <li className={styles.btn}>获奖证书</li>
-          <li className={styles.btn}>个人评价</li>
-          <li className={styles.btn}>技能清单</li>
-          <li className={styles.btn}>在校经历</li>
-          <li className={styles.btn}>项目经验</li>
-          <li className={styles.btn}>工作经历</li>
-          <li className={styles.btn}>测试用例</li>
+          <li
+            className={styles.btn}
+            onClick={() => onButtonAction(sliderActionMaps.PERSONAL)}
+          >
+            个人信息
+          </li>
+          <li
+            className={styles.btn}
+            onClick={() => onButtonAction(sliderActionMaps.EDUCATION)}
+          >
+            教育信息
+          </li>
+          <li
+            className={styles.btn}
+            onClick={() => onButtonAction(sliderActionMaps.WORK_PERFER)}
+          >
+            求职意向
+          </li>
+          <li
+            className={styles.btn}
+            onClick={() => onButtonAction(sliderActionMaps.CERTIFICATE)}
+          >
+            获奖证书
+          </li>
+          <li
+            className={styles.btn}
+            onClick={() => onButtonAction(sliderActionMaps.EVALUATION)}
+          >
+            个人评价
+          </li>
+          <li
+            className={styles.btn}
+            onClick={() => onButtonAction(sliderActionMaps.SKILL)}
+          >
+            技能清单
+          </li>
+          <li
+            className={styles.btn}
+            onClick={() => onButtonAction(sliderActionMaps.SCHOOL_EXPERIENCE)}
+          >
+            在校经历
+          </li>
+          <li
+            className={styles.btn}
+            onClick={() => onButtonAction(sliderActionMaps.PROJECT_EXPERIENCE)}
+          >
+            项目经验
+          </li>
+          <li
+            className={styles.btn}
+            onClick={() => onButtonAction(sliderActionMaps.WORK_EXPERIENCE)}
+          >
+            工作经历
+          </li>
+          <li
+            className={styles.btn}
+            onClick={() => onButtonAction(sliderActionMaps.TEST_DEMO)}
+          >
+            测试用例
+          </li>
         </ul>
       </div>
     </React.Fragment>
