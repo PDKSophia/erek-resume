@@ -2,7 +2,7 @@
  * @desc 用户 user reducer
  * @author pengdaokuan
  * @createTime 2020-05-12
- * @lastModify 2020-05-12
+ * @lastModify 2020-05-13
  */
 import Immutable from "seamless-immutable";
 import * as actionTypes from "../actionsType";
@@ -17,6 +17,8 @@ import {
   AbstructEvaluation,
   AbstructSkill
 } from "./interface";
+
+import { useCreateReduxFunction } from "@src/common/hooks/useReduxHook";
 
 export interface UserStateType {
   userInfo: {
@@ -111,3 +113,16 @@ function userStore(state = initialState, action: { type: string; props: any }) {
 }
 
 export default userStore;
+
+const [
+  useUserRedux,
+  useUserSelector,
+  useUserFunction,
+  useInitUser
+] = useCreateReduxFunction(
+  "userStore",
+  actionTypes.STORE_USER_TYPE,
+  actionTypes.INIT_USER_TYPE
+);
+
+console.log(useUserRedux, useUserSelector, useUserFunction, useInitUser);

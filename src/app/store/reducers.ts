@@ -1,16 +1,19 @@
 /**
- * @Desc: Reducer 整合
- * @Author: pengdaokuan
- * @CreateTime: 2019-11-29
- * @LastModify: 2019-11-29
+ * @desc Reducer 整合
+ * @author pengdaokuan
+ * @createTime 2019-11-29
+ * @lastModify 2020-05-14
  */
-import { combineReducers } from "redux";
-import themeStore, { ThemeStateType } from "./theme/reducer";
+import { combineReducers } from 'redux';
+import themeStore, { ThemeStateType } from './theme/reducer';
+import userStore, { UserStateType } from './user/reducer';
 
 export interface AppStoreType {
   themeStore: ThemeStateType;
+  userStore: UserStateType;
 }
 
 export default combineReducers({
-  themeStore
+  themeStore,
+  userStore
 });
