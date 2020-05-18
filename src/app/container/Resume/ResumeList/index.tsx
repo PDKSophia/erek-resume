@@ -28,14 +28,14 @@ function ResumeList(props: any) {
   const isAuth = useSelector((state: AppStoreType) => state.themeStore.isAuth);
 
   function onClickResume(resume: AbstructResumeItemProps) {
+    ridRef.current = resume.id;
     if (getBrower().mobile) {
       setDeviceModal(true);
     } else {
       if (!isAuth) {
         setAuthModal(true);
       } else {
-        ridRef.current = resume.id;
-        props.history.push(`/make-resume/${resume.id}`);
+        props.history.push(`/make-resume?rid=${resume.id}`);
       }
     }
   }
@@ -48,7 +48,8 @@ function ResumeList(props: any) {
   function onAuthOk() {
     setAuthModal(false);
     dispatch(themeActions.setAuthority(true));
-    props.history.push(`/make-resume/${ridRef.current}`);
+    console.log(ridRef.current);
+    props.history.push(`/make-resume?rid=${ridRef.current}`);
   }
   return (
     <div className={styles.container}>

@@ -33,7 +33,7 @@ export default function App(props: any) {
         <Route path="/resume" component={Resume} />
         <Route path="/platform" component={Platform} />
         <Route path="/template" component={Template} />
-        <Route path="/make-resume/:rid" component={MakeResume} />
+        <Route path="/make-resume" component={MakeResume} />
       </Switch>
     </div>
   );

@@ -7,15 +7,18 @@
 import React, { useState, useEffect } from 'react';
 import styles from './index.module.css';
 import { withRouter } from 'react-router-dom';
+import { getUrlParam } from '@src/common/utils';
 import ResumeActions from './components/ResumeActions';
 import ResumeSlider from './components/ResumeSlider';
 import ResumeOne from './components/ResumeTempList/ResumeOne';
 
 function MakeResume(props: any) {
-  const [uid, setUid] = useState(undefined);
+  const [rid, setRid] = useState(undefined);
   useEffect(() => {
-    console.log(props.location);
+    const value = getUrlParam('rid');
+    setRid(value);
   }, []);
+
   return (
     <div className={styles.container}>
       <ResumeActions />
