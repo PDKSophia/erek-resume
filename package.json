@@ -6,7 +6,10 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint ./src",
+    "lint-only-error": "eslint --quiet ./src",
+    "lint-only-error-fix": "eslint --quiet --fix ./src"
   },
   "dependencies": {
     "@types/classnames": "^2.2.9",
@@ -23,6 +26,7 @@
     "babel-plugin-import": "^1.13.0",
     "classnames": "^2.2.6",
     "deep-extend": "^0.6.0",
+    "eslint-config-alloy": "^3.7.2",
     "less-loader": "^5.0.0",
     "lodash": "^4.17.15",
     "mockjs": "^1.1.0",

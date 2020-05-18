@@ -10,24 +10,31 @@ import { AppStoreType } from '@src/app/store/reducers';
  * @param {string} initType -- 初始化该redux的type
  */
 export function useCreateReduxFunction(name: string, storeType: string, initType: string) {
-  // 获取redux的方法
+  const dispatch = useDispatch();
+  let funcArray: Array<any> = [];
+
+  // 获取某个key的值
   const useGetSelector = function(...keys: any) {
+    let data = undefined;
     const realKeys: Array<any> = flattenDeep(keys);
     if (realKeys.length === 0) {
       return useSelector((state: AppStoreType) => state[name]);
     } else if (realKeys.length === 1) {
       if (typeof realKeys[0] === 'string') {
-        return useSelector((state: AppStoreType) => state[name][realKeys[0]]);
+        data = useSelector((state: AppStoreType) => state[name][realKeys[0]]);
       } else {
-        return useSelector(realKeys[0], shallowEqual);
+        data = useSelector(realKeys[0], shallowEqual);
       }
     } else {
-      return useSelector((state: AppStoreType) => pick(state[name], realKeys), shallowEqual);
+      data = useSelector((state: AppStoreType) => pick(state[name], realKeys), shallowEqual);
     }
+    return {
+      data
+    };
   };
-  //设置redux的方法
+
+  // 设置某个key的值
   const useSetDispatch = function(key: string) {
-    const dispatch = useDispatch();
     if (!key) {
       return (props: any) => {
         dispatch({
@@ -46,25 +53,25 @@ export function useCreateReduxFunction(name: string, storeType: string, initType
     };
   };
 
-  // reduxState
+  // 定义[value, changeValue]的方法
   const useReduxFunction = function(key: string) {
     const value = useGetSelector(key);
     const changeValue = useSetDispatch(key);
     return [value, changeValue];
   };
 
-  const funcArray = [useReduxFunction, useGetSelector, useSetDispatch];
+  funcArray = [useGetSelector, useSetDispatch, useReduxFunction];
 
+  // 初始化redux
   if (initType) {
-    // 初始化redux
-    const useInitFunction = function() {
-      const dispatch = useDispatch();
-      return () =>
+    const initReduxFunction = function() {
+      return () => {
         dispatch({
           type: initType
         });
+      };
     };
-    funcArray.push(useInitFunction);
+    funcArray.push(initReduxFunction);
   }
   return funcArray;
 }
