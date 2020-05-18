@@ -1,11 +1,11 @@
 /**
  * 主题相关hooks
  */
-import { themeList } from "../constants/theme";
-import { useDispatch, useSelector } from "react-redux";
-import { AppStoreType } from "@src/app/store/reducers";
-import { storeLibProps } from "@src/app/store/theme/action";
-import { getLocalStorage, setLocalStorage } from "../utils/index";
+import { themeList } from '../constants/theme';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppStoreType } from '@src/app/store/reducers';
+import { storeLibProps } from '@src/app/store/theme/action';
+import { getLocalStorage, setLocalStorage } from '../utils/index';
 
 /**
  * 初始化主题色
@@ -15,10 +15,10 @@ import { getLocalStorage, setLocalStorage } from "../utils/index";
  */
 export function useInitTheme() {
   const dispatch = useDispatch();
-  let sessionTheme = getLocalStorage("currentTheme");
+  let sessionTheme = getLocalStorage('currentTheme');
   let useResult = sessionTheme ? sessionTheme : themeList.dark;
   return () => {
-    setLocalStorage("currentTheme", useResult);
+    setLocalStorage('currentTheme', useResult);
     dispatch(storeLibProps({ theme: useResult }));
   };
 }

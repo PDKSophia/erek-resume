@@ -10,31 +10,31 @@ import { AppStoreType } from '@src/app/store/reducers';
  * @param {string} initType -- 初始化该redux的type
  */
 export function useCreateReduxFunction(name: string, storeType: string, initType: string) {
-  const dispatch = useDispatch();
   let funcArray: Array<any> = [];
 
   // 获取某个key的值
   const useGetSelector = function(...keys: any) {
-    let data = undefined;
     const realKeys: Array<any> = flattenDeep(keys);
-    if (realKeys.length === 0) {
-      return useSelector((state: AppStoreType) => state[name]);
-    } else if (realKeys.length === 1) {
-      if (typeof realKeys[0] === 'string') {
-        data = useSelector((state: AppStoreType) => state[name][realKeys[0]]);
-      } else {
-        data = useSelector(realKeys[0], shallowEqual);
-      }
-    } else {
-      data = useSelector((state: AppStoreType) => pick(state[name], realKeys), shallowEqual);
-    }
-    return {
-      data
-    };
+    const defaultStore = useSelector((state: any) => state[name]);
+    let otherStore = {};
+    // if (realKeys.length === 0) {
+    //   otherStore = useSelector((state: AppStoreType) => state[name]);
+    // } else if (realKeys.length === 1) {
+    //   if (typeof realKeys[0] === 'string') {
+    //     otherStore = useSelector((state: AppStoreType) => state[name][realKeys[0]]);
+    //   } else {
+    //     otherStore = useSelector(realKeys[0], shallowEqual);
+    //   }
+    // } else {
+    //   otherStore = useSelector((state: AppStoreType) => pick(state[name], realKeys), shallowEqual);
+    // }
+    return { ...defaultStore, ...otherStore };
   };
 
   // 设置某个key的值
   const useSetDispatch = function(key: string) {
+    const dispatch = useDispatch();
+
     if (!key) {
       return (props: any) => {
         dispatch({
@@ -63,15 +63,17 @@ export function useCreateReduxFunction(name: string, storeType: string, initType
   funcArray = [useGetSelector, useSetDispatch, useReduxFunction];
 
   // 初始化redux
-  if (initType) {
-    const initReduxFunction = function() {
-      return () => {
-        dispatch({
-          type: initType
-        });
-      };
-    };
-    funcArray.push(initReduxFunction);
-  }
+  // if (initType) {
+  //   const dispatch = useDispatch();
+
+  //   const initReduxFunction = function() {
+  //     return () => {
+  //       dispatch({
+  //         type: initType
+  //       });
+  //     };
+  //   };
+  //   funcArray.push(initReduxFunction);
+  // }
   return funcArray;
 }
