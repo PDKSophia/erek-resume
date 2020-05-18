@@ -4,14 +4,14 @@
  * @createDate 2020-03-28
  * @lastModify 2020-03-28
  */
-import { themeList } from "@src/common/constants/theme";
+import { themeList } from '@src/common/constants/theme';
 
 /**
  * @desc 判断某个值是否为字符串类型
  * @param {any} value - 判断的值
  */
 function isString(value: any) {
-  return typeof value === "string";
+  return typeof value === 'string';
 }
 
 /**
@@ -49,15 +49,9 @@ export function getLocalStorage(name: string) {
  */
 export function handleRegKeyword(text: string, keyword: string) {
   const regResult = text.replace(
-    new RegExp(
-      `>[^<]*?${keyword}[^>]*?<|^[^<]*?${keyword}|${keyword}[^>]*?$`,
-      "gi"
-    ),
+    new RegExp(`>[^<]*?${keyword}[^>]*?<|^[^<]*?${keyword}|${keyword}[^>]*?$`, 'gi'),
     (value: string) => {
-      return value.replace(
-        new RegExp(`(${keyword})`, "gi"),
-        `<span style="color:#ff7551;">$1</span>`
-      );
+      return value.replace(new RegExp(`(${keyword})`, 'gi'), `<span style="color:#ff7551;">$1</span>`);
     }
   );
   return regResult;
@@ -80,16 +74,16 @@ export function getThemeList() {
 export function getBrower() {
   const { userAgent } = window.navigator;
   const device = {
-    trident: userAgent.includes("Trident"), //IE内核
-    presto: userAgent.includes("Presto"), //opera内核
-    iPad: userAgent.includes("iPad"), //是否iPad
-    iPhone: userAgent.includes("iPhone"), //是否为iPhone或者QQHD浏览器
-    webKit: userAgent.includes("AppleWebKit"), //苹果、谷歌内核
-    webApp: userAgent.indexOf("Safari") === -1, //是否web应该程序，没有头部与底部
+    trident: userAgent.includes('Trident'), //IE内核
+    presto: userAgent.includes('Presto'), //opera内核
+    iPad: userAgent.includes('iPad'), //是否iPad
+    iPhone: userAgent.includes('iPhone'), //是否为iPhone或者QQHD浏览器
+    webKit: userAgent.includes('AppleWebKit'), //苹果、谷歌内核
+    webApp: userAgent.indexOf('Safari') === -1, //是否web应该程序，没有头部与底部
     mobile: !!userAgent.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
     ios: !!userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
-    android: userAgent.includes("Android") || userAgent.includes("Linux"), //android终端或uc浏览器
-    gecko: userAgent.includes("Gecko") && userAgent.indexOf("KHTML") === -1, //火狐内核
+    android: userAgent.includes('Android') || userAgent.includes('Linux'), //android终端或uc浏览器
+    gecko: userAgent.includes('Gecko') && userAgent.indexOf('KHTML') === -1, //火狐内核
     is: (key: string) => device[key]
   };
   return device;
@@ -102,4 +96,28 @@ export function getBrower() {
 export function isUrl(url: string) {
   let regRule = /(http|https):\/\/([\w.]+\/?)\S*/;
   return regRule.test(url.toLowerCase());
+}
+
+/**
+ * 获取URL中的参数的值
+ * @param {string} paras 参数key
+ * @returns {string} 返回参数的value
+ */
+export function getUrlParam(paras?: string) {
+  let url = window.location.search;
+  let paramString = url.substring(url.indexOf('?') + 1, url.length).split('&');
+  let paraObj = {};
+  let j = '';
+  for (let i = 0; (j = paramString[i]); i++) {
+    const key = j.substring(0, j.indexOf('=')).toLowerCase();
+    const value = j.substring(j.indexOf('=') + 1, j.length);
+    paraObj[key] = value;
+  }
+  let returnValue: any;
+  if (paras) {
+    returnValue = paraObj[paras.toLowerCase()];
+  } else {
+    returnValue = { ...paraObj };
+  }
+  return typeof returnValue === 'undefined' ? '' : returnValue;
 }
