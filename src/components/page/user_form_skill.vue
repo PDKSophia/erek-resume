@@ -398,18 +398,18 @@ export default {
                 Major : '',
                 Job : '',
                 Avatar : require('../../assets/default.jpg'),
-                UserName : '林囿余',
-                Area : '贵州',
-                Email : '2577187007@qq.com',
-                Phone : '18673291007',
+                UserName : '彭道宽',
+                Area : '海口',
+                Email : '1063137960@qq.com',
+                Phone : '176****6512',
                 EnrolmentTime : '2015-09',
                 GraduationTime : '2019-07',
-                JobAddress : '成都|长沙|北京|',
+                JobAddress : '成都|长沙|广州|',
                 Certificate : '湖南科技大学一等奖|全国英语四级证|全国计算机二级证书|',
                 Github : 'https://github.com/PDKSophia/resumes/pull/18',
                 Blog : 'https://github.com/PDKSophia/resumes/pull/18',
                 Hobby : '跑步、音乐、看书、',
-                Skill : '',
+                Skill : '良好的语言表达能力和沟通能力，能快速融入团队，较快适应新的工作环境 | 代码洁癖，前后端分离 | 保持好奇，对新知识新技术有决心和毅力 |',
                 Experience :[
                     {
                         projectName : '基于微信企业号 - 二手市场 - 前端',
@@ -420,17 +420,6 @@ export default {
                         projectSolve : '{sessionStorage 实现从详情到列表页的滚动}{配置nginx，实现跨域问题}',
                         StartTime : '2017-11',
                         EndTime : '2018-05',
-                        show : false
-                    },
-                    {
-                        projectName : '开源 - 嘟嘟WebApp( 完善中 ) - 独立开发',
-                        projectJob : '全栈工程师',
-                        projectSkill : 'Vue.js + jQuery + Vuex',
-                        projectLink : 'https://market.ticknet.hnust.cn',
-                        projectSummary : '功能包括实时电影热映、在线播放歌曲、文章博客浏览、发布动态、五子棋、 脑筋急转弯、天气查询等',
-                        projectSolve : '{豆瓣API获得资源，存入数据库，减少豆瓣API请求次数}{通过QQ音乐API，获取歌单列表存入数据库，rand()随机歌曲数量，更新 歌曲信息播放地址}{接入个人博客文章，借鉴朋友圈风格，实现动态、分享多图上传}',
-                        StartTime : '2018-03',
-                        EndTime : '2018-06',
                         show : false
                     },
                     {
@@ -471,7 +460,7 @@ export default {
                         show : false,
                     }
                 ],
-                Evaluation : '',
+                Evaluation : '良好的语言表达能力和沟通能力，能快速融入团队，较快适应新的工作环境 | 代码洁癖，前后端分离 | 保持好奇，对新知识新技术有决心和毅力 |',
             },
             NewProject : {
                 projectName : '',
@@ -653,6 +642,7 @@ export default {
         },
         // 生成简历
         SubmitMakeResume () {
+            this.SessionUserInfo();
             this.ShowTemplateChoose = true
         },
         // 使用该模板
@@ -668,13 +658,22 @@ export default {
                     this.$router.push({path : '/user/template_three'})
                     break;
                 case 3:
-                    this.$router.push({path : '/user/template_four'})
+                    this.$Modal.error({
+                        title: 'Yun Resume',
+                        content: '暂未完成，敬请期待 ~'
+                    });
                     break;
                 case 4:
-                    this.$router.push({path : '/user/template_five'})
+                    this.$Modal.error({
+                        title: 'Yun Resume',
+                        content: '暂未完成，敬请期待 ~'
+                    });
                     break;
                 case 5:
-                    this.$router.push({path : '/user/template_six'})
+                    this.$Modal.error({
+                        title: 'Yun Resume',
+                        content: '暂未完成，敬请期待 ~'
+                    });
                     break;
                 default:
                     break;
